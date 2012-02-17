@@ -1,0 +1,1478 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="ja" xml:lang="ja">
+<head>
+<title>スタートアップベンチャー</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-02-17 Fri"/>
+<meta name="author" content="Shigeaki Matsumura"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="content">
+
+<h1 class="title">スタートアップベンチャー</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 スタートアップベンチャーの実際とそれを取り巻く環境 </a>
+<ul>
+<li><a href="#sec-1_1">1.1 川田 尚吾 Shogo Kawada, Ph.D </a></li>
+<li><a href="#sec-1_2">1.2 自己紹介 </a></li>
+<li><a href="#sec-1_3">1.3 USのネットベンチャーをとりまく環境の近年の傾向 </a>
+<ul>
+<li><a href="#sec-1_3_1">1.3.1 ネットの環境の変化 </a></li>
+<li><a href="#sec-1_3_2">1.3.2 投資環境の変化 </a></li>
+<li><a href="#sec-1_3_3">1.3.3 カンブリア爆発へ </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_4">1.4 facebaookアプリ </a></li>
+<li><a href="#sec-1_5">1.5 スマートフォンのアプリケーションプラットフォーム </a>
+<ul>
+<li><a href="#sec-1_5_1">1.5.1 iOS </a></li>
+<li><a href="#sec-1_5_2">1.5.2 android </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_6">1.6 クラウドサービスのイメージ </a>
+<ul>
+<li><a href="#sec-1_6_1">1.6.1 これまで </a></li>
+<li><a href="#sec-1_6_2">1.6.2 クラウドサービスの活用 </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_7">1.7 webサービス提供者のための主なクラウドサービス </a>
+<ul>
+<li><a href="#sec-1_7_1">1.7.1 Amazon Web Service </a></li>
+<li><a href="#sec-1_7_2">1.7.2 Google App Engine </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_8">1.8 伝統的なVCからSAへのパワーシフツが起きつつある </a>
+<ul>
+<li><a href="#sec-1_8_1">1.8.1 Venture Capital </a></li>
+<li><a href="#sec-1_8_2">1.8.2 Super Angel </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_9">1.9 スーパーエンジェルがからむ案件の例 </a></li>
+<li><a href="#sec-1_10">1.10 シードアクセラレータの台頭 </a>
+<ul>
+<li><a href="#sec-1_10_1">1.10.1 Y Combinator </a></li>
+<li><a href="#sec-1_10_2">1.10.2 500 startups </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_11">1.11 シードアクセラレータの特徴 </a></li>
+<li><a href="#sec-1_12">1.12 Convertible noteのしくみ </a></li>
+<li><a href="#sec-1_13">1.13 Convertible noteのポイント </a></li>
+<li><a href="#sec-1_14">1.14 USのネットベンチャー </a></li>
+<li><a href="#sec-1_15">1.15 日本での動き </a>
+<ul>
+<li><a href="#sec-1_15_1">1.15.1 オープンプラットフォームのイメージ </a></li>
+<li><a href="#sec-1_15_2">1.15.2 サポートプログラム </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_16">1.16 PCでもSNSを中心にオープンプラットフォームが広がる </a>
+<ul>
+<li><a href="#sec-1_16_1">1.16.1 mixi </a></li>
+<li><a href="#sec-1_16_2">1.16.2 facebook </a></li>
+<li><a href="#sec-1_16_3">1.16.3 twitter </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_17">1.17 スマートフォンが一気に普及してきている </a></li>
+<li><a href="#sec-1_18">1.18 既に躍進を初めたSAP </a>
+<ul>
+<li><a href="#sec-1_18_1">1.18.1 Klab </a></li>
+<li><a href="#sec-1_18_2">1.18.2 gloops </a></li>
+<li><a href="#sec-1_18_3">1.18.3 gumi </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_19">1.19 国内の主なスタートアップアクセラレーター </a></li>
+<li><a href="#sec-1_20">1.20 米国の日本も相似な状況。そして戦い方も進化 </a></li>
+<li><a href="#sec-1_21">1.21 現代戦の特徴その1 </a>
+<ul>
+<li><a href="#sec-1_21_1">1.21.1 プログラマーが重要 </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_22">1.22 DeNAによる新卒エンジニアスペシャリスト採用 </a></li>
+<li><a href="#sec-1_23">1.23 現代戦の特徴その2 </a>
+<ul>
+<li><a href="#sec-1_23_1">1.23.1 プラットフォームの活用 </a></li>
+</ul>
+</li>
+<li><a href="#sec-1_24">1.24 calil.jpの例 </a></li>
+<li><a href="#sec-1_25">1.25 現代戦の特徴その3 </a></li>
+<li><a href="#sec-1_26">1.26 現代戦の特徴その4 </a></li>
+<li><a href="#sec-1_27">1.27 現代戦の特徴のまとめ </a></li>
+<li><a href="#sec-1_28">1.28 未来に普通にあるサービスを生み出すための壮大な多様性の爆発 </a></li>
+<li><a href="#sec-1_29">1.29 20代のしかけるスタートアップが続々。。。 </a></li>
+<li><a href="#sec-1_30">1.30 ホットスポット効果 </a></li>
+<li><a href="#sec-1_31">1.31 世界に向けた内圧の高まり </a></li>
+<li><a href="#sec-1_32">1.32 質疑応答 </a>
+<ul>
+<li><a href="#sec-1_32_1">1.32.1 川田さんの投資方針 </a></li>
+<li><a href="#sec-1_32_2">1.32.2 ベンチャーが成功するために必要なものとは？ </a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 Wondershakeを通して、学んできたこと </a>
+<ul>
+<li><a href="#sec-2_1">2.1 自己紹介 </a></li>
+<li><a href="#sec-2_2">2.2 プロダクト紹介 </a>
+<ul>
+<li><a href="#sec-2_2_1">2.2.1 チーム </a></li>
+<li><a href="#sec-2_2_2">2.2.2 会社 </a></li>
+<li><a href="#sec-2_2_3">2.2.3 Our Vision </a></li>
+</ul>
+</li>
+<li><a href="#sec-2_3">2.3 新サービズ </a>
+<ul>
+<li><a href="#sec-2_3_1">2.3.1 Tsudoi </a></li>
+</ul>
+</li>
+<li><a href="#sec-2_4">2.4 スタートアップを始めて気づいたこと </a></li>
+<li><a href="#sec-2_5">2.5 次にくると思うサービス </a>
+<ul>
+<li><a href="#sec-2_5_1">2.5.1 Webを活用したセレンディピティ </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> スタートアップベンチャーの実際とそれを取り巻く環境 </h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1_1" class="outline-3">
+<h3 id="sec-1_1"><span class="section-number-3">1.1</span> 川田 尚吾 Shogo Kawada, Ph.D </h3>
+<div class="outline-text-3" id="text-1_1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1_2" class="outline-3">
+<h3 id="sec-1_2"><span class="section-number-3">1.2</span> 自己紹介 </h3>
+<div class="outline-text-3" id="text-1_2">
+
+<ul>
+<li>
+1987-1991 学生ベンチャー
+</li>
+<li>
+1991-1996 都立大大学院で研究。ネットと出会う
+</li>
+<li>
+1996-1999 マッキンゼー
+</li>
+<li>
+1999-2008 DeNAを共同創業。取締役COO
+</li>
+<li>
+2008-2011 DeNA非常勤取締役
+</li>
+<li>
+2011-     DeNA顧問、投資家
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_3" class="outline-3">
+<h3 id="sec-1_3"><span class="section-number-3">1.3</span> USのネットベンチャーをとりまく環境の近年の傾向 </h3>
+<div class="outline-text-3" id="text-1_3">
+
+
+</div>
+
+<div id="outline-container-1_3_1" class="outline-4">
+<h4 id="sec-1_3_1"><span class="section-number-4">1.3.1</span> ネットの環境の変化 </h4>
+<div class="outline-text-4" id="text-1_3_1">
+
+<ul>
+<li>
+SNS/スマートフォン普及によるプラットフォームの充実
+</li>
+<li>
+クラウドサービスの実用化
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_3_2" class="outline-4">
+<h4 id="sec-1_3_2"><span class="section-number-4">1.3.2</span> 投資環境の変化 </h4>
+<div class="outline-text-4" id="text-1_3_2">
+
+<ul>
+<li>
+VCからスーパーエンジェルへの主役交代
+</li>
+<li>
+インキュベーター(スタートアップアクセラレータ)の台頭(Y Combinatorなど)
+</li>
+<li>
+ファイナンス技法の変化
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_3_3" class="outline-4">
+<h4 id="sec-1_3_3"><span class="section-number-4">1.3.3</span> カンブリア爆発へ </h4>
+<div class="outline-text-4" id="text-1_3_3">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_4" class="outline-3">
+<h3 id="sec-1_4"><span class="section-number-3">1.4</span> facebaookアプリ </h3>
+<div class="outline-text-3" id="text-1_4">
+
+<ul>
+<li>
+APIを2008年に公開
+</li>
+<li>
+認証、ソーシャルグラフの利用、決済など、8.45億人のMAUを活用するための様々なAPIが用意されている
+</li>
+<li>
+ゲーム(ジンガ)、ユーティリティー、コミュニケーションなど様々なアプリ
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_5" class="outline-3">
+<h3 id="sec-1_5"><span class="section-number-3">1.5</span> スマートフォンのアプリケーションプラットフォーム </h3>
+<div class="outline-text-3" id="text-1_5">
+
+
+</div>
+
+<div id="outline-container-1_5_1" class="outline-4">
+<h4 id="sec-1_5_1"><span class="section-number-4">1.5.1</span> iOS </h4>
+<div class="outline-text-4" id="text-1_5_1">
+
+<ul>
+<li>
+iOS SDK
+</li>
+<li>
+App Store
+</li>
+<li>
+iTUnes storeアカウントによる決済
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_5_2" class="outline-4">
+<h4 id="sec-1_5_2"><span class="section-number-4">1.5.2</span> android </h4>
+<div class="outline-text-4" id="text-1_5_2">
+
+<ul>
+<li>
+android SDK
+</li>
+<li>
+Android Market
+</li>
+<li>
+google check outまたはキャリア課金
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_6" class="outline-3">
+<h3 id="sec-1_6"><span class="section-number-3">1.6</span> クラウドサービスのイメージ </h3>
+<div class="outline-text-3" id="text-1_6">
+
+<p>技術的な本質は仮想化
+</p>
+</div>
+
+<div id="outline-container-1_6_1" class="outline-4">
+<h4 id="sec-1_6_1"><span class="section-number-4">1.6.1</span> これまで </h4>
+<div class="outline-text-4" id="text-1_6_1">
+
+<ul>
+<li>
+キャパ増やすために機器購入
+</li>
+<li>
+機器購入のたびに設置/設定
+</li>
+<li>
+キャパはピークに合わせる
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_6_2" class="outline-4">
+<h4 id="sec-1_6_2"><span class="section-number-4">1.6.2</span> クラウドサービスの活用 </h4>
+<div class="outline-text-4" id="text-1_6_2">
+
+<ul>
+<li>
+必要に応じてキャパを借りる
+</li>
+<li>
+キャパ増やしても設置/設定不要
+</li>
+<li>
+時前のキャパは最小限orなし
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_7" class="outline-3">
+<h3 id="sec-1_7"><span class="section-number-3">1.7</span> webサービス提供者のための主なクラウドサービス </h3>
+<div class="outline-text-3" id="text-1_7">
+
+
+</div>
+
+<div id="outline-container-1_7_1" class="outline-4">
+<h4 id="sec-1_7_1"><span class="section-number-4">1.7.1</span> Amazon Web Service </h4>
+<div class="outline-text-4" id="text-1_7_1">
+
+<ul>
+<li>
+EC2 S3
+</li>
+<li>
+従量制の有料モデル
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_7_2" class="outline-4">
+<h4 id="sec-1_7_2"><span class="section-number-4">1.7.2</span> Google App Engine </h4>
+<div class="outline-text-4" id="text-1_7_2">
+
+<ul>
+<li>
+Python, Java, go
+</li>
+<li>
+無料+従量制
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_8" class="outline-3">
+<h3 id="sec-1_8"><span class="section-number-3">1.8</span> 伝統的なVCからSAへのパワーシフツが起きつつある </h3>
+<div class="outline-text-3" id="text-1_8">
+
+
+</div>
+
+<div id="outline-container-1_8_1" class="outline-4">
+<h4 id="sec-1_8_1"><span class="section-number-4">1.8.1</span> Venture Capital </h4>
+<div class="outline-text-4" id="text-1_8_1">
+
+<p>お金のかかる技術開発やミドル以降のステージ向き
+</p><ul>
+<li id="sec-1_8_1_1">概要 <br/>
+<ul>
+<li>
+主に機関投資家から資金を集めベンチャー企業に投資するファンド(投資会社)
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1_8_1_2">著名なプレーヤー <br/>
+<ul>
+<li>
+セコイアキャピタル,KPCB,アクセルパートナーズなど
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1_8_1_3">特徴 <br/>
+<ul>
+<li>
+比較的額の大きい投資
+</li>
+<li>
+しっかりしたデューデリジェンス
+</li>
+<li>
+ファイナンス的アドバイスが得意
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1_8_2" class="outline-4">
+<h4 id="sec-1_8_2"><span class="section-number-4">1.8.2</span> Super Angel </h4>
+<div class="outline-text-4" id="text-1_8_2">
+
+<p>リーンスタートアップモデルやアーリーステージ向き
+</p><ul>
+<li id="sec-1_8_2_1">概要 <br/>
+<ul>
+<li>
+自分の資金+投資家の資金
+</li>
+<li>
+企業経験を持つ個人/ファンド
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1_8_2_2">著名なプレーヤー <br/>
+<ul>
+<li>
+Ron Conway, Paul Grahamなど
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1_8_2_3">特徴 <br/>
+<ul>
+<li>
+小額投資中心で転換社債も利用
+</li>
+<li>
+速い投資意思決定
+</li>
+<li>
+事業そのものへのアドバイスが可能
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_9" class="outline-3">
+<h3 id="sec-1_9"><span class="section-number-3">1.9</span> スーパーエンジェルがからむ案件の例 </h3>
+<div class="outline-text-3" id="text-1_9">
+
+<ul>
+<li>
+facebook:
+</li>
+<li>
+zynga:
+</li>
+<li>
+Dropbox: Y Combinator出身
+</li>
+<li>
+airbnb: (旅行中に家をシェアするサービス) Y Combinator出身
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_10" class="outline-3">
+<h3 id="sec-1_10"><span class="section-number-3">1.10</span> シードアクセラレータの台頭 </h3>
+<div class="outline-text-3" id="text-1_10">
+
+
+</div>
+
+<div id="outline-container-1_10_1" class="outline-4">
+<h4 id="sec-1_10_1"><span class="section-number-4">1.10.1</span> Y Combinator </h4>
+<div class="outline-text-4" id="text-1_10_1">
+
+<ul>
+<li>
+創業直後のスタートアップに数万ドル
+</li>
+<li>
+3ヶ月吾にDemoDayが開催され投資家とマッチング
+</li>
+</ul>
+
+<ul>
+<li id="sec-1_10_1_1">投資先の例 <br/>
+<ul>
+<li>
+Dropbox
+</li>
+<li>
+Airbnb
+</li>
+<li>
+heroku
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1_10_2" class="outline-4">
+<h4 id="sec-1_10_2"><span class="section-number-4">1.10.2</span> 500 startups </h4>
+<div class="outline-text-4" id="text-1_10_2">
+
+<ul>
+<li>
+オフィスも提供
+</li>
+<li>
+3ヶ月吾にDemoDayが開催され投資家とマッチング
+</li>
+</ul>
+
+<ul>
+<li id="sec-1_10_2_1">投資先の例 <br/>
+<ul>
+<li>
+visual.ly
+</li>
+<li>
+MyGengo
+</li>
+<li>
+life360.com
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_11" class="outline-3">
+<h3 id="sec-1_11"><span class="section-number-3">1.11</span> シードアクセラレータの特徴 </h3>
+<div class="outline-text-3" id="text-1_11">
+
+<ul>
+<li>
+比較的小額だが起業家に有利な条件での資金提供
+</li>
+<li>
+企業経験のあるメンターによる支援
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_12" class="outline-3">
+<h3 id="sec-1_12"><span class="section-number-3">1.12</span> Convertible noteのしくみ </h3>
+<div class="outline-text-3" id="text-1_12">
+
+<ul>
+<li>
+立ち上げ直後の会社から社債を購入
+</li>
+<li>
+シリーズA(増資)で社債を株式に変換してキャピタルゲイン
+</li>
+<li>
+ディスカウントレート(増資時株価より割引)もしくはキャップ(時価総額上限)またはその両方を設定
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_13" class="outline-3">
+<h3 id="sec-1_13"><span class="section-number-3">1.13</span> Convertible noteのポイント </h3>
+<div class="outline-text-3" id="text-1_13">
+
+<ul>
+<li>
+立ち上げ気では困難な企業価値算出を先送りにしつつ、先行投資のメリットを投資家に確約できる
+</li>
+<li>
+タイミングと条件を固定する必要がなく、個別分散的に資金確保しやすい(株式より柔軟性がある)
+</li>
+<li>
+法的手数料が安い(アメリカでは、なのか？)
+</li>
+<li>
+資金調達に使う工数/コスト(時間)が節約でき開発に専念できる  
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_14" class="outline-3">
+<h3 id="sec-1_14"><span class="section-number-3">1.14</span> USのネットベンチャー </h3>
+<div class="outline-text-3" id="text-1_14">
+
+</div>
+
+</div>
+
+<div id="outline-container-1_15" class="outline-3">
+<h3 id="sec-1_15"><span class="section-number-3">1.15</span> 日本での動き </h3>
+<div class="outline-text-3" id="text-1_15">
+
+
+</div>
+
+<div id="outline-container-1_15_1" class="outline-4">
+<h4 id="sec-1_15_1"><span class="section-number-4">1.15.1</span> オープンプラットフォームのイメージ </h4>
+<div class="outline-text-4" id="text-1_15_1">
+
+<ul>
+<li>
+プラットフォーム
+</li>
+<li>
+パートナーディベロッパーへSDK公開
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_15_2" class="outline-4">
+<h4 id="sec-1_15_2"><span class="section-number-4">1.15.2</span> サポートプログラム </h4>
+<div class="outline-text-4" id="text-1_15_2">
+
+<ul>
+<li>
+資金導入
+</li>
+<li>
+課金、広告
+</li>
+<li>
+インフラ
+</li>
+<li>
+デバッグ
+</li>
+<li>
+カスタマー対応
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_16" class="outline-3">
+<h3 id="sec-1_16"><span class="section-number-3">1.16</span> PCでもSNSを中心にオープンプラットフォームが広がる </h3>
+<div class="outline-text-3" id="text-1_16">
+
+
+</div>
+
+<div id="outline-container-1_16_1" class="outline-4">
+<h4 id="sec-1_16_1"><span class="section-number-4">1.16.1</span> mixi </h4>
+<div class="outline-text-4" id="text-1_16_1">
+
+<ul>
+<li>
+2009年にmixiアプリ公開
+</li>
+<li>
+認証、ソーシャルグラフの利用、課金など各種API
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_16_2" class="outline-4">
+<h4 id="sec-1_16_2"><span class="section-number-4">1.16.2</span> facebook </h4>
+<div class="outline-text-4" id="text-1_16_2">
+
+<ul>
+<li>
+2011年に国内利用者数が1000万突破
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_16_3" class="outline-4">
+<h4 id="sec-1_16_3"><span class="section-number-4">1.16.3</span> twitter </h4>
+<div class="outline-text-4" id="text-1_16_3">
+
+<ul>
+<li>
+2011年に月間訪問者数が1400万突破
+</li>
+<li>
+認証やtweet連携するためのAPIを利用可能
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_17" class="outline-3">
+<h3 id="sec-1_17"><span class="section-number-3">1.17</span> スマートフォンが一気に普及してきている </h3>
+<div class="outline-text-3" id="text-1_17">
+
+<ul>
+<li>
+2011/Q4 43.1%
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_18" class="outline-3">
+<h3 id="sec-1_18"><span class="section-number-3">1.18</span> 既に躍進を初めたSAP </h3>
+<div class="outline-text-3" id="text-1_18">
+
+
+</div>
+
+<div id="outline-container-1_18_1" class="outline-4">
+<h4 id="sec-1_18_1"><span class="section-number-4">1.18.1</span> Klab </h4>
+<div class="outline-text-4" id="text-1_18_1">
+
+<ul>
+<li>
+2011年9月にマザーズ上場
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_18_2" class="outline-4">
+<h4 id="sec-1_18_2"><span class="section-number-4">1.18.2</span> gloops </h4>
+<div class="outline-text-4" id="text-1_18_2">
+
+<ul>
+<li>
+mobageで提供中のゲームの月間コイン消費が20億円突破
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_18_3" class="outline-4">
+<h4 id="sec-1_18_3"><span class="section-number-4">1.18.3</span> gumi </h4>
+<div class="outline-text-4" id="text-1_18_3">
+
+<ul>
+<li>
+評価額100億円で20億円を第三者割り当て増資で調達(IPOに近い)
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_19" class="outline-3">
+<h3 id="sec-1_19"><span class="section-number-3">1.19</span> 国内の主なスタートアップアクセラレーター </h3>
+<div class="outline-text-3" id="text-1_19">
+
+<ul>
+<li>
+Open Network Labo
+</li>
+<li>
+NetAge
+</li>
+<li>
+Movida Japan
+</li>
+<li>
+インキュベイトキャンプ
+</li>
+<li>
+ブレークスルーキャンプ
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_20" class="outline-3">
+<h3 id="sec-1_20"><span class="section-number-3">1.20</span> 米国の日本も相似な状況。そして戦い方も進化 </h3>
+<div class="outline-text-3" id="text-1_20">
+
+<ul>
+<li>
+現在戦
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_21" class="outline-3">
+<h3 id="sec-1_21"><span class="section-number-3">1.21</span> 現代戦の特徴その1 </h3>
+<div class="outline-text-3" id="text-1_21">
+
+
+</div>
+
+<div id="outline-container-1_21_1" class="outline-4">
+<h4 id="sec-1_21_1"><span class="section-number-4">1.21.1</span> プログラマーが重要 </h4>
+<div class="outline-text-4" id="text-1_21_1">
+
+<ul>
+<li>
+facebookは管理部門含め全員プログラマー体制を目指す
+</li>
+</ul>
+
+<ul>
+<li id="sec-1_21_1_1">過去 <br/>
+<ul>
+<li>
+ウォーターフォール型
+</li>
+<li>
+数十人(数と体制)
+</li>
+<li>
+一部もしくは全部を外注
+</li>
+<li>
+求められたシステムを作る
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1_21_1_2">現在 <br/>
+<ul>
+<li>
+スパイラル型
+</li>
+<li>
+一人または数人(天才エンジニア)
+</li>
+<li>
+基本内製
+</li>
+<li>
+自分でサービスを創る
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_22" class="outline-3">
+<h3 id="sec-1_22"><span class="section-number-3">1.22</span> DeNAによる新卒エンジニアスペシャリスト採用 </h3>
+<div class="outline-text-3" id="text-1_22">
+
+<ul>
+<li>
+エンジニア配属をお約束します
+</li>
+<li>
+600から1000万
+</li>
+<li>
+技術研修は能力に応じてスキップできる
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_23" class="outline-3">
+<h3 id="sec-1_23"><span class="section-number-3">1.23</span> 現代戦の特徴その2 </h3>
+<div class="outline-text-3" id="text-1_23">
+
+
+</div>
+
+<div id="outline-container-1_23_1" class="outline-4">
+<h4 id="sec-1_23_1"><span class="section-number-4">1.23.1</span> プラットフォームの活用 </h4>
+<div class="outline-text-4" id="text-1_23_1">
+
+<ul>
+<li id="sec-1_23_1_1">これまで <br/>
+</li>
+</ul>
+<ul>
+<li id="sec-1_23_1_2">これから <br/>
+<ul>
+<li>
+コアサービスに集中できる
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1_24" class="outline-3">
+<h3 id="sec-1_24"><span class="section-number-3">1.24</span> calil.jpの例 </h3>
+<div class="outline-text-3" id="text-1_24">
+
+<ul>
+<li>
+図書館の横断検索
+</li>
+<li>
+蔵書の有無、貸出状況を表示
+</li>
+<li>
+国会図書館のシステムに組込まれている
+</li>
+<li>
+認証は外部のものを利用
+</li>
+<li>
+インフラはGoogle App Engineを活用
+</li>
+<li>
+3人が2ヶ月で一気に開発
+</li>
+<li>
+元京大の長尾先生(ハッカー)が感動
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_25" class="outline-3">
+<h3 id="sec-1_25"><span class="section-number-3">1.25</span> 現代戦の特徴その3 </h3>
+<div class="outline-text-3" id="text-1_25">
+
+<ul>
+<li>
+ラーメン代(ramen profitable)
+</li>
+<li>
+ラーメン代を稼ぐことで資金繰りに振り回されずじっくり開発できる(投資家に媚び諂う必要なし)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_26" class="outline-3">
+<h3 id="sec-1_26"><span class="section-number-3">1.26</span> 現代戦の特徴その4 </h3>
+<div class="outline-text-3" id="text-1_26">
+
+<p>今のコアサービスと元の計画は違う
+</p><ul>
+<li>
+ピボット
+</li>
+</ul>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">今のコアサービス</th><th scope="col" class="left">元の計画</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">google</td><td class="left">検索サイト</td><td class="left">検索サイトへの技術提供</td></tr>
+<tr><td class="left">DeNA</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">Skype</td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">twitter</td><td class="left">ミニブログ</td><td class="left">Podcast検索サービス</td></tr>
+<tr><td class="left">groupon</td><td class="left">グルーポン共同購入</td><td class="left">一定の賛同者が集ると寄付をもらえるサービス</td></tr>
+<tr><td class="left">instagram</td><td class="left">写真共有</td><td class="left">位置情報系ゲーミィフィケーションサービス</td></tr>
+<tr><td class="left">AirBnB</td><td class="left"></td><td class="left">ベッドルームの貸出</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_27" class="outline-3">
+<h3 id="sec-1_27"><span class="section-number-3">1.27</span> 現代戦の特徴のまとめ </h3>
+<div class="outline-text-3" id="text-1_27">
+
+<ul>
+<li>
+プログラマー重視
+</li>
+<li>
+プラットフォーム活用
+</li>
+<li>
+ラーメン代稼ぎ
+</li>
+<li>
+ピボット
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_28" class="outline-3">
+<h3 id="sec-1_28"><span class="section-number-3">1.28</span> 未来に普通にあるサービスを生み出すための壮大な多様性の爆発 </h3>
+<div class="outline-text-3" id="text-1_28">
+
+</div>
+
+</div>
+
+<div id="outline-container-1_29" class="outline-3">
+<h3 id="sec-1_29"><span class="section-number-3">1.29</span> 20代のしかけるスタートアップが続々。。。 </h3>
+<div class="outline-text-3" id="text-1_29">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">サービス</th><th scope="col" class="left">コアメンバー</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">Wondershake</td><td class="left">Wondershake</td><td class="left">鈴木</td></tr>
+<tr><td class="left">Labit</td><td class="left">すごい時間割</td><td class="left">鶴田</td></tr>
+<tr><td class="left">ウォンテッド</td><td class="left">Wantedly</td><td class="left">仲、萩原</td></tr>
+<tr><td class="left">シンクランチ</td><td class="left">ソーシャルランチ</td><td class="left">福山と上村</td></tr>
+</tbody>
+</table>
+
+他にも多数
+</div>
+
+</div>
+
+<div id="outline-container-1_30" class="outline-3">
+<h3 id="sec-1_30"><span class="section-number-3">1.30</span> ホットスポット効果 </h3>
+<div class="outline-text-3" id="text-1_30">
+
+<ul>
+<li>
+一定以上の濃度で優秀な才能が集まり
+</li>
+<li>
+自分たちが世界を変えると▼信じ
+</li>
+<li>
+狂ったように働く
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_31" class="outline-3">
+<h3 id="sec-1_31"><span class="section-number-3">1.31</span> 世界に向けた内圧の高まり </h3>
+<div class="outline-text-3" id="text-1_31">
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1_32" class="outline-3">
+<h3 id="sec-1_32"><span class="section-number-3">1.32</span> 質疑応答 </h3>
+<div class="outline-text-3" id="text-1_32">
+
+
+</div>
+
+<div id="outline-container-1_32_1" class="outline-4">
+<h4 id="sec-1_32_1"><span class="section-number-4">1.32.1</span> 川田さんの投資方針 </h4>
+<div class="outline-text-4" id="text-1_32_1">
+
+<ul>
+<li>
+エンジニアが経営している会社
+</li>
+<li>
+世界を目指している会社
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1_32_2" class="outline-4">
+<h4 id="sec-1_32_2"><span class="section-number-4">1.32.2</span> ベンチャーが成功するために必要なものとは？ </h4>
+<div class="outline-text-4" id="text-1_32_2">
+
+<ul>
+<li>
+領域とタイミング(どのタイミングでどこに張るか)が重要
+</li>
+<li>
+人間性や能力はあまり関係ない
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Wondershakeを通して、学んできたこと </h2>
+<div class="outline-text-2" id="text-2">
+
+<p>Co-Founder, CEO
+</p>
+</div>
+
+<div id="outline-container-2_1" class="outline-3">
+<h3 id="sec-2_1"><span class="section-number-3">2.1</span> 自己紹介 </h3>
+<div class="outline-text-3" id="text-2_1">
+
+<ul>
+<li>
+日本に生まれる
+</li>
+<li>
+2-5 ナイジェリア
+</li>
+<li>
+5-10 横浜
+</li>
+<li>
+ロンドン
+</li>
+<li>
+東京
+</li>
+<li>
+カリフォルニア
+</li>
+<li>
+21 東京
+</li>
+<li>
+海外と日本を丁度半々
+</li>
+<li>
+カリフォルニアへの交換留学でインターネットの面白さに出会った(Twitter)
+</li>
+<li>
+2010年からブログを書いてTwitterで共有する毎日(日本読者はTechcrunchの記事のほんの少ししか読んでいない)
+</li>
+<li>
+翻訳して載せたらバズった
+</li>
+<li>
+講談社で連載の話をもらい、「ソーシャライズ」(日本版マッシャブル？)をスタート(3ヶ月か半年続けた)(ある種、仕事を得た)
+</li>
+<li>
+自分の環境を超えて面白い人と繋がれる
+</li>
+<li>
+2010/3シリコンバレーの起業家に会ってきてさらにスタートアップの世界に魅力を感じる
+</li>
+<li>
+Miselu(AndroidのOSをヤマハのピアノへぶちこんで新なデバイスを作る？)の吉川さんとの出会いは断トツ(片道チケットで米国へ渡った起業家)
+</li>
+<li>
+Silicon Valley Way "Go Big or Go Home" (空振りしてもいいからフルスイングしろ!)
+</li>
+<li>
+2010年9月 WonderShakeの原型がスタート
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2_2" class="outline-3">
+<h3 id="sec-2_2"><span class="section-number-3">2.2</span> プロダクト紹介 </h3>
+<div class="outline-text-3" id="text-2_2">
+
+
+</div>
+
+<div id="outline-container-2_2_1" class="outline-4">
+<h4 id="sec-2_2_1"><span class="section-number-4">2.2.1</span> チーム </h4>
+<div class="outline-text-4" id="text-2_2_1">
+
+<ul>
+<li>
+鈴木 23 CEO
+</li>
+<li>
+藤井 26 iPhone Developer
+</li>
+<li>
+千葉 24 Sever Side Developer
+</li>
+<li>
+山崎 23 Designer
+</li>
+<li>
+伊藤 22 Marketing
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2_2_2" class="outline-4">
+<h4 id="sec-2_2_2"><span class="section-number-4">2.2.2</span> 会社 </h4>
+<div class="outline-text-4" id="text-2_2_2">
+
+<ul>
+<li>
+米国Delawareで法人化
+</li>
+<li>
+Open Network Lab 二期生
+</li>
+<li>
+2011年 400万円調達
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2_2_3" class="outline-4">
+<h4 id="sec-2_2_3"><span class="section-number-4">2.2.3</span> Our Vision </h4>
+<div class="outline-text-4" id="text-2_2_3">
+
+<ul>
+<li>
+平凡な日常に驚きを
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2_3" class="outline-3">
+<h3 id="sec-2_3"><span class="section-number-3">2.3</span> 新サービズ </h3>
+<div class="outline-text-3" id="text-2_3">
+
+
+</div>
+
+<div id="outline-container-2_3_1" class="outline-4">
+<h4 id="sec-2_3_1"><span class="section-number-4">2.3.1</span> Tsudoi </h4>
+<div class="outline-text-4" id="text-2_3_1">
+
+<ul>
+<li id="sec-2_3_1_1">Concept <br/>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2_4" class="outline-3">
+<h3 id="sec-2_4"><span class="section-number-3">2.4</span> スタートアップを始めて気づいたこと </h3>
+<div class="outline-text-3" id="text-2_4">
+
+</div>
+
+</div>
+
+<div id="outline-container-2_5" class="outline-3">
+<h3 id="sec-2_5"><span class="section-number-3">2.5</span> 次にくると思うサービス </h3>
+<div class="outline-text-3" id="text-2_5">
+
+
+</div>
+
+<div id="outline-container-2_5_1" class="outline-4">
+<h4 id="sec-2_5_1"><span class="section-number-4">2.5.1</span> Webを活用したセレンディピティ </h4>
+<div class="outline-text-4" id="text-2_5_1">
+
+<ul>
+<li>
+いかに人に検索させないようにできるか
+</li>
+<li>
+人間、欲しい情報が分からない方が多い
+</li>
+<li>
+ツールが多すぎる(選択肢が多すぎ)
+</li>
+<li>
+検索なしで現在位置にマッチし自分の好みを考慮したレコメンデーション
+</li>
+<li>
+日常的な行動をとっているだけ自分に面白い情報が飛んでくる
+</li>
+<li>
+嗜好性、行動履歴
+
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+<div id="postamble">
+<p class="author"> Author: Shigeaki Matsumura
+</p>
+<p class="date"> Date: 2012-02-17 Fri</p>
+<p class="creator">HTML generated by org-mode 7.3 in emacs 23</p>
+</div>
+</div>
+</body>
+</html>
