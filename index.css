@@ -1,0 +1,12 @@
+#wrapper {
+    width: 800px;
+    margin: 0 auto;
+}
+
+#contents {
+    float: left;
+}
+
+#right-side {
+    float: right;
+}
