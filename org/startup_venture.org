@@ -3,7 +3,7 @@
 #+EMAIL:     matsu911@gmail.com
 #+DATE:      2012-02-17 Fri
 #+DESCRIPTION: 
-#+KEYWORDS: 
+#+KEYWORDS: スタートアップベンチャー,Wondershake,Y Combinator
 #+LANGUAGE:  ja
 #+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
@@ -11,7 +11,7 @@
 #+EXPORT_SELECT_TAGS: export
 #+EXPORT_EXCLUDE_TAGS: noexport
 #+LINK_UP:   
-#+LINK_HOME: 
+#+LINK_HOME: http://matsu911.github.com
 #+XSLT: 
 
 * スタートアップベンチャーの実際とそれを取り巻く環境
@@ -88,30 +88,31 @@
 + facebook:
 + zynga:
 + Dropbox: Y Combinator出身
-+ airbnb: (旅行中に家をシェアするサービス) Y Combinator出身
++ [[http://www.airbnb.com/][airbnb]]: (旅行中に家をシェアするサービス) Y Combinator出身
 ** シードアクセラレータの台頭
 *** Y Combinator
 + 創業直後のスタートアップに数万ドル
-+ 3ヶ月吾にDemoDayが開催され投資家とマッチング
++ 3ヶ月後にDemoDayが開催され投資家とマッチング
 **** 投資先の例
 + Dropbox
 + Airbnb
 + heroku
 *** 500 startups
 + オフィスも提供
-+ 3ヶ月吾にDemoDayが開催され投資家とマッチング
++ 3ヶ月後にDemoDayが開催され投資家とマッチング
 **** 投資先の例
-+ visual.ly
-+ MyGengo
-+ life360.com
++ [[http://visual.ly/][visual.ly]]
++ [[http://mygengo.com/][MyGengo]]
++ [[http://www.life360.com/][life360.com]]
 ** シードアクセラレータの特徴
 + 比較的小額だが起業家に有利な条件での資金提供
 + 企業経験のあるメンターによる支援
-** Convertible noteのしくみ
+** 転換社債(Convertible note)
+*** しくみ
 + 立ち上げ直後の会社から社債を購入
 + シリーズA(増資)で社債を株式に変換してキャピタルゲイン
 + ディスカウントレート(増資時株価より割引)もしくはキャップ(時価総額上限)またはその両方を設定
-** Convertible noteのポイント
+*** ポイント
 + 立ち上げ気では困難な企業価値算出を先送りにしつつ、先行投資のメリットを投資家に確約できる
 + タイミングと条件を固定する必要がなく、個別分散的に資金確保しやすい(株式より柔軟性がある)
 + 法的手数料が安い(アメリカでは、なのか？)
@@ -227,7 +228,7 @@
 + 人間性や能力はあまり関係ない
 
 * Wondershakeを通して、学んできたこと
-Co-Founder, CEO
+鈴木仁士 Co-Founder, CEO
 ** 自己紹介
 + 日本に生まれる
 + 2-5 ナイジェリア
