@@ -17,6 +17,13 @@
 #+STYLE: pre { background-color: black; color: #c3c3c3; }
 #+STYLE: </style>
 
+#+BEGIN_HTML
+<div align="right">
+<a href="https://twitter.com/share" class="twitter-share-button" data-via="matsu911" data-lang="ja" data-size="large">ツイート</a>
+</div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+#+END_HTML
+
 * 困難なテスト
 一般に、テストを自動化する場合、テスト対象のプログラムやコードに対するインプットとアウトプットを制御する必要があります。
 コードが綺麗に抽象化され、テストデータを外部から入力しやすいインターフェースが用意されていれば、ユニットテストのコードを書くことができますが、そうではないケースも多いのではないでしょうか。
