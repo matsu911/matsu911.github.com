@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<title>LD_PRELOADを使ったテスト(C言語編)</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="LD_PRELOADを使ったテスト(C言語編)"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-02-27 月"/>
+<meta name="author" content="Shigeaki Matsumura"/>
+<meta name="description" content="LD_PRELOADを使って既存のプログラムやコードを外部から制御します。"/>
+<meta name="keywords" content="LD_PRELOAD,テスト"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<style type="text/css">
+pre { background-color: black; color: #c3c3c3; }
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="http://matsu911.github.com"> UP </a>
+ |
+ <a accesskey="H" href="http://matsu911.github.com"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">LD_PRELOADを使ったテスト(C言語編)</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 困難なテスト</a></li>
+<li><a href="#sec-2">2 dateコマンド</a></li>
+<li><a href="#sec-3">3 dateコマンドの挙動</a></li>
+<li><a href="#sec-4">4 共有オブジェクトの作成</a></li>
+<li><a href="#sec-5">5 LD_PRELOADを設定して実行</a></li>
+<li><a href="#sec-6">6 元の関数の呼び出し</a></li>
+<li><a href="#sec-7">7 解説</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 困難なテスト</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>一般に、テストを自動化する場合、テスト対象のプログラムやコードに対するインプットとアウトプットを制御する必要があります。
+コードが綺麗に抽象化され、テストデータを外部から入力しやすいインターフェースが用意されていれば、ユニットテストのコードを書くことができますが、そうではないケースも多いのではないでしょうか。
+その場合、テストコードを書けるようにリファクタリングを行うことになるのでしょうが、テストコードなしでのリファクタリングが必要になり、一般に困難な作業になります。
+ここでは、共有ライブラリとLD_PRELOADという環境変数を使うことで、コードに手を加えることなく外部から対象のプログラムの挙動を制御する方法を紹介します。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> dateコマンド</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>それでは例として、dateコマンドで表示される日時を制御することを考えてみましょう。
+まず、dateコマンドを実行すると次のように日時が表示されます。
+</p>
+
+
+<pre class="src src-sh">$ date
+2012&#24180;  2&#26376; 27&#26085; &#26376;&#26332;&#26085; 07:57:56 JST
+</pre>
+
+<p>
+この日時はシステムの時刻を変更することで変えることは可能ですが、実行する度に時刻が変わるので、特に時刻に依存したテストを行うケースでは不便です。
+この時刻を簡単に制御することができれば、時刻に依存したテストも簡単に実行することができるようになります。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> dateコマンドの挙動</h2>
+<div class="outline-text-2" id="text-3">
+
+<p>dateコマンドの挙動を調べてみましょう。
+まず、<a href="http://linuxjm.sourceforge.jp/html/ld.so/man1/ldd.1.html">ldd</a>コマンドでdateコマンドが使う共有ライブラリを調べます。
+</p>
+
+
+<pre class="src src-sh">$ ldd $(<span style="color: #fa8072;">which</span> date)
+        librt.so.1 =&gt; /lib64/librt.so.1 (0x000000332e800000)
+        libc.so.6 =&gt; /lib64/libc.so.6 (0x000000332d400000)
+        libpthread.so.0 =&gt; /lib64/libpthread.so.0 (0x000000332e000000)
+        /lib64/ld-linux-x86-64.so.2 (0x000000332d000000)
+</pre>
+
+<p>
+/lib64/librt.so.1、/lib64/libc.so.6、/lib64/libpthread.so.0を共有ライブラリとして使用することがわかります。
+これらの共有ライブラリに含まれるAPIが制御する候補となります。
+ちなみに/lib64/ld-linux-x86-64.so.2はローダーなので今回の目的では特に気にする必要はありません。
+</p>
+<p>
+次にltraceを用いて実行時のライブラリ呼び出しのトレースを取得します。
+</p>
+
+
+<pre class="src src-sh">$ ltrace date
+__libc_start_main(0x401b90, 1, 0x7fff0c04b1e8, 0x407c10, 0x407c00 &lt;unfinished ...&gt;
+setlocale(6, <span style="color: #ffa07a;">""</span>)                                 = <span style="color: #ffa07a;">"ja_JP.UTF-8"</span>
+bindtextdomain(<span style="color: #ffa07a;">"coreutils"</span>, <span style="color: #ffa07a;">"/usr/share/locale"</span>) = <span style="color: #ffa07a;">"/usr/share/locale"</span>
+textdomain(<span style="color: #ffa07a;">"coreutils"</span>)                          = <span style="color: #ffa07a;">"coreutils"</span>
+__cxa_atexit(0x403c70, 0, 0, 0x736c6974756572, 4) = 0
+getopt_long(1, 0x7fff0c04b1e8, <span style="color: #ffa07a;">"d:f:I::r:Rs:u"</span>, 0x60a920, NULL) = -1
+nl_langinfo(131180, 0x7fff0c04b1e8, 1, 0, 1)     = 0x2aed1d58b555
+clock_gettime(0, 0x7fff0c04b0b0, 0x332d75210c, 2, 1) = 0
+localtime(0x7fff0c04af80)                        = 0x332d756cc0
+fwrite(<span style="color: #ffa07a;">"2012"</span>, 4, 1, 0x332d752780)               = 1
+strlen(<span style="color: #ffa07a;">"\345\271\264 %b %e\346\227\245 %A %H:%M:%S %Z"</span>) = 27
+mbrtowc(0, 0x2aed1d58b557, 28, 0x7fff0c04af30, 0xfefefefefefefeff) = 3
+mbsinit(0x7fff0c04af30, 24180, 3, 11, 0x7fff0c04a9e4) = 1
+fwrite(<span style="color: #ffa07a;">"\345\271\264 %b %e\346\227\245 %A %H:%M:%S %Z"</span>, 3, 1, 0x332d752780) = 1
+fputc(<span style="color: #ffa07a;">' '</span>, 0x332d752780)                         = 32
+strftime(<span style="color: #ffa07a;">""</span>, 47197887963889, NULL, 0x889ce632)   = 6
+fwrite(<span style="color: #ffa07a;">" 2\346\234\210"</span>, 5, 1, 0x332d752780)     = 1
+fputc(<span style="color: #ffa07a;">' '</span>, 0x332d752780)                         = 32
+fwrite(<span style="color: #ffa07a;">"27"</span>, 2, 1, 0x332d752780)                 = 1
+mbrtowc(0, 0x2aed1d58b560, 19, 0x7fff0c04af30, 0x2aed1b177f30) = 3
+mbsinit(0x7fff0c04af30, 26085, 3, 11, 0x7fff0c04a9e4) = 1
+fwrite(<span style="color: #ffa07a;">"\346\227\245 %A %H:%M:%S %Z"</span>, 3, 1, 0x332d752780) = 1
+fputc(<span style="color: #ffa07a;">' '</span>, 0x332d752780)                         = 32
+strftime(<span style="color: #ffa07a;">""</span>, 47197887963827, NULL, 0xa597e69c9be6889c) = 10
+fwrite(<span style="color: #ffa07a;">"\346\234\210\346\233\234\346\227\245"</span>, 9, 1, 0x332d752780) = 1
+fputc(<span style="color: #ffa07a;">' '</span>, 0x332d752780)                         = 32
+fputc(<span style="color: #ffa07a;">'0'</span>, 0x332d752780)                         = 48
+fwrite(<span style="color: #ffa07a;">"7"</span>, 1, 1, 0x332d752780)                  = 1
+fputc(<span style="color: #ffa07a;">':'</span>, 0x332d752780)                         = 58
+fwrite(<span style="color: #ffa07a;">"58"</span>, 2, 1, 0x332d752780)                 = 1
+fputc(<span style="color: #ffa07a;">':'</span>, 0x332d752780)                         = 58
+fwrite(<span style="color: #ffa07a;">"44"</span>, 2, 1, 0x332d752780)                 = 1
+fputc(<span style="color: #ffa07a;">' '</span>, 0x332d752780)                         = 32
+strlen(<span style="color: #ffa07a;">"JST"</span>)                                    = 3
+fwrite(<span style="color: #ffa07a;">"JST"</span>, 3, 1, 0x332d752780)                = 1
+__overflow(0x332d752780, 10, 0, 0, 0x2aed1b177f302012&#24180;  2&#26376; 27&#26085; &#26376;&#26332;&#26085; 07:58:44 JST
+) = 10
+<span style="color: #00ffff;">exit</span>(0 &lt;unfinished ...&gt;
+__fpending(0x332d752780, 0, 0x332d7532f0, -1, 0xffffffff) = 0
+fclose(0x332d752780)                             = 0
++++ exited (status 0) +++
+</pre>
+
+<p>
+ここで<a href="http://linuxjm.sourceforge.jp/html/LDP_man-pages/man2/clock_gettime.2.html">clock_gettime</a>に注目します。
+dateコマンドはclock_gettimeを呼び出してシステムの時刻を取得していることがわかります。
+これはclock_gettimeの挙動を制御することでdateコマンドの実行結果を制御できることを意味します。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> 共有オブジェクトの作成</h2>
+<div class="outline-text-2" id="text-4">
+
+<p>では、clock_gettimeの関数宣言を見てみましょう。
+clock_gettimeはtime.hで宣言されています。
+次はclock_gettimeの宣言をtime.hから抜粋したものです。
+</p>
+
+
+<pre class="src src-c"><span style="color: #ff4500;">/* </span><span style="color: #ff4500;">Get current value of clock CLOCK_ID and store it in TP.  </span><span style="color: #ff4500;">*/</span>
+<span style="color: #00ffff;">extern</span> <span style="color: #98fb98;">int</span> <span style="color: #87cefa;">clock_gettime</span> (<span style="color: #98fb98;">clockid_t</span> <span style="color: #eedd82;">__clock_id</span>, <span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">timespec</span> *<span style="color: #eedd82;">__tp</span>) __THROW;
+</pre>
+
+<p>
+このインターフェスと同じ型で同じ名前(シンボル)の関数を作り、第2引数で与えられたポインタの実態に任意の時刻を設定する関数を書きます。
+ファイルclock_gettime.cを作成し、次のように記述します。
+</p>
+
+
+<pre class="src src-c"><span style="color: #7fffd4;">#include</span> <span style="color: #ffa07a;">&lt;time.h&gt;</span>
+
+<span style="color: #98fb98;">int</span> <span style="color: #87cefa;">clock_gettime</span> (<span style="color: #98fb98;">clockid_t</span> <span style="color: #eedd82;">__clock_id</span>, <span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">timespec</span> *<span style="color: #eedd82;">__tp</span>)
+{
+  __tp-&gt;tv_sec  = 0;
+  __tp-&gt;tv_nsec = 0;
+  <span style="color: #00ffff;">return</span> 0;
+}
+</pre>
+
+<p>
+ここではtv_secおよびtv_nsecに0を代入します。
+</p>
+<p>
+このファイルをコンパイルし、共有ライブラリを作成します。
+ここでは共有ライブラリのファイル名をclock_gettime.soとします。
+</p>
+
+
+<pre class="src src-sh">$ gcc -fPIC -shared clock_gettime.c -o clock_gettime.so
+</pre>
+
+
+<p>
+次に、作成された共有ラリブラリにシンボルclock_gettimeが含まれていることを確認します。
+</p>
+
+
+<pre class="src src-sh">$ nm clock_gettime.so 
+00000000002005e0 a _DYNAMIC
+0000000000200778 a _GLOBAL_OFFSET_TABLE_
+                 w _Jv_RegisterClasses
+00000000002005b8 d __CTOR_END__
+00000000002005b0 d __CTOR_LIST__
+00000000002005c8 d __DTOR_END__
+00000000002005c0 d __DTOR_LIST__
+00000000000005a8 r __FRAME_END__
+00000000002005d0 d __JCR_END__
+00000000002005d0 d __JCR_LIST__
+0000000000200798 A __bss_start
+                 w __cxa_finalize@@GLIBC_2.2.5
+0000000000000510 t __do_global_ctors_aux
+0000000000000430 t __do_global_dtors_aux
+00000000002005d8 d __dso_handle
+                 w __gmon_start__
+0000000000200798 A _edata
+00000000002007a8 A _end
+0000000000000548 T _fini
+00000000000003d0 T _init
+0000000000000410 t call_gmon_start
+00000000000004dc T clock_gettime
+00000000002007a0 b completed.6145
+0000000000200798 b dtor_idx.6147
+00000000000004b0 t frame_dummy
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> LD_PRELOADを設定して実行</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>それでは実際に環境変数LD_PRELOADにclock_gettime.soを指定してdateコマンドを実行してみましょう。
+</p>
+
+
+<pre class="src src-sh">$ <span style="color: #eedd82;">LD_PRELOAD</span>=clock_gettime.so date
+1970&#24180;  1&#26376;  1&#26085; &#26408;&#26332;&#26085; 09:00:00 JST
+</pre>
+
+<p>
+Posix Timeの開始時刻になっていることが確認できます。
+ちなみにタイムゾーンがJST(GMT+9：00)なので9時となっています。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> 元の関数の呼び出し</h2>
+<div class="outline-text-2" id="text-6">
+
+<p>以上の方法で、自分で再定義した関数が元の関数の替わりに呼び出されるようになったのですが、再定義した関数から元の関数を呼び出したい場合があります。
+現在の時刻の1時間後の時刻を返すようにしたいケースを考えます。
+次のように<a href="http://linuxjm.sourceforge.jp/html/LDP_man-pages/man3/dlsym.3.html#lbAG">dlsym</a>の第1引数にRTLD_NEXTを指定してシンボルを取得すると元の関数のアドレスを取得できます。
+</p>
+
+
+<pre class="src src-c"><span style="color: #7fffd4;">#include</span> <span style="color: #ffa07a;">&lt;stdio.h&gt;</span>
+<span style="color: #7fffd4;">#include</span> <span style="color: #ffa07a;">&lt;stdlib.h&gt;</span>
+<span style="color: #7fffd4;">#include</span> <span style="color: #ffa07a;">&lt;time.h&gt;</span>
+<span style="color: #7fffd4;">#define</span> <span style="color: #eedd82;">__USE_GNU</span>
+<span style="color: #7fffd4;">#include</span> <span style="color: #ffa07a;">&lt;dlfcn.h&gt;</span>
+
+<span style="color: #98fb98;">int</span> <span style="color: #87cefa;">clock_gettime</span> (<span style="color: #98fb98;">clockid_t</span> <span style="color: #eedd82;">__clock_id</span>, <span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">timespec</span> *<span style="color: #eedd82;">__tp</span>)
+{
+  <span style="color: #98fb98;">void</span> *<span style="color: #eedd82;">handle</span> = dlsym(RTLD_NEXT, <span style="color: #ffa07a;">"clock_gettime"</span>);
+  <span style="color: #00ffff;">if</span>(handle == <span style="color: #7fffd4;">NULL</span>)
+  {
+    fprintf(stderr, <span style="color: #ffa07a;">"failed to get symbol 'clock_gettime'"</span>);
+    exit(1);
+  }
+  <span style="color: #98fb98;">int</span> (*<span style="color: #eedd82;">func</span>)(<span style="color: #98fb98;">clockid_t</span>, <span style="color: #00ffff;">struct</span> <span style="color: #98fb98;">timespec</span> *) = handle;
+  <span style="color: #98fb98;">int</span> <span style="color: #eedd82;">ret</span> = func(__clock_id, __tp);
+  __tp-&gt;tv_sec += 3600;
+  <span style="color: #00ffff;">return</span> ret;
+}
+</pre>
+
+<p>
+元の関数を呼び出し、その結果に3600秒加えて1時間後の値を返します。
+</p>
+<p>
+コンパイルでは新たにフラグ-ldlを追加します。
+</p>
+
+
+<pre class="src src-sh">$ gcc -fPIC -shared clock_gettime.c -ldl -o clock_gettime.so
+</pre>
+
+
+<p>
+次のように1時間後の値が得られることがわかります。
+</p>
+
+
+<pre class="src src-sh">$ date; <span style="color: #eedd82;">LD_PRELOAD</span>=clock_gettime.so date
+2012&#24180;  2&#26376; 27&#26085; &#26376;&#26332;&#26085; 08:09:49 JST
+2012&#24180;  2&#26376; 27&#26085; &#26376;&#26332;&#26085; 09:09:49 JST
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> 解説</h2>
+<div class="outline-text-2" id="text-7">
+
+<p>本稿では環境変数LD_PRELOADを用いることで、既存のコードを変更することなく挙動を変更する方法を示しました。
+環境変数LD_PRELOADで設定された共有ライブラリはローダーによって前もってロードされ、実行形式や依存するライブラリよりも前のメモリ上のアドレスに配置されます。
+共有ライブラリの関数を呼び出す場合、シンボル名をキーとして、メモリの先頭から検索して最初に該当するシンボルのアドレスを呼び出します。
+そのため、LD_PRELOADで指定された共有ライブラリで定義された関数が元の関数の替わりに呼び出されます。
+元の関数は、LD_PRELOADで指定された共有ライブラリの関数より後のアドレスに配置されているので、dlsymで現在のアドレス以降のメモリからシンボルを検索することで得られます。
+この仕組みにより、共有ライブラリで定義されている関数と同じインターフェースの関数を作ることで、本稿で述べたように任意のデータを既存のプログラムにインプットとして与えることができます。
+</p></div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-02-27 月</p>
+<p class="author">Author: Shigeaki Matsumura</p>
+<p class="creator">Org version 7.8.03 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
