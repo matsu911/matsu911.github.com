@@ -1,0 +1,9 @@
+body {
+    margin: 0 auto;
+    width: 80%;
+}
+
+pre {
+    background-color: black; 
+    color: #c3c3c3; 
+}

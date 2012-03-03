@@ -13,9 +13,7 @@
 #+LINK_UP:   
 #+LINK_HOME: http://matsu911.github.com
 #+XSLT:
-#+STYLE: <style type="text/css">
-#+STYLE: pre { background-color: black; color: #c3c3c3; }
-#+STYLE: </style>
+#+STYLE: <link rel="stylesheet" type="text/css" href="main.css" />
 
 #+BEGIN_HTML
 <div align="right">
