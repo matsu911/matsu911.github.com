@@ -23,6 +23,9 @@
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 #+END_HTML
 
+この文書は産業技術大学院大学主催の[[http://pk.aiit.ac.jp/index.php?InfoTalk%252F20120217][第39回InfoTalk]]の内容をまとめたものです。
+この講演はUstreamでも配信されており、[[http://www.ustream.tv/recorded/20501062][ここ]]から視聴できます。
+
 * スタートアップベンチャーの実際とそれを取り巻く環境
 ** 川田 尚吾 Shogo Kawada, Ph.D
 ** 自己紹介
@@ -224,7 +227,7 @@
 他にも多数
 ** ホットスポット効果
 + 一定以上の濃度で優秀な才能が集まり
-+ 自分たちが世界を変えると▼信じ
++ 自分たちが世界を変えると信じ
 + 狂ったように働く
 ** 世界に向けた内圧の高まり
 
