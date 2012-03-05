@@ -1,0 +1,2834 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="ja" xml:lang="ja">
+<head>
+<title>クオンツトレーディング入門</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="クオンツトレーディング入門"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-01-24 火"/>
+<meta name="author" content="Shigeaki Matsumura"/>
+<meta name="description" content=""/>
+<meta name="keywords" content="クオンツトレーディング"/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="main.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="http://matsu911.github.com"> UP </a>
+ |
+ <a accesskey="H" href="http://matsu911.github.com"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">クオンツトレーディング入門</h1>
+
+
+<div align="right">
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-size="large">ツイート</a>
+<a href="https://twitter.com/matsu911" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@matsu911をフォロー</a>
+</div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 クオンツとは何か</a></li>
+<li><a href="#sec-2">2 クオンツトレーディング戦略の基本的構造</a></li>
+<li><a href="#sec-3">3 アルファモデル</a>
+<ul>
+<li><a href="#sec-3-1">3.1 アルファとは</a>
+<ul>
+<li><a href="#sec-3-1-1">3.1.1 例</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-2">3.2 アルファの追求</a></li>
+<li><a href="#sec-3-3">3.3 アルファモデル</a>
+<ul>
+<li><a href="#sec-3-3-1">3.3.1 さまざまな呼び名</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-4">3.4 アルファモデルの2つのタイプ</a>
+<ul>
+<li><a href="#sec-3-4-1">3.4.1 理論駆動型</a></li>
+<li><a href="#sec-3-4-2">3.4.2 データ駆動型</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-5">3.5 戦略の実行</a>
+<ul>
+<li><a href="#sec-3-5-1">3.5.1 予測目標</a></li>
+<li><a href="#sec-3-5-2">3.5.2 対象期間</a></li>
+<li><a href="#sec-3-5-3">3.5.3 賭け構造</a></li>
+<li><a href="#sec-3-5-4">3.5.4 投資ユニバース</a></li>
+<li><a href="#sec-3-5-5">3.5.5 モデルの具体化</a></li>
+<li><a href="#sec-3-5-6">3.5.6 実行頻度</a></li>
+<li><a href="#sec-3-5-7">3.5.7 モデルの多様性</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-6">3.6 複数のアルファモデルの組み合わせ</a>
+<ul>
+<li><a href="#sec-3-6-1">3.6.1 アルファファクター(シグナル)の組み合わせ方</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-4">4 リスクモデル</a>
+<ul>
+<li><a href="#sec-4-1">4.1 リスクの限定</a>
+<ul>
+<li><a href="#sec-4-1-1">4.1.1 リスクサイズの制限方法</a></li>
+<li><a href="#sec-4-1-2">4.1.2 リスクの測定方法</a></li>
+<li><a href="#sec-4-1-3">4.1.3 サイズを制限する対象</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-2">4.2 リスクの種類の限定</a>
+<ul>
+<li><a href="#sec-4-2-1">4.2.1 理論駆動型リスクモデル</a></li>
+<li><a href="#sec-4-2-2">4.2.2 経験的リスクモデル</a></li>
+<li><a href="#sec-4-2-3">4.2.3 クオンツのリスクモデルの選び方</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5">5 取引コストモデル</a>
+<ul>
+<li><a href="#sec-5-1">5.1 取引コストの定義</a>
+<ul>
+<li><a href="#sec-5-1-1">5.1.1 売買手数料と諸費用</a></li>
+<li><a href="#sec-5-1-2">5.1.2 スリッページ****</a></li>
+<li><a href="#sec-5-1-3">5.1.3 マーケットインパクト</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-2">5.2 さまざまな取引コストモデル</a>
+<ul>
+<li><a href="#sec-5-2-1">5.2.1 均一取引コストモデル</a></li>
+<li><a href="#sec-5-2-2">5.2.2 線形取引コストモデル</a></li>
+<li><a href="#sec-5-2-3">5.2.3 折れ線近似取引コストモデル</a></li>
+<li><a href="#sec-5-2-4">5.2.4 二次式取引コストモデル</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-6">6 ポートフォリオ構築モデル</a>
+<ul>
+<li><a href="#sec-6-1">6.1 ルールに基づくポートフォリオ構築モデル</a>
+<ul>
+<li><a href="#sec-6-1-1">6.1.1 ポジション均等荷重</a></li>
+<li><a href="#sec-6-1-2">6.1.2 リスク均等荷重</a></li>
+<li><a href="#sec-6-1-3">6.1.3 アルファ駆動型荷重</a></li>
+<li><a href="#sec-6-1-4">6.1.4 決定木モデル</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-2">6.2 ポートフォリオオプティマイザ</a>
+<ul>
+<li><a href="#sec-6-2-1">6.2.1 現代ポートフォリオ理論</a></li>
+<li><a href="#sec-6-2-2">6.2.2 入力パラメータ</a></li>
+<li><a href="#sec-6-2-3">6.2.3 最適化テクニック</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-3">6.3 ポートフォリオ構築モデルの出力</a></li>
+<li><a href="#sec-6-4">6.4 クオンツはポートフォリオ構築モデルをどのようにして選ぶのか</a></li>
+</ul>
+</li>
+<li><a href="#sec-7">7 執行</a>
+<ul>
+<li><a href="#sec-7-1">7.1 注文執行アルゴリズム</a>
+<ul>
+<li><a href="#sec-7-1-1">7.1.1 注文方法</a></li>
+<li><a href="#sec-7-1-2">7.1.2 アグレッシブな注文とパッシブな注文</a></li>
+<li><a href="#sec-7-1-3">7.1.3 大口注文対小口注文</a></li>
+<li><a href="#sec-7-1-4">7.1.4 隠された注文(情報限定公開型注文)対目に見える注文(情報公開型注文)</a></li>
+<li><a href="#sec-7-1-5">7.1.5 注文はどこに送るのか</a></li>
+<li><a href="#sec-7-1-6">7.1.6 注文の取り消しと差し替え</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-2">7.2 高頻度トレーディング ー アルファと執行との間の境界線をなくす</a>
+<ul>
+<li><a href="#sec-7-2-1">7.2.1 アルゴリズム</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-3">7.3 トレーディングインフラ</a>
+<ul>
+<li><a href="#sec-7-3-1">7.3.1 取引所との接続確立</a></li>
+<li><a href="#sec-7-3-2">7.3.2 取引所とのメッセージをやり取りするためのプロトコル</a></li>
+<li><a href="#sec-7-3-3">7.3.3 ハードウェアとソフトウェア</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 データ</a>
+<ul>
+<li><a href="#sec-8-1">8.1 データの重要性</a></li>
+<li><a href="#sec-8-2">8.2 データのタイプ</a>
+<ul>
+<li><a href="#sec-8-2-1">8.2.1 価格データ</a></li>
+<li><a href="#sec-8-2-2">8.2.2 ファンダメンタルデータ</a></li>
+</ul>
+</li>
+<li><a href="#sec-8-3">8.3 データソース</a>
+<ul>
+<li><a href="#sec-8-3-1">8.3.1 一次資料供給源</a></li>
+</ul>
+</li>
+<li><a href="#sec-8-4">8.4 データクリーニング</a>
+<ul>
+<li><a href="#sec-8-4-1">8.4.1 データの欠損</a></li>
+<li><a href="#sec-8-4-2">8.4.2 数値に間違い</a></li>
+<li><a href="#sec-8-4-3">8.4.3 間違ったタイムスタンプ</a></li>
+<li><a href="#sec-8-4-4">8.4.4 先読みバイアス</a></li>
+</ul>
+</li>
+<li><a href="#sec-8-5">8.5 データの保存</a>
+<ul>
+<li><a href="#sec-8-5-1">8.5.1 フラットファイル</a></li>
+<li><a href="#sec-8-5-2">8.5.2 リレーショナルデータベース</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-9">9 リサーチ</a>
+<ul>
+<li><a href="#sec-9-1">9.1 リサーチの設計 ー 科学的手法</a></li>
+<li><a href="#sec-9-2">9.2 アイデアの着想</a></li>
+<li><a href="#sec-9-3">9.3 検証</a>
+<ul>
+<li><a href="#sec-9-3-1">9.3.1 インサンプル検証(トレーニング)</a></li>
+<li><a href="#sec-9-3-2">9.3.2 「良い」モデルは何によって決まるのか</a></li>
+<li><a href="#sec-9-3-3">9.3.3 オーバーフィッティング</a></li>
+<li><a href="#sec-9-3-4">9.3.4 アウトオブサンプル検証</a></li>
+<li><a href="#sec-9-3-5">9.3.5 検証における仮説の設定</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-10">10 クオンツ戦略に内包されるリスク</a>
+<ul>
+<li><a href="#sec-10-1">10.1 モデルリスク</a>
+<ul>
+<li><a href="#sec-10-1-1">10.1.1 モデル化の間違った適用</a></li>
+<li><a href="#sec-10-1-2">10.1.2 モデルの間違った定式化</a></li>
+<li><a href="#sec-10-1-3">10.1.3 実装エラー</a></li>
+</ul>
+</li>
+<li><a href="#sec-10-2">10.2 市場のレジーム変化によるリスク</a></li>
+<li><a href="#sec-10-3">10.3 外因性ショックリスク</a></li>
+<li><a href="#sec-10-4">10.4 伝播リスク(典型投資家リスク)</a>
+<ul>
+<li><a href="#sec-10-4-1">10.4.1 2007年に大手クオンツファンドが一斉に資産の強制売却に追い込まれた要因</a></li>
+</ul>
+</li>
+<li><a href="#sec-10-5">10.5 クオンツのリスク監視</a></li>
+</ul>
+</li>
+<li><a href="#sec-11">11 クオンツトレーディングに対する批判</a>
+<ul>
+<li><a href="#sec-11-1">11.1 トレーディングはアートであって科学ではない</a></li>
+<li><a href="#sec-11-2">11.2 クオンツがリスクを過小評価することで市場ボラティリティは上昇する</a></li>
+<li><a href="#sec-11-3">11.3 普段とは異なるイベントや市場状態の急激な変化にクオンツは対応できない</a></li>
+<li><a href="#sec-11-4">11.4 クオンツはみんな同じだ</a></li>
+<li><a href="#sec-11-5">11.5 長期的に見て成功するクオンツは少数の大手クオンツのみ</a></li>
+<li><a href="#sec-11-6">11.6 クオンツはデータマイニングという罪を犯している</a></li>
+</ul>
+</li>
+<li><a href="#sec-12">12 クオンツとクオンツ戦略の評価</a>
+<ul>
+<li><a href="#sec-12-1">12.1 情報収集</a></li>
+<li><a href="#sec-12-2">12.2 クオンツトレーディング戦略の評価</a>
+<ul>
+<li><a href="#sec-12-2-1">12.2.1 リサーチと戦略の開発</a></li>
+<li><a href="#sec-12-2-2">12.2.2 データの収集、クリーニング、管理</a></li>
+<li><a href="#sec-12-2-3">12.2.3 投資の選択と構成</a></li>
+<li><a href="#sec-12-2-4">12.2.4 ポートフォリオの構築</a></li>
+<li><a href="#sec-12-2-5">12.2.5 執行</a></li>
+<li><a href="#sec-12-2-6">12.2.6 リスクの管理と監視</a></li>
+<li><a href="#sec-12-2-7">12.2.7 クオンツトレーダーのスキルの評価</a></li>
+<li><a href="#sec-12-2-8">12.2.8 エッジ(優位性)</a></li>
+<li><a href="#sec-12-2-9">12.2.9 誠実さの評価</a></li>
+<li><a href="#sec-12-2-10">12.2.10 そのクオンツはあなたのポートフォリオに加える価値があるのか</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-13">13 クオンツトレーディングの未来</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> クオンツとは何か</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>  徹底した調査に基づいて設計したアルファを追求する投資戦略をシッステマティックに実行するトレーダー
+</p></div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> クオンツトレーディング戦略の基本的構造</h2>
+<div class="outline-text-2" id="text-2">
+
+<ul>
+<li>アルファモデル
+</li>
+<li>リスクモデル
+</li>
+<li>取引コストモデル
+</li>
+<li>ポートフォリオ構築モデル
+</li>
+<li>執行モデル
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> アルファモデル</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> アルファとは</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<p>投資家の生み出すリターンのなかでベンチマークによらない部分、つまり運用マネージャーのスキルによって付加された(あるいは失なわれた)価値
+</p>
+</div>
+
+<div id="outline-container-3-1-1" class="outline-4">
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> 例</h4>
+<div class="outline-text-4" id="text-3-1-1">
+
+<ul>
+<li>マネージャーのリターンが12%
+</li>
+<li>ベンチマークのリターンが10%
+</li>
+<li>マネージャーのアルファは概算で+2%
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> アルファの追求</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<ul>
+<li>ポートフォリオの選択とサイジングのタイミングを図ることによってなされる
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3"><span class="section-number-3">3.3</span> アルファモデル</h3>
+<div class="outline-text-3" id="text-3-3">
+
+<ul>
+<li>タイミングを図るためにクオンツが構築して用いるソフトウェア
+</li>
+<li>エクスポージャー
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-3-3-1" class="outline-4">
+<h4 id="sec-3-3-1"><span class="section-number-4">3.3.1</span> さまざまな呼び名</h4>
+<div class="outline-text-4" id="text-3-3-1">
+
+<ul>
+<li>予測
+</li>
+<li>ファクター
+</li>
+<li>アルファ
+</li>
+<li>モデル
+</li>
+<li>戦略
+</li>
+<li>推定子
+</li>
+<li>予測子
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-4" class="outline-3">
+<h3 id="sec-3-4"><span class="section-number-3">3.4</span> アルファモデルの2つのタイプ</h3>
+<div class="outline-text-3" id="text-3-4">
+
+
+</div>
+
+<div id="outline-container-3-4-1" class="outline-4">
+<h4 id="sec-3-4-1"><span class="section-number-4">3.4.1</span> 理論駆動型</h4>
+<div class="outline-text-4" id="text-3-4-1">
+
+<p>ほとんどは理論駆動型
+</p><ul>
+<li id="sec-3-4-1-1">5つの戦略<br/>
+<ul>
+<li>トレンド
+</li>
+<li>回帰
+</li>
+<li>バリュー、利回り
+</li>
+<li>グロース
+</li>
+<li>質
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-3-4-1-2">価格データに基づく戦略<br/>
+<ul>
+<li>トレンド戦略と平均回帰戦略は必ずしも対立するものではなく、共存することもある
+</li>
+<li>トレンドは長期的で平均回帰は短期的
+</li>
+</ul>
+
+<ul>
+<li id="sec-3-4-1-2-1">トレンドフォロー<br/>
+<ul>
+<li>市場はときとして長期にわたって同じ方向に 動くことがあり、そういったトレンドを発見できればそれに乗って利益を得ることができるという理論に基づく
+</li>
+<li>均衡状態から均衡状態へのゆっくりとした移行をとらえる
+</li>
+<li>大バカ者理論によりトレンドは持続する
+</li>
+<li>一定の方向への大きな動きを狙う
+</li>
+<li>リターンも大きいがリスクも大きい
+</li>
+</ul>
+
+<ul>
+<li id="sec-3-4-1-2-1-1">例<br/>
+<ul>
+<li>商品先物に多い
+</li>
+</ul>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-3-4-1-2-2">平均回帰<br/>
+<ul>
+<li>価格の上下動には重心のようなものが存在し、その重心がどこにあり、どれくらいの上下動であれば利益が見込めるトレードが可能なのかを見つけることができるという理論に基づく
+</li>
+<li>裁量トレーダーが用いる平均回帰戦略は一般に逆張り戦略と呼ばれる
+</li>
+</ul>
+
+<ul>
+<li id="sec-3-4-1-2-2-1">例<br/>
+<ul>
+<li>スタットアーブ
+</li>
+</ul>
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-3-4-1-3">ファンダメンタルデータに基づく戦略<br/>
+<ul>
+<li id="sec-3-4-1-3-1">バリュー、利回り戦略<br/>
+<ul>
+<li>一般に株式トレーディングに用いられる戦略としてよく知られているが、ほかの市場でも同じように用いることができる
+</li>
+<li>PER(株価収益率)の逆数はEPR(益回り)
+</li>
+<li>バリュー投資の根底にある考え方は、高リスクの商品のリスクは課題評価され、低リスクの商品は過小評価される傾向があるため、高リスクの資産を保有する一方で低リスクの資産を売る、もしくは高リスクの資産を保有するか低リスクの資産を売る、かのいずれかがよい
+</li>
+<li>キャリートレードとは割安の証券を買うと同時に割高の証券を売る戦略
+</li>
+</ul>
+
+<ul>
+<li id="sec-3-4-1-3-1-1">例<br/>
+<ul>
+<li>通貨のキャリートレードが人気
+</li>
+<li>クオンツロングショート戦略
+</li>
+</ul>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-3-4-1-3-2">グロース戦略<br/>
+<ul>
+<li>資産の過去の成長や将来の成長を基に立てた予測に基づく戦略
+</li>
+<li>資産の価格ではなく急成長しているかどうかで資産を買う
+</li>
+<li>FXトレーディングなどのマクロ経済グロース戦略とミクロ経済グロース戦略
+</li>
+<li>センチメン戦略は正式な決算発表を待たずにアナリストの予測を用いる
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-3-4-1-3-3">質戦略<br/>
+<ul>
+<li>他の条件が一定ならば質の高い商品を保有し、質の低い商品を売るのがよい、という考えに基づく戦略
+</li>
+<li>厳しい市場環境では投資家を保護する
+</li>
+<li>自己資本比率
+</li>
+<li>フリーキャッシュフローがどの程度発表された1株利益に近いか、などの収益の質
+</li>
+</ul>
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-3-4-2" class="outline-4">
+<h4 id="sec-3-4-2"><span class="section-number-4">3.4.2</span> データ駆動型</h4>
+<div class="outline-text-4" id="text-3-4-2">
+
+<ul>
+<li id="sec-3-4-2-1">利点<br/>
+<ul>
+<li>難しいため、あまりポピュラーではない
+</li>
+<li>理論から立証されていない市場の振舞いも識別できる
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-3-4-2-2">欠点<br/>
+<ul>
+<li>モデルに入力するデータを自分で決めなくてはならない
+</li>
+<li>入力にノイズが含まれるので、データマイニングのみに頼ってアルファを生み出すのは問題がある
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-5" class="outline-3">
+<h3 id="sec-3-5"><span class="section-number-3">3.5</span> 戦略の実行</h3>
+<div class="outline-text-3" id="text-3-5">
+
+
+</div>
+
+<div id="outline-container-3-5-1" class="outline-4">
+<h4 id="sec-3-5-1"><span class="section-number-4">3.5.1</span> 予測目標</h4>
+<div class="outline-text-4" id="text-3-5-1">
+
+<ul>
+<li>動きの方向
+</li>
+<li>動きの大きさ
+</li>
+<li>動きの期間
+</li>
+<li>予測精度
+</li>
+</ul>
+
+<ul>
+<li id="sec-3-5-1-1">シグナルの強さ<br/>
+<ul>
+<li>期待リターンの大きさ
+</li>
+<li>リターンが得られる確率
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-3-5-2" class="outline-4">
+<h4 id="sec-3-5-2"><span class="section-number-4">3.5.2</span> 対象期間</h4>
+<div class="outline-text-4" id="text-3-5-2">
+
+<ul>
+<li>高頻度戦略
+</li>
+<li>短期戦略
+</li>
+<li>中期先着
+</li>
+<li>長期戦略
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-5-3" class="outline-4">
+<h4 id="sec-3-5-3"><span class="section-number-4">3.5.3</span> 賭け構造</h4>
+<div class="outline-text-4" id="text-3-5-3">
+
+<ul>
+<li>予測方法によって決まる
+</li>
+<li>絶対予測(絶対アルファ)
+</li>
+<li>相対予測(相対アルファ)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-5-4" class="outline-4">
+<h4 id="sec-3-5-4"><span class="section-number-4">3.5.4</span> 投資ユニバース</h4>
+<div class="outline-text-4" id="text-3-5-4">
+
+<ul>
+<li>トレードする地域(市場)
+</li>
+<li>商品クラス
+</li>
+<li>流動性が重視される
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-5-5" class="outline-4">
+<h4 id="sec-3-5-5"><span class="section-number-4">3.5.5</span> モデルの具体化</h4>
+<div class="outline-text-4" id="text-3-5-5">
+
+<ul>
+<li>戦略のあらゆる側面を具体的に定義
+</li>
+<li>最適なパラメータの決定に機械学習を使う
+</li>
+<li>モデルの更新頻度の問題
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-5-6" class="outline-4">
+<h4 id="sec-3-5-6"><span class="section-number-4">3.5.6</span> 実行頻度</h4>
+<div class="outline-text-4" id="text-3-5-6">
+
+<ul>
+<li>モデルをリアルタイムに実行する頻度
+</li>
+<li>頻繁に実行すると取引回数が増えコストも増える
+</li>
+<li>実行頻度が低い場合、マーケットインパクトが増える
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-5-7" class="outline-4">
+<h4 id="sec-3-5-7"><span class="section-number-4">3.5.7</span> モデルの多様性</h4>
+<div class="outline-text-4" id="text-3-5-7">
+
+<ul>
+<li>細かな実行要素の組み合わせでモデルの多様性が得られる
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3-6" class="outline-3">
+<h3 id="sec-3-6"><span class="section-number-3">3.6</span> 複数のアルファモデルの組み合わせ</h3>
+<div class="outline-text-3" id="text-3-6">
+
+<ul>
+<li>複数のアルファ戦略にさまざまな実行要素を組み合わせる
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-3-6-1" class="outline-4">
+<h4 id="sec-3-6-1"><span class="section-number-4">3.6.1</span> アルファファクター(シグナル)の組み合わせ方</h4>
+<div class="outline-text-4" id="text-3-6-1">
+
+<ul>
+<li>線形モデル
+</li>
+<li>非線形モデル
+</li>
+<li>機械学習モデル
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> リスクモデル</h2>
+<div class="outline-text-2" id="text-4">
+
+<ul>
+<li>リスク管理とはリターンの質と安定性を向上させるためにエクスポージャーを意図的に選択し、その大きさを決めること
+</li>
+<li>リスク管理とはエクスポージャーを選びその大きさを決めることで、任意水準のリスクに対するリターンを最大化することを意味する
+</li>
+<li>アルファモデルが楽観主義者とすればリスクモデルは悲観主義者
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> リスクの限定</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+</div>
+
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1"><span class="section-number-4">4.1.1</span> リスクサイズの制限方法</h4>
+<div class="outline-text-4" id="text-4-1-1">
+
+<ul>
+<li>ボーダーラインを設ける
+</li>
+<li>ペナルティー関数を設ける
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2"><span class="section-number-4">4.1.2</span> リスクの測定方法</h4>
+<div class="outline-text-4" id="text-4-1-2">
+
+<ul>
+<li>リターンの標準偏差を計算してリスクを求める
+</li>
+<li>任意のユニバースにおけるさまざまな商品の類似度を測定
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-1-3" class="outline-4">
+<h4 id="sec-4-1-3"><span class="section-number-4">4.1.3</span> サイズを制限する対象</h4>
+<div class="outline-text-4" id="text-4-1-3">
+
+<ul>
+<li>単一のポジション
+</li>
+<li>ポジションの集合体
+</li>
+<li>ポートフォリオ全体のレバレッジ管理も必要
+</li>
+<li>ケリー基準
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> リスクの種類の限定</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ul>
+<li>偶発的なエクスポージャーは除去したほうがよい
+</li>
+<li>アルファモデルにリスク管理の概念を組込むことができる
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1"><span class="section-number-4">4.2.1</span> 理論駆動型リスクモデル</h4>
+<div class="outline-text-4" id="text-4-2-1">
+
+<ul>
+<li>分散化によって除去できないシステマティックリスクファクターに注目
+</li>
+<li>個別株では市場そのものがシステマティックリスクファクター
+</li>
+<li>債券では金利リスクがシステマティックリスクファクター
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2"><span class="section-number-4">4.2.2</span> 経験的リスクモデル</h4>
+<div class="outline-text-4" id="text-4-2-2">
+
+<ul>
+<li>システマティクリスクは測定して低減しなくてはならない
+</li>
+<li>ヒストリカルデータを基にする
+</li>
+<li>偽のエクスポージャーを発見してしまう可能性がある
+</li>
+<li>主成分分析(PCA)
+</li>
+</ul>
+
+<ul>
+<li id="sec-4-2-2-1">債券のPCA<br/>
+<ul>
+<li>第一主成分は金利水準
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-2-2-2">株式のPCA<br/>
+<ul>
+<li>第一主成分は市場そのもの
+</li>
+<li>第二主成分はセクター
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4-2-3" class="outline-4">
+<h4 id="sec-4-2-3"><span class="section-number-4">4.2.3</span> クオンツのリスクモデルの選び方</h4>
+<div class="outline-text-4" id="text-4-2-3">
+
+<ul>
+<li>理論駆動型リスクモデルが好まれる
+</li>
+<li>モデルの適応性から経験的リスクモデルが好まれることもある
+</li>
+<li>理論駆動型リスクモデルと経験的リスクモデルは相互排他的ではない
+</li>
+<li>両者のハイブリッドも用いられる
+</li>
+</ul>
+
+<ul>
+<li id="sec-4-2-3-1">経験的リスクモデルの欠点<br/>
+<ul>
+<li>市場体制が変化する過渡期で脆弱
+</li>
+<li>統計的優位性と適応性のトレードオフ
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-2-3-2">経験的リスクモデルの利点<br/>
+<ul>
+<li>既知ではないリスクファクターを発見できる
+</li>
+<li>日中のデータを使えば統計的優位性と適応性のトレードオフは解消できる
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> 取引コストモデル</h2>
+<div class="outline-text-2" id="text-5">
+
+<ul>
+<li>いかなるトレードを行うにもお金がかかる
+</li>
+<li>成功しているクオンツの多くは取引コストとしてリターンの20%〜50%を想定
+</li>
+<li>トレーディングコストを最小化するためのものではなく、ポートフォリオ構築エンジンに任意のトレードを行うのにかかるコストに関する情報を地峡するだけ
+</li>
+<li>コストの最小化は執行アルゴリズムが行う
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> 取引コストの定義</h3>
+<div class="outline-text-3" id="text-5-1">
+
+
+</div>
+
+<div id="outline-container-5-1-1" class="outline-4">
+<h4 id="sec-5-1-1"><span class="section-number-4">5.1.1</span> 売買手数料と諸費用</h4>
+<div class="outline-text-4" id="text-5-1-1">
+
+<ul>
+<li>ブローカー、取引所、規制当局によって提供されるサービスに対して支払われる
+</li>
+<li>流動性プール
+</li>
+</ul>
+
+<ul>
+<li id="sec-5-1-1-1">売買手数料<br/>
+<ul>
+<li>ほかの市場参加者へのアクセス
+</li>
+<li>取引の安全確保
+</li>
+<li>オペレーションインフラの使用
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-1-1-2">清算手数料<br/>
+<ul>
+<li>決算前に発生する管理(報告と監視)
+</li>
+<li>税務処理
+</li>
+<li>障害処理
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-1-1-3">決済手数料<br/>
+<ul>
+<li>全支払い終了後の証券の引き渡し
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-1-2" class="outline-4">
+<h4 id="sec-5-1-2"><span class="section-number-4">5.1.2</span> スリッページ****</h4>
+<div class="outline-text-4" id="text-5-1-2">
+
+<ul>
+<li>取引しようと決めた時点における価格と取引所で執行された価格との差
+</li>
+<li>トレンドフォロー戦略でスリッページの影響を受けやすく、平均回帰戦略では影響が小さい
+</li>
+<li>スリッページは時間と商品のボラティリティの関数
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-1-3" class="outline-4">
+<h4 id="sec-5-1-3"><span class="section-number-4">5.1.3</span> マーケットインパクト</h4>
+<div class="outline-text-4" id="text-5-1-3">
+
+<ul>
+<li>注文が取引所に入ったときの価格とその注文が実際に執行されるときの価格との差
+</li>
+<li>需要量が大きいほど、それを満たす供給量を探すのは難しくなるため、トレードコストは高くなる
+</li>
+<li>一般に、マーケットインパクトを取引コストモデルに組込むときには流動性に対する注文サイズのみを考慮
+</li>
+<li>スリッページとマーケットインパクトは相互に影響し合う
+</li>
+<li>ECNは流動性を提供するトレーダーには代価を支払い、流動性を要求するトレーダーには代価を要求する方式を導入
+</li>
+<li>平均回帰戦略で流動性を提供を利益源としてモデル化することもできる
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> さまざまな取引コストモデル</h3>
+<div class="outline-text-3" id="text-5-2">
+
+<ul>
+<li>固定コストと可変コスト
+</li>
+<li>流動性、トレンド、ボラティリティを一定と家庭すると、取引コストの総額は2次曲線(x軸を注文サイズ、y軸をトレーディングコスト)
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-5-2-1" class="outline-4">
+<h4 id="sec-5-2-1"><span class="section-number-4">5.2.1</span> 均一取引コストモデル</h4>
+<div class="outline-text-4" id="text-5-2-1">
+
+<ul>
+<li>計算は簡単がた正確さに欠ける
+</li>
+<li>極端なトレードサイズでなければそれほど問題にならない
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-2-2" class="outline-4">
+<h4 id="sec-5-2-2"><span class="section-number-4">5.2.2</span> 線形取引コストモデル</h4>
+<div class="outline-text-4" id="text-5-2-2">
+
+<ul>
+<li>取引コストがトレードサイズに比例
+</li>
+<li>トレードサイズが小さいときにはコストを過大評価
+</li>
+<li>トレードサイズが大きいときにはコストを過小評価
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-2-3" class="outline-4">
+<h4 id="sec-5-2-3"><span class="section-number-4">5.2.3</span> 折れ線近似取引コストモデル</h4>
+<div class="outline-text-4" id="text-5-2-3">
+
+<ul>
+<li>簡単な公式ながらある程度正確
+</li>
+<li>曲率が大きくなったら線を引きなおし、直線の組み合わせで曲線を近似
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-5-2-4" class="outline-4">
+<h4 id="sec-5-2-4"><span class="section-number-4">5.2.4</span> 二次式取引コストモデル</h4>
+<div class="outline-text-4" id="text-5-2-4">
+
+<ul>
+<li>他とくらべると構築するのが難しい
+</li>
+<li>正確
+</li>
+<li>推定であり実際とは異なる
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> ポートフォリオ構築モデル</h2>
+<div class="outline-text-2" id="text-6">
+
+<ul>
+<li>クオンツが持つべきポートフォリオを決定する
+</li>
+<li>アルファモデル、リスクモデル、取引コストモデルの仲裁人
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> ルールに基づくポートフォリオ構築モデル</h3>
+<div class="outline-text-3" id="text-6-1">
+
+
+</div>
+
+<div id="outline-container-6-1-1" class="outline-4">
+<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> ポジション均等荷重</h4>
+<div class="outline-text-4" id="text-6-1-1">
+
+<ul>
+<li>シグナルの強さはホジションをとるか否かの判断のみ
+</li>
+</ul>
+
+<ul>
+<li id="sec-6-1-1-1">非均等荷重の問題点<br/>
+<ul>
+<li>任意のポジションの将来の方向性のみならず、動きの大きさや変動する確率も他の予測に比べて統計的に十分な信頼度で予測することが可能と暗に仮定
+</li>
+<li>予測値の良い少ないものに多く賭け、予測値があまり良くない多くのものに少なく賭ける傾向があり、リスクをとりすぎることがある
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-1-2" class="outline-4">
+<h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> リスク均等荷重</h4>
+<div class="outline-text-4" id="text-6-1-2">
+
+<ul>
+<li>ポジションをボラティリティ(ドローダウンなどの他のリスク尺度でもよい)に逆比例して調整
+</li>
+<li>リスク量によって均等化
+</li>
+<li>リスク尺度は過去のデータに基づくため突然ボラティリティが急上昇するようなケースで問題
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-1-3" class="outline-4">
+<h4 id="sec-6-1-3"><span class="section-number-4">6.1.3</span> アルファ駆動型荷重</h4>
+<div class="outline-text-4" id="text-6-1-3">
+
+<ul>
+<li>ポジションサイズをアルファに基づいて決める
+</li>
+<li>多くの場合、最大ポジションに制約を設け、最大サイズにリスクモデルを併用する
+</li>
+<li>セクターや資産クラスとしった各グループの全体的なサイズに制約を設けることもできる
+</li>
+<li>トレンドが反転するケースでは注意が必要
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-1-4" class="outline-4">
+<h4 id="sec-6-1-4"><span class="section-number-4">6.1.4</span> 決定木モデル</h4>
+<div class="outline-text-4" id="text-6-1-4">
+
+<ul>
+<li>木構造を単純にすればポートフォリオの構築は単純化されすぎるし、木構造を複雑にすれば問題解決が難しくなり正しく構築されないこともある
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> ポートフォリオオプティマイザ</h3>
+<div class="outline-text-3" id="text-6-2">
+
+<ul>
+<li>現代ポートフォリオ理論(MPT)に基づく
+</li>
+<li>平均分散最適化
+</li>
+<li>目的関数の最大化
+</li>
+<li>指向性探索アルゴリズム
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1"><span class="section-number-4">6.2.1</span> 現代ポートフォリオ理論</h4>
+<div class="outline-text-4" id="text-6-2-1">
+
+<ul>
+<li>投資家は本質的にリスク回避的であると仮定
+</li>
+<li>余分なリスクをとるときは代償として超過リターンが期待できるときのみ
+</li>
+<li>リスク調整済みリターン
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-2-2" class="outline-4">
+<h4 id="sec-6-2-2"><span class="section-number-4">6.2.2</span> 入力パラメータ</h4>
+<div class="outline-text-4" id="text-6-2-2">
+
+<ul>
+<li>平均
+</li>
+<li>分散
+</li>
+<li>期待相関行列
+</li>
+<li>ポートフォリオのサイズ
+</li>
+<li>望むリスク水準
+</li>
+<li>制約事項(空売り不可のリストなど)
+</li>
+</ul>
+
+<ul>
+<li id="sec-6-2-2-1">期待リターン<br/>
+<ul>
+<li>長期間のヒストリカルリターンではなくアルファモデルからの期待リターン
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-2-2-2">期待ボラティリティ<br/>
+<ul>
+<li>ヒストリカルデータを基に測定することが多いが、独自の尺度を用いることもある
+</li>
+<li>GARCH(Generalized Autoregressive Conditional Heteroskedasticity:自己回帰条件付不均一分散モデル)モデルやその亜種
+</li>
+<li>GARCHはトレンドと平均回帰の組み合わせでボラティリティを予測
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-2-2-3">期待相関<br/>
+<ul>
+<li>ボラティリティの計算や予測を行うためのアプローチを提供
+</li>
+<li>クオンツトレーディングでは標準的な相関尺度を用いると多くの問題が発生する
+</li>
+<li>2つの商品の関係は常に安定的に測定できるわけではない
+</li>
+<li>相関が安定しないのは統計量としての相関に問題があるわけではなく、これが金融界の現実
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-2-3" class="outline-4">
+<h4 id="sec-6-2-3"><span class="section-number-4">6.2.3</span> 最適化テクニック</h4>
+<div class="outline-text-4" id="text-6-2-3">
+
+<ul>
+<li id="sec-6-2-3-1">制約条件のない最適化<br/>
+<ul>
+<li>リスク調整済みリターンが最大の銘柄に全資産を投資してしまう
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-2-3-2">制約条件のある最適化<br/>
+<ul>
+<li>最適プロセスに制約条件やペナルティーを設ける
+</li>
+<li>ポジションの閾値
+</li>
+<li>各グループに対する閾値
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-2-3-3">ブラック・リッターマン最適化<br/>
+<ul>
+<li>従来のモデルにおける入力量の測定誤差に関する問題点のいくつかが解決
+</li>
+<li>投資家のリターン予測を投資家の確信度によって調整
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-2-3-4">グリノルドとカーンのアプローチ ファクターポートフォリオの最適化<br/>
+<ul>
+<li>シグナルポートフォリオの構築を目的とする
+</li>
+<li>それぞれがひとつのタイプのアルファ予測に基づくルールを基にしたファクターポートフォリオを構築する
+</li>
+<li>ファクターポートフォリオの数がファクター数と一致し、通常20を超えることはないため、データ量が少なくてすむ
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-2-3-5">再サンプル効率<br/>
+<ul>
+<li>推定誤差への過剰反応を抑える
+</li>
+<li>ヒストリカルデータから推定された値は将来とは異なる
+</li>
+<li>モンテカルロシミュレーションによるデータの再サンプリング
+</li>
+<li>同じ観測結果を何度も並べ替えて多くの時系列を生成し、戦略の検証に用いる多数の「過去」を生成
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-2-3-6">データマイニングによる最適化<br/>
+<ul>
+<li>機械学習
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> ポートフォリオ構築モデルの出力</h3>
+<div class="outline-text-3" id="text-6-3">
+
+<ul>
+<li>目標ポートフォリオ
+</li>
+<li>どういったポジションをとり、それぞれのサイズはいくらか
+</li>
+<li>目標ポートフォリオと現行ポートフォリオとの差が行うべきトレード
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> クオンツはポートフォリオ構築モデルをどのようにして選ぶのか</h3>
+<div class="outline-text-3" id="text-6-4">
+
+<ul>
+<li>ルールを基にした配分システムを使うクオンツは絶対アルファ戦略を使うケースが多い(先物のトレーダー)
+</li>
+<li>オプティマイザを用いるクオンツは相対アルファ戦略を使うケースが多い(株式ニュートラル)
+</li>
+<li>相対アルファ戦略を用いるのは、銘柄間の関係が安定していると信じているから
+</li>
+<li>絶対アルファ戦略を用いるのは、相関行列があまり役に立たないと考えているから
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> 執行</h2>
+<div class="outline-text-2" id="text-7">
+
+<ul>
+<li>電子的執行と人間の手を介する執行があるが、クオンツが主に用いるのは電子的執行
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> 注文執行アルゴリズム</h3>
+<div class="outline-text-3" id="text-7-1">
+
+
+</div>
+
+<div id="outline-container-7-1-1" class="outline-4">
+<h4 id="sec-7-1-1"><span class="section-number-4">7.1.1</span> 注文方法</h4>
+<div class="outline-text-4" id="text-7-1-1">
+
+<ul>
+<li>成行
+</li>
+<li>指値
+</li>
+<li>MOC
+</li>
+<li>ストップリミット
+</li>
+<li>FOK
+</li>
+<li>AON
+</li>
+<li>GTC
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-2" class="outline-4">
+<h4 id="sec-7-1-2"><span class="section-number-4">7.1.2</span> アグレッシブな注文とパッシブな注文</h4>
+<div class="outline-text-4" id="text-7-1-2">
+
+<ul>
+<li>アグレッシブとはどれくらい速やかにトレードを執行したいか
+</li>
+<li>パッシブとはアグレッシブの逆
+</li>
+<li>ジョイニング(Joining)とは最良の買い板や売り板に自分の注文を追加すること
+</li>
+<li>インプルービング(Improving)とは最良の買い板や売り板になるような注文を入れること
+</li>
+<li>アグレッシブ度は用いる戦略のタイプ、シグナルの強さ、システムのそのシグナルに対する確信度によって決まる
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-3" class="outline-4">
+<h4 id="sec-7-1-3"><span class="section-number-4">7.1.3</span> 大口注文対小口注文</h4>
+<div class="outline-text-4" id="text-7-1-3">
+
+<ul>
+<li>大口注文は小口注文に比べてコストがかかる
+</li>
+<li>一般に時間軸で分割して発注される
+</li>
+<li>執行に時間をかけるとその間に価格が動くリスクがある
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-4" class="outline-4">
+<h4 id="sec-7-1-4"><span class="section-number-4">7.1.4</span> 隠された注文(情報限定公開型注文)対目に見える注文(情報公開型注文)</h4>
+<div class="outline-text-4" id="text-7-1-4">
+
+<ul>
+<li>「手の内」を隠しながら取引が可能
+</li>
+<li>隠れた注文は同じ価格の目に見える注文よりも優先順位は下がる
+</li>
+<li>アイスバーギング(iceberging)は大きな注文を小さな注文に細分化し、そのほとんどをオーダーブックに隠された注文として記帳する
+</li>
+<li>すべての取引所が隠された注文を認めているわけではない
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-5" class="outline-4">
+<h4 id="sec-7-1-5"><span class="section-number-4">7.1.5</span> 注文はどこに送るのか</h4>
+<div class="outline-text-4" id="text-7-1-5">
+
+<ul>
+<li>市場によっては同じ銘柄に対して複数の流動性プールが存在する場合がある
+</li>
+<li>米国株の流動性プールとして知られるのがアイランドとアーキペラゴ
+</li>
+<li>SOR(スマートオーダールーティング)が急速に普及しつつあり、その時点で最適な流動性プールに自動的に流すシステム
+</li>
+<li>最近、米国の規制当局によって有効な流動性プールの最良の売り/買い板を同時に表示することが義務付けられたが、ECNによって流動性の深さや接続スピードが異なるため、依然としてSORは魅力
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-6" class="outline-4">
+<h4 id="sec-7-1-6"><span class="section-number-4">7.1.6</span> 注文の取り消しと差し替え</h4>
+<div class="outline-text-4" id="text-7-1-6">
+
+<ul>
+<li>板厚の変化に対する市場の反応を知るために、偽の大口注文を出し、すぐに取り消して他の注文と差し替えるという手口を使う者もいる
+</li>
+<li>注文取り消し率の多いトレーダーにはペナルティーが課せられることがある
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> 高頻度トレーディング ー アルファと執行との間の境界線をなくす</h3>
+<div class="outline-text-3" id="text-7-2">
+
+<ul>
+<li>超短期(秒単位など)のトレードをする戦略をマイクロストラクチャ・アルファといい、目標とする銘柄と関連銘柄のオーダーブックにおける流動性パターンに注目することでリターンの向上を目指す
+</li>
+<li>大手クオンツはマイクロストラクチャ予測を執行モデルに採用することでポートフォリオ構築モデルによって必要と判断されたトレードコストの低減を図る
+</li>
+<li>インフラとリサーチに莫大な投資が必要
+</li>
+<li>マーケットインパクトの影響を考えると、少額運用しかできない
+</li>
+<li>他の市場プレーヤーの執行パターンの発見に機械学習を用いるトレーダーもいる
+</li>
+<li>機械学習は長期トレーディングよりも高頻度トレーディングに対してのほうが成功率が高いようだ
+</li>
+<li>動きの遅い従来型ロボット(例えばアイスバーグ)がシャークの餌食になり、機械学習エージェントのによって偵察される様は、まるでロボットの戦争ゲームのようで、高頻度トレーディングは「兵器開発競争」と言われてきた
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-7-2-1" class="outline-4">
+<h4 id="sec-7-2-1"><span class="section-number-4">7.2.1</span> アルゴリズム</h4>
+<div class="outline-text-4" id="text-7-2-1">
+
+<ul>
+<li id="sec-7-2-1-1">ゲリラ<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-7-2-1-2">スナイパー<br/>
+</li>
+</ul>
+<ul>
+<li id="sec-7-2-1-3">シャーク<br/>
+<ul>
+<li>隠された大口注文を見つけだすことを目的とする
+</li>
+<li>小口注文を連続的に出し、注文が直ちに執行されれば、隠された大口注文があることを意味する
+</li>
+<li>大口注文を検知したシャークは目に見える注文を出し、この注文は隠された大口注文よりも執行待ち順位が上になる
+</li>
+<li>アイスバーグ戦略の注文が執行されるために、大口注文の注文価格を上げるが、シャークは追随し、常に執行順位が大口注文よりも上になる
+</li>
+<li>この大口注文により市場はトレンドが形成されるが、価格が十分に上がったところでシャークは売り抜け、ほぼ無リスクで利益を上げる
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> トレーディングインフラ</h3>
+<div class="outline-text-3" id="text-7-3">
+
+
+</div>
+
+<div id="outline-container-7-3-1" class="outline-4">
+<h4 id="sec-7-3-1"><span class="section-number-4">7.3.1</span> 取引所との接続確立</h4>
+<div class="outline-text-4" id="text-7-3-1">
+
+<ul>
+<li>DMA(ダイレクト・マーケット・アクセス)(10〜30ミリ秒)
+</li>
+<li>コロケーションアクセス(スポンサードアクセスともいう)(250マイクロ秒以下)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-3-2" class="outline-4">
+<h4 id="sec-7-3-2"><span class="section-number-4">7.3.2</span> 取引所とのメッセージをやり取りするためのプロトコル</h4>
+<div class="outline-text-4" id="text-7-3-2">
+
+<ul>
+<li>FIX(Financial Information eXchange)プロトコル
+</li>
+<li>FIXエンジンとはFIXプロトコルを実装するソフトウェア
+</li>
+<li>高頻度トレーダーはFIXエンジンを自作するケースが多い
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-3-3" class="outline-4">
+<h4 id="sec-7-3-3"><span class="section-number-4">7.3.3</span> ハードウェアとソフトウェア</h4>
+<div class="outline-text-4" id="text-7-3-3">
+
+<ul>
+<li>自作か購入するかを決めなくてはならない
+</li>
+<li>特殊なトレーディング機能を持つマイクロチップを自社開発したところもある
+</li>
+<li>市場データ処理と注文の送信における内部遅延を低減するために独自のアルゴリズム、データベース、執行ソフトウェアにこだわるクオンツもいる
+</li>
+<li>オクオンツの場合、効率と処理能力を考慮して、OSはWindowsよりもLinuxやUNIXを利用する者が多い
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> データ</h2>
+<div class="outline-text-2" id="text-8">
+
+
+</div>
+
+<div id="outline-container-8-1" class="outline-3">
+<h3 id="sec-8-1"><span class="section-number-3">8.1</span> データの重要性</h3>
+<div class="outline-text-3" id="text-8-1">
+
+<ul>
+<li>データとはクオンツトレーディングシステムへの入力を意味する
+</li>
+<li>モデルの細部は用いられる入力の性質の影響を受けることが多い
+</li>
+<li>用いるデータの性質はデータの保存や検索に使うデータベース技術を選ぶうえでの重要な要素
+</li>
+<li>「ゴミを入れればゴミしか出てこない」
+</li>
+<li>悪いデータはリサーチで大量の時間を浪費させる原因にもなる
+</li>
+<li>多くのクオンツを主体としたトレーディング会社はデータをデータベンダーから買うのではなく、一次情報源から自ら収集し、データへのアクセススピードの向上、データのクリーニング、良い保存方法の開発にも大量の資源を投入する
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-8-2" class="outline-3">
+<h3 id="sec-8-2"><span class="section-number-3">8.2</span> データのタイプ</h3>
+<div class="outline-text-3" id="text-8-2">
+
+<ul>
+<li>価格データとファンダメンタルデータに大別される
+</li>
+<li>価格データは高頻度、ファンダメンタルデータは週ごと、月ごと、四半期ごと、などデータによって収集周期が異なる
+</li>
+<li>高頻度トレードでは主に価格データを用いる
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-8-2-1" class="outline-4">
+<h4 id="sec-8-2-1"><span class="section-number-4">8.2.1</span> 価格データ</h4>
+<div class="outline-text-4" id="text-8-2-1">
+
+<ul>
+<li>銘柄価格
+</li>
+<li>出来高
+</li>
+<li>各トレードの行なわれた時間やサイズ
+</li>
+<li>１日を通して買値と売値の動きと量を銘柄別に継続的に記録した「オーダーブック」
+</li>
+<li>各種指数の水準など
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-8-2-2" class="outline-4">
+<h4 id="sec-8-2-2"><span class="section-number-4">8.2.2</span> ファンダメンタルデータ</h4>
+<div class="outline-text-4" id="text-8-2-2">
+
+<ul>
+<li>価格以外のデータ
+</li>
+<li>経営状態
+</li>
+<li>財務実績
+</li>
+<li>金銭的価値
+</li>
+<li>センチメント(市場心理)
+</li>
+<li>ニュースフィード
+</li>
+<li>GPSを利用することで政府発表の統計値を用いるよりも素早くかつ正確にさまざまな経済活動水準を判断しようとする企業もある
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8-3" class="outline-3">
+<h3 id="sec-8-3"><span class="section-number-3">8.3</span> データソース</h3>
+<div class="outline-text-3" id="text-8-3">
+
+<ul>
+<li>最も直接的でおそらく最も難しいのが一次情報源からの生データの入手
+</li>
+<li>二次データベンダーを利用することが多いがデータベンダー間で証券コードが異なることに注意
+</li>
+<li>三次データベンダーはさまざまなデータベンダーのデータをまとめて提供してくれるが、制約の多い
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-8-3-1" class="outline-4">
+<h4 id="sec-8-3-1"><span class="section-number-4">8.3.1</span> 一次資料供給源</h4>
+<div class="outline-text-4" id="text-8-3-1">
+
+<ul>
+<li id="sec-8-3-1-1">取引所<br/>
+<ul>
+<li>価格
+</li>
+<li>出来▼高
+</li>
+<li>タイムスタンプ(データの作成・更新の日時情報)
+</li>
+<li>取引高(未決済建玉)
+</li>
+<li>オーダーブックデータ
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-8-3-1-2">規制当局<br/>
+<ul>
+<li>各企業の財務諸表
+</li>
+<li>各銘柄の大株主や機関投資家の売買活動に関するファイリング
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-8-3-1-3">政府<br/>
+<ul>
+<li>マクロ経済データ(雇用統計、インフレ率、GDPなどのデータ)
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-8-3-1-4">企業<br/>
+<ul>
+<li>決算報告とその関連データ(配当額の変更など)
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-8-3-1-5">通信社<br/>
+<ul>
+<li>マスメディアへのニュース配信
+</li>
+<li>ニュース記事
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-8-3-1-6">データベンダー(データ生成者)<br/>
+<ul>
+<li>独自に作成した関係者が関心を持つようなデータ(証券会社の企業レポートなど)
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8-4" class="outline-3">
+<h3 id="sec-8-4"><span class="section-number-3">8.4</span> データクリーニング</h3>
+<div class="outline-text-3" id="text-8-4">
+
+
+</div>
+
+<div id="outline-container-8-4-1" class="outline-4">
+<h4 id="sec-8-4-1"><span class="section-number-4">8.4.1</span> データの欠損</h4>
+<div class="outline-text-4" id="text-8-4-1">
+
+<ul>
+<li>データを欠損を認識できるようにプログラミングする
+</li>
+<li>欠損したデータを外挿する(ヒストリカルデータで特に便利)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-8-4-2" class="outline-4">
+<h4 id="sec-8-4-2"><span class="section-number-4">8.4.2</span> 数値に間違い</h4>
+<div class="outline-text-4" id="text-8-4-2">
+
+<ul>
+<li>桁に関するエラー
+</li>
+<li>価格が単に間違っている
+</li>
+<li>これらに対してはスパイクフィルターで平滑化するか除去する
+</li>
+<li>流動性の低いものでは実際にスパイクが発生することもあるので注意
+</li>
+<li>人間に注意喚起するためにスパイクフィルターを警告として用いることもある
+</li>
+<li>複数のデータ提供者のデータを比較する方法もある
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-8-4-3" class="outline-4">
+<h4 id="sec-8-4-3"><span class="section-number-4">8.4.3</span> 間違ったタイムスタンプ</h4>
+<div class="outline-text-4" id="text-8-4-3">
+
+<ul>
+<li>解決が難しい問題のひとつ
+</li>
+<li>時系列の順序が入れ替わるとさまざまな問題が発生する
+</li>
+<li>自身でデータをリアルタイムに取得しタイムスタンプと内部クロックを比較することでチェックできるが、リアルタイムに処理できなくてはならない
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-8-4-4" class="outline-4">
+<h4 id="sec-8-4-4"><span class="section-number-4">8.4.4</span> 先読みバイアス</h4>
+<div class="outline-text-4" id="text-8-4-4">
+
+<ul>
+<li id="sec-8-4-4-1">非同時性<br/>
+<ul>
+<li id="sec-8-4-4-1-1">財務諸表<br/>
+<ul>
+<li>データの修正履歴を注意深く追跡する必要がある
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-8-4-4-1-2">各市場における引け時間の違い<br/>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-8-5" class="outline-3">
+<h3 id="sec-8-5"><span class="section-number-3">8.5</span> データの保存</h3>
+<div class="outline-text-3" id="text-8-5">
+
+
+</div>
+
+<div id="outline-container-8-5-1" class="outline-4">
+<h4 id="sec-8-5-1"><span class="section-number-4">8.5.1</span> フラットファイル</h4>
+<div class="outline-text-4" id="text-8-5-1">
+
+<ul>
+<li>負荷が軽いが、順次検索
+</li>
+<li>インデックスフラットファイル
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-8-5-2" class="outline-4">
+<h4 id="sec-8-5-2"><span class="section-number-4">8.5.2</span> リレーショナルデータベース</h4>
+<div class="outline-text-4" id="text-8-5-2">
+
+<ul>
+<li>データ間に複雑な関係を設定
+</li>
+<li>データキューブ(柔軟性に欠ける)
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> リサーチ</h2>
+<div class="outline-text-2" id="text-9">
+
+<ul>
+<li>リサーチはクオンツトレーディングの心臓部
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-9-1" class="outline-3">
+<h3 id="sec-9-1"><span class="section-number-3">9.1</span> リサーチの設計 ー 科学的手法</h3>
+<div class="outline-text-3" id="text-9-1">
+
+<ul>
+<li>科学的手法により意思決定に厳密性と規律がもたらされる
+</li>
+<li>市場は変化するため、継続的なリサーチが必要
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-2" class="outline-3">
+<h3 id="sec-9-2"><span class="section-number-3">9.2</span> アイデアの着想</h3>
+<div class="outline-text-3" id="text-9-2">
+
+<ul>
+<li>市場の観察
+</li>
+<li>学術的文献
+</li>
+<li>人間の移動
+</li>
+<li>裁量トレーダーたちの活動から得られる教訓
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3" class="outline-3">
+<h3 id="sec-9-3"><span class="section-number-3">9.3</span> 検証</h3>
+<div class="outline-text-3" id="text-9-3">
+
+<ul>
+<li>検証はリサーチの中核
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-9-3-1" class="outline-4">
+<h4 id="sec-9-3-1"><span class="section-number-4">9.3.1</span> インサンプル検証(トレーニング)</h4>
+<div class="outline-text-4" id="text-9-3-1">
+
+<ul>
+<li>サンプルの範囲と期間
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3-2" class="outline-4">
+<h4 id="sec-9-3-2"><span class="section-number-4">9.3.2</span> 「良い」モデルは何によって決まるのか</h4>
+<div class="outline-text-4" id="text-9-3-2">
+
+<ul>
+<li id="sec-9-3-2-1">累積利益グラフ<br/>
+<ul>
+<li>儲けることができたかどうか、どれくらいスムーズに儲けることができたか、どういったダウンサイドリスクが考えられるか、ということが分かる
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-9-3-2-2">平均リターン<br/>
+<ul>
+<li>戦略が過去にどれくらいうまく機能したかが分かる
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-9-3-2-3">リターンのバラツキ<br/>
+<ul>
+<li>一般に、任意水準のリターンに対するバラツキが小さいほど優れた戦略
+</li>
+<li>リターンまわりのバラツキが小さいほど、そのリターンに対する信頼度は増す
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-9-3-2-4">山から谷までの最大ドローダウン<br/>
+<ul>
+<li>累積利益曲線の山からの下落幅のなかで最大のもの
+</li>
+<li>ドローダウンは小さいほうがよい
+</li>
+<li>ドローダウンからの回復時間も測定
+</li>
+<li>モデルが不調に陥いったあとどういった振舞いをするかを知ることができる
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-9-3-2-5">予測能力<br/>
+<ul>
+<li>決定係数(相関係数の2乗)
+</li>
+<li>クオンツ業界では非常に高い決定係数は0.05
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-9-3-2-6">勝率またま勝ち時間<br/>
+<ul>
+<li>安定性を測る尺度のひとつ
+</li>
+<li>勝ち時間の全時間に対する比率(通常勝ち日の全日数に対する比率)
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-9-3-2-7">さまざまなリターン・リスク比率<br/>
+<ul>
+<li>一定期間における超過リターン(無リスクレートを上回るリターン)の平均をリターンのバラツキで割ったシャープレシオはリスク調整済みリターンの典型例
+</li>
+<li>シャープレシオの公式から無リスクレートを除去したものはインフォメーションレシオ
+</li>
+<li>スターリングレシオ(平均リターン/平均を下回るリターンのバラツキ)
+</li>
+<li>カルマーレシオ(平均リターン/山から谷までの最大ドローダウン)
+</li>
+<li>オメガレシオ(正のリターンの合計/負のリターンの合計)
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-9-3-2-8">他の戦略との関係<br/>
+<ul>
+<li>クオンツは複数の戦略を同時に用いることが多く、戦略ポートフォリオを使って効果的な運用を目指す
+</li>
+<li>新しいアイデアを加える場合、すでに利用しているアイデアとうまく調和するかどうかを測定する
+</li>
+<li>新しいアイデアと既存の戦略ポートフォリオとの相関
+</li>
+<li>新しいアイデアを加えたときと加えないときを比べ、付加価値を測る
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-9-3-2-9">情報の時間的価値の減少<br/>
+<ul>
+<li>戦略が情報をタイムリーに取得することに対してどれくらい敏感か
+</li>
+<li>予測効果は市場においてどれくらいの期間有効なのか
+</li>
+<li>トレーディングシグナルを受け取ってからトレードを行うまでのタイムラグ
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-9-3-2-10">特定の変数に対する感度<br/>
+<ul>
+<li>微小な変化に対して敏感過ぎる変数は信用できない
+</li>
+<li>感応度が高過ぎる変数はオーバーフィッティングの可能性がある
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-9-3-3" class="outline-4">
+<h4 id="sec-9-3-3"><span class="section-number-4">9.3.3</span> オーバーフィッティング</h4>
+<div class="outline-text-4" id="text-9-3-3">
+
+<ul>
+<li>オーバーフィッティングは、過去のデータにフィットし過ぎて将来の予測力が落ちる
+</li>
+<li>少ない仮定や変数で高い予測力を持つモデル(オッカムの剃刀)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3-4" class="outline-4">
+<h4 id="sec-9-3-4"><span class="section-number-4">9.3.4</span> アウトオブサンプル検証</h4>
+<div class="outline-text-4" id="text-9-3-4">
+
+<ul>
+<li>アウトオブサンプル検証の決定係数のインサンプル検証の決定係数に対する比率(1に近いと堅牢なモデル。例えば0.5以上)
+</li>
+<li>インサンプル検証で使われなかったデータを使う
+</li>
+<li>ローリングウィンドウ方式
+</li>
+<li>正しく検証を行うことは難しい(先読みバイアスなど)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-9-3-5" class="outline-4">
+<h4 id="sec-9-3-5"><span class="section-number-4">9.3.5</span> 検証における仮説の設定</h4>
+<div class="outline-text-4" id="text-9-3-5">
+
+<ul>
+<li>取引コストや空売りの可否など
+</li>
+<li>仮説は戦略の善し悪しを決めるうえで極めて重要
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> クオンツ戦略に内包されるリスク</h2>
+<div class="outline-text-2" id="text-10">
+
+
+</div>
+
+<div id="outline-container-10-1" class="outline-3">
+<h3 id="sec-10-1"><span class="section-number-3">10.1</span> モデルリスク</h3>
+<div class="outline-text-3" id="text-10-1">
+
+<ul>
+<li>モデルは現実世界の近似
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-10-1-1" class="outline-4">
+<h4 id="sec-10-1-1"><span class="section-number-4">10.1.1</span> モデル化の間違った適用</h4>
+<div class="outline-text-4" id="text-10-1-1">
+
+<ul>
+<li>計量的モデリングを適用すべきでない問題に適用(主観的な問題など)
+</li>
+<li>正しく適用すれば有効なテクニックを間違った方法で適用(VaRなど)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-10-1-2" class="outline-4">
+<h4 id="sec-10-1-2"><span class="section-number-4">10.1.2</span> モデルの間違った定式化</h4>
+<div class="outline-text-4" id="text-10-1-2">
+
+<ul>
+<li>まれにしか起こらないイベントに関するものが多い(2007年8月直後の米国大型株の流動性リスクのモデル化など)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-10-1-3" class="outline-4">
+<h4 id="sec-10-1-3"><span class="section-number-4">10.1.3</span> 実装エラー</h4>
+<div class="outline-text-4" id="text-10-1-3">
+
+<ul>
+<li>おそらくモデルリスクのなかで最も多いエラー
+</li>
+<li>プログラミングやアーキテクチャの誤り
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10-2" class="outline-3">
+<h3 id="sec-10-2"><span class="section-number-3">10.2</span> 市場のレジーム変化によるリスク</h3>
+<div class="outline-text-3" id="text-10-2">
+
+<ul>
+<li>ほとんどのクオンツモデルはヒストリカルデータを基に構築し、市場が一定の期間特定の振舞いをした場合、その振舞いが持続することを前提にモデルを構築が、市場のレジームが変われば打撃を受ける
+</li>
+<li>過去の振舞いが持続することに対する依存度が著しく高い戦略(トレンドフォローなど)が打撃を受ける
+</li>
+<li>市場のレジーム変化は複数の資産クラスにわたって同時発生するため、クオンツにとって痛手となる
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-10-3" class="outline-3">
+<h3 id="sec-10-3"><span class="section-number-3">10.3</span> 外因性ショックリスク</h3>
+<div class="outline-text-3" id="text-10-3">
+
+<ul>
+<li>外因性ショックとは市場外部の情報によって発生したもの(テロ、戦争の勃発、規制当局の介入など)
+</li>
+<li>市場外部の情報が市場価格に影響を及ぼし始めると、通常よりも大きな価格変動が起こるため、クオンツ戦略は打撃を受ける
+</li>
+<li>こうした情報は定量化不能で、めったにない情報のため、手の打ちようがないリスク
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-10-4" class="outline-3">
+<h3 id="sec-10-4"><span class="section-number-3">10.4</span> 伝播リスク(典型投資家リスク)</h3>
+<div class="outline-text-3" id="text-10-4">
+
+<ul>
+<li>他の投資家が同じ戦略を保有していることによって生じるリスク
+</li>
+<li>ある戦略が大きな損失を出すと、それとまったく無関係の戦略も売られるという現象をATM効果という(資金難と追証の請求に直面した高レバジッジの投資家は、流動性のない戦略は売れないため、流動性のある戦略を売る)
+</li>
+<li>1998年8月と2007年8月の信用危機によって信用商品の流動性が低下し、信用危機とは無関係の流動性資産を売らざるを得なかった
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-10-4-1" class="outline-4">
+<h4 id="sec-10-4-1"><span class="section-number-4">10.4.1</span> 2007年に大手クオンツファンドが一斉に資産の強制売却に追い込まれた要因</h4>
+<div class="outline-text-4" id="text-10-4-1">
+
+<ul>
+<li>似たようなバリューベースのクオンツ戦略に巨額のマネーが投資された
+</li>
+<li>米国におけるロングショート型クオンツトレーディングのパフォーマンスが年初来低迷していた
+</li>
+<li>流動性の高いクオンツ戦略と大きな損失を被っていた流動性の低い信用ベースの戦略とのペアトレードによって、危機発生と同時に流動性の高い戦略がATMとして使われた
+</li>
+<li>リスクターゲッティングとレバレッジの調整にVaRが使用された
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-10-5" class="outline-3">
+<h3 id="sec-10-5"><span class="section-number-3">10.5</span> クオンツのリスク監視</h3>
+<div class="outline-text-3" id="text-10-5">
+
+<ul>
+<li>エクスポージャーの監視(関心のあるエクスポージャーごとにグループ分けして分析)
+</li>
+<li>損益の監視(前日の引け時点におけるポジションの価格を現在の市場価格と比較)
+</li>
+<li>執行の監視(今執行中の注文、最近執行された注文、取引量や取引価格など)
+</li>
+<li>システムパフォーマンスの監視(ソフトウェアエラーやインフラエラーのチェック、CPUパフォーマンス、各段階における処理速度、 メッセージの伝達遅延)
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> クオンツトレーディングに対する批判</h2>
+<div class="outline-text-2" id="text-11">
+
+
+</div>
+
+<div id="outline-container-11-1" class="outline-3">
+<h3 id="sec-11-1"><span class="section-number-3">11.1</span> トレーディングはアートであって科学ではない</h3>
+<div class="outline-text-3" id="text-11-1">
+
+<ul>
+<li>市場を動かしているのは人間であり、人間の振舞いはモデル化できない
+</li>
+<li>クオンツモデルにも完璧を期待することはできないが、よく設計されたクオンツ戦略は市場の長期にわたる振舞いを十分な精度で予測できるため、実践者に大きな利益をもたらす
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-11-2" class="outline-3">
+<h3 id="sec-11-2"><span class="section-number-3">11.2</span> クオンツがリスクを過小評価することで市場ボラティリティは上昇する</h3>
+<div class="outline-text-3" id="text-11-2">
+
+<ul>
+<li>クオンツがリスクを過小評価するために市場ボラティリティが上昇するという主張は的外れ
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-11-3" class="outline-3">
+<h3 id="sec-11-3"><span class="section-number-3">11.3</span> 普段とは異なるイベントや市場状態の急激な変化にクオンツは対応できない</h3>
+<div class="outline-text-3" id="text-11-3">
+
+<ul>
+<li>将来の予測するのにヒストリカルデータに依存するため、市場の振舞いが大きく変化したときには大きな打撃を受ける
+</li>
+<li>市場のレジーム変動期をうまく切り抜けるクオンツ戦略も存在する
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-11-4" class="outline-3">
+<h3 id="sec-11-4"><span class="section-number-3">11.4</span> クオンツはみんな同じだ</h3>
+<div class="outline-text-3" id="text-11-4">
+
+<ul>
+<li>ひとつひとつのトレードは大差なくてもトレード数が年間何百万にも及べば積もり積もって大差になる
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-11-5" class="outline-3">
+<h3 id="sec-11-5"><span class="section-number-3">11.5</span> 長期的に見て成功するクオンツは少数の大手クオンツのみ</h3>
+<div class="outline-text-3" id="text-11-5">
+
+<ul>
+<li>運用額が多いことが必ずしも良いとは限らない
+</li>
+<li>非常に魅力的な戦略は大手クオンツには向かない
+</li>
+<li>小規模ヘッジファンドが実際に大手ファンドをアウトパフォームすることを示す証拠がある
+</li>
+<li>大手マネージャーは規模を拡大するために自分の専門外の分野に手を広げなくてはならないが、小規模マネージャーは自分の得意分野に集中できる
+</li>
+<li>クオンツ戦略の質の大部分は担当責任者の良い意思決定と健全なリサーチプロセスによって決まる
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-11-6" class="outline-3">
+<h3 id="sec-11-6"><span class="section-number-3">11.6</span> クオンツはデータマイニングという罪を犯している</h3>
+<div class="outline-text-3" id="text-11-6">
+
+<ul>
+<li>データマイニングと理論科学は紙一重
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> クオンツとクオンツ戦略の評価</h2>
+<div class="outline-text-2" id="text-12">
+
+
+</div>
+
+<div id="outline-container-12-1" class="outline-3">
+<h3 id="sec-12-1"><span class="section-number-3">12.1</span> 情報収集</h3>
+<div class="outline-text-3" id="text-12-1">
+
+<ul>
+<li>レイモンドトリバー著「インテロゲーター」が参考になる
+</li>
+<li>信頼関係を築く
+</li>
+<li>質問者が答えをほとんど知っている場合、相手は情報を秘密にしておくことに正当性を感じない
+</li>
+<li>徹底した情報管理が重要
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2" class="outline-3">
+<h3 id="sec-12-2"><span class="section-number-3">12.2</span> クオンツトレーディング戦略の評価</h3>
+<div class="outline-text-3" id="text-12-2">
+
+
+</div>
+
+<div id="outline-container-12-2-1" class="outline-4">
+<h4 id="sec-12-2-1"><span class="section-number-4">12.2.1</span> リサーチと戦略の開発</h4>
+<div class="outline-text-4" id="text-12-2-1">
+
+<ul>
+<li>トレーディング戦略についての新しいアイデアはどのように着想するのか
+</li>
+<li>それらのアイデアの検証方法は？
+</li>
+<li>戦略が機能しているかどうかを判断するのに何を見るか
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2-2" class="outline-4">
+<h4 id="sec-12-2-2"><span class="section-number-4">12.2.2</span> データの収集、クリーニング、管理</h4>
+<div class="outline-text-4" id="text-12-2-2">
+
+<ul>
+<li>どういったデータを使っているのか
+</li>
+<li>データはどのように保存するのか。またその理由は？
+</li>
+<li>データはどのようにクリーニングするのか
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2-3" class="outline-4">
+<h4 id="sec-12-2-3"><span class="section-number-4">12.2.3</span> 投資の選択と構成</h4>
+<div class="outline-text-4" id="text-12-2-3">
+
+<ul>
+<li>あなたのアルファモデルは理論駆動型かデータ駆動型か
+</li>
+<li>どういったタイプのアルファ戦略を使っているのか(例えば、トレンド、回帰、バリュー、利回り、グロース、質)
+</li>
+<li>相対賭けか個別賭けか
+</li>
+<li>相対賭けの場合、相対の具体的な意味は？
+</li>
+<li>投資の対象期間と投資対象は？
+</li>
+<li>複数のアルファモデルをどう組み合わせるのか
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2-4" class="outline-4">
+<h4 id="sec-12-2-4"><span class="section-number-4">12.2.4</span> ポートフォリオの構築</h4>
+<div class="outline-text-4" id="text-12-2-4">
+
+<ul>
+<li>ポートフォリオの構築方法
+</li>
+<li>どういった限度を設けているのか。またその理由は？
+</li>
+<li>ポートフォリオ構築に用いる入力量は？
+</li>
+<li>ポートフォリオの構築で目指すものは？(つまり「目的関数」は何か)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2-5" class="outline-4">
+<h4 id="sec-12-2-5"><span class="section-number-4">12.2.5</span> 執行</h4>
+<div class="outline-text-4" id="text-12-2-5">
+
+<ul>
+<li>どういった取引コストモデルを使っているのか。また、そのモデルを用いる理由は？
+</li>
+<li>トレードの執行方法 ー 手動かアルゴリズムか
+</li>
+<li>あなたの注文執行アルゴリズムについて ー アルゴリズムに組み込んでいるもの(例えば、隠された注文か目に見える注文か、アクティブかパッシブか)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2-6" class="outline-4">
+<h4 id="sec-12-2-6"><span class="section-number-4">12.2.6</span> リスクの管理と監視</h4>
+<div class="outline-text-4" id="text-12-2-6">
+
+<ul>
+<li>あなたのリスクモデルは何を説明するモデルか。またなぜそういったものを説明するのか。
+</li>
+<li>どこにどういったリスク制限を設けているのか。またその理由は？
+</li>
+<li>どういった状況のときにモデルに介入するのか
+</li>
+<li>継続的に監視しているものは？
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2-7" class="outline-4">
+<h4 id="sec-12-2-7"><span class="section-number-4">12.2.7</span> クオンツトレーダーのスキルの評価</h4>
+<div class="outline-text-4" id="text-12-2-7">
+
+<ul>
+<li>よい意思決定を行ういは経験がものを言う
+</li>
+<li>クオンツは分析は注意深く慎重に行い、将来に対する自分の予測能力については謙虚でなればならない
+</li>
+<li>細部からクオンツのシステムの質を判断するには投資家側にも十分な経験が求められる
+</li>
+<li>非クオンツの投資家がクオンツを適正に評価するために必要なのは、評価と精査過程における完全性と徹底した情報管理
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2-8" class="outline-4">
+<h4 id="sec-12-2-8"><span class="section-number-4">12.2.8</span> エッジ(優位性)</h4>
+<div class="outline-text-4" id="text-12-2-8">
+
+<ul>
+<li>ここでいうエッジとはポートフォリオマネージャーの成功を後押しするものを意味し、競争力とは異なる
+</li>
+<li>エッジ源の大きな順：投資プロセス、競争がないこと、構造的要素
+</li>
+<li>トレーダーのエッジは持続可能なものであるかを確認することが重要
+</li>
+<li>エッジを持っていると主張したら、それを徹底的に調べる必要がある
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2-9" class="outline-4">
+<h4 id="sec-12-2-9"><span class="section-number-4">12.2.9</span> 誠実さの評価</h4>
+<div class="outline-text-4" id="text-12-2-9">
+
+<ul>
+<li>クオンツを含むトレーダーは全般的に正直で倫理的な人物が多いため、「信頼すれども確認を怠らず」という姿勢で臨むのがよい
+</li>
+<li>背景と学歴を調べ、身元照会を行う
+</li>
+<li>クオンツの細部を知ることはそのクオンツの誠実さを知るうえでも有用
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-12-2-10" class="outline-4">
+<h4 id="sec-12-2-10"><span class="section-number-4">12.2.10</span> そのクオンツはあなたのポートフォリオに加える価値があるのか</h4>
+<div class="outline-text-4" id="text-12-2-10">
+
+<ul>
+<li id="sec-12-2-10-1">アルファのポートフォリオ<br/>
+<ul>
+<li>投資家が最初にアルファエクスポージャーを分散しておくことが重要
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-12-2-10-2">儲け構造<br/>
+<ul>
+<li>儲け構造についても分散化しておくのが良い
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-12-2-10-3">対象期間の分散化<br/>
+<ul>
+<li>エクスポージャーは対象期間についてもバランスを取る必要がある
+</li>
+<li>短期戦略は安定したパフォーマンスを示す傾向が高いが、あまり大きな資産は扱えない
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-12-2-10-4">ポートフォリオ構築における考察事項のまとめ<br/>
+次の3つの要素を考慮した分散化ポートフォリオを構築すること
+<ul>
+<li>さまざまなタイプのアルファエクスポージャー
+</li>
+<li>さまざまな儲け構造
+</li>
+<li>さまざまな対象期間
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> クオンツトレーディングの未来</h2>
+<div class="outline-text-2" id="text-13">
+
+<ul>
+<li>ほとんどのクオンツはアルファモデルに過度の時間を費やすが、この分野のこれ以上の進化は期待できない
+</li>
+<li>短期的には比較的標準的なアルファモデルはアジアやヨーロッパの小さな発展市場や世界の新興市場で活躍の余地があるかもしれない
+</li>
+<li>参入障壁の低い国々や資産クラスで新しい形のアルファが発見され活用されるだろう
+</li>
+<li>アルファモデルの組合せ、ポジションサイジング、リスク管理の分野で革新の余地がある
+</li>
+<li>クオンツと自由裁量のハイブリッドな戦略など、クオンツトレーディングシステムの使われ方も進化していくだろう
+</li>
+<li>「クオンツの共同体」構造が誕生する可能性があり、戦略の独自な要素は極秘に維持しながら他では知恵を借りることができるようになるだろう
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-01-24 火</p>
+<p class="author">Author: Shigeaki Matsumura</p>
+<p class="creator">Org version 7.8.03 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
