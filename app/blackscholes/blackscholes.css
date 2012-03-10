@@ -1,0 +1,32 @@
+body {
+    text-align: center;
+    margin: 0 auto;
+    width: 480px;
+    color: white;
+    background-color: black;
+}
+
+form {
+    align: center;
+    text-align: center;
+    color: white;
+    background-color: black;
+}
+
+input.variable {
+    text-align: right;
+    color: white;
+    background-color: black;
+    border: 0px solid;
+    border-bottom: 1px solid;
+    width: 50px;
+}
+
+input {
+    text-align: right;
+    color: white;
+    background-color: black;
+    border: 0px solid;
+    border-bottom: 1px solid;
+//    width: 100px;
+}
