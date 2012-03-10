@@ -43,13 +43,23 @@ function select_calculator() {
 	return Put;
 }
 
+function format_number(x, n) {
+    if(isNaN(x)) return x;
+    x += "";
+    if(x.lastIndexOf(".") == -1) 	    
+	x += ".";
+    while(x.slice(-n - 1, -n) != ".")
+    	x += "0";
+    return x;
+}
+
 function update() {
     var S = parseFloat($('#spot').attr("value"));
     var K = parseFloat($('#strike').attr("value"));
     var s = parseFloat($('#sigma').attr("value"));
     var r = parseFloat($('#ccir').attr("value"));
     var T = parseFloat($('#maturity').attr("value"));
-    $('#result').attr("value", round(select_calculator()(S, K, s, r, 0, T), 4));
+    $('#result').text(format_number(round(select_calculator()(S, K, s, r, 0, T), 4), 4));
     if($('input[name=calc_type]:checked').val() == 'call')
 	$('#formula').html("C = S N(d<sub>1</sub>) - K e<sup>-rT</sup> N(d<sub>2</sub>)");
     else

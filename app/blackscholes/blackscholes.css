@@ -30,3 +30,12 @@ input {
     border-bottom: 1px solid;
 //    width: 100px;
 }
+
+p#result {
+    font-size: 12px;
+    margin: 12px auto;
+    align: center;
+    width: 120px;
+    text-align: right;
+    border-bottom: 1px solid;
+}
