@@ -6,19 +6,21 @@
     <script type="text/javascript" src="blackscholes.js"></script>
   </head>
   <body>
-    <h1>Black Scholes Calculator</h1>
-    <p id="formula"/>
-    <form>
-      <div><p id="result"/></div>
-      <div>
-	<input type="radio" name="calc_type" value="call" checked>Call 
-	<input type="radio" name="calc_type" value="put">Put
-      </div>
-      <div>S = <input class="variable" id="spot" type="text"/></div>
-      <div>K = <input class="variable" id="strike" type="text"/></div>
-      <div>&sigma; = <input class="variable" id="sigma" type="text"/></div>
-      <div>r = <input class="variable" id="ccir" type="text"/></div>
-      <div>T = <input class="variable" id="maturity" type="text"/></div>
-    </form>
+    <div id="root">
+      <h1>Black Scholes Calculator</h1>
+      <p id="formula"/>
+      <form>
+	<div><p id="result"/></div>
+	<div>
+	  <input type="radio" name="calc_type" value="call" checked>Call 
+	  <input type="radio" name="calc_type" value="put">Put
+	</div>
+	<div>S = <input class="variable" id="spot" type="text"/></div>
+	<div>K = <input class="variable" id="strike" type="text"/></div>
+	<div>&sigma; = <input class="variable" id="sigma" type="text"/></div>
+	<div>r = <input class="variable" id="ccir" type="text"/></div>
+	<div>T = <input class="variable" id="maturity" type="text"/></div>
+      </form>
+    </div>
   </body>
 </html>

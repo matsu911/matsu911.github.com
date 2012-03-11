@@ -1,16 +1,24 @@
 body {
     text-align: center;
-    margin: 0 auto;
+    margin: 20px auto;
     width: 480px;
-    color: #3c3c3c;
-    background-color: #f3f3f3;
+    color: white;
+    background-color: #cccccc;
+}
+
+div#root {
+    padding: 20 0 20 0;
+    background-color: #3d3d3d;
+    color: white;
+    border-radius: 10px;
 }
 
 form {
+    margin: 20px;
     align: center;
     text-align: center;
-    color: #3c3c3c;
-    background-color: #f3f3f3;
+    color: white;
+    background-color: #3d3d3d;
 }
 
 input.variable {
@@ -22,8 +30,8 @@ input.variable {
 
 input {
     text-align: right;
-    color: #3c3c3c;
-    background-color: #f3f3f3;
+    color: white;
+    background-color: #3d3d3d;
     border: 0px solid;
     border-bottom: 1px solid;
 }
