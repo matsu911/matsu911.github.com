@@ -2,21 +2,19 @@ body {
     text-align: center;
     margin: 0 auto;
     width: 480px;
-    color: white;
-    background-color: black;
+    color: #3c3c3c;
+    background-color: #f3f3f3;
 }
 
 form {
     align: center;
     text-align: center;
-    color: white;
-    background-color: black;
+    color: #3c3c3c;
+    background-color: #f3f3f3;
 }
 
 input.variable {
     text-align: right;
-    color: white;
-    background-color: black;
     border: 0px solid;
     border-bottom: 1px solid;
     width: 50px;
@@ -24,11 +22,10 @@ input.variable {
 
 input {
     text-align: right;
-    color: white;
-    background-color: black;
+    color: #3c3c3c;
+    background-color: #f3f3f3;
     border: 0px solid;
     border-bottom: 1px solid;
-//    width: 100px;
 }
 
 p#result {
