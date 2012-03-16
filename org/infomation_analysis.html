@@ -1,0 +1,797 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>情報の解析</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="情報の解析"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-03-16 Fri"/>
+<meta name="author" content="Shigeaki Matsumura"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="main.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="http://matsu911.github.com"> UP </a>
+ |
+ <a accesskey="H" href="http://matsu911.github.com"> HOME </a>
+</div>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">情報の解析</h1>
+
+
+<div align="right">
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-size="large">ツイート</a>
+<a href="https://twitter.com/matsu911" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@matsu911をフォロー</a>
+</div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+<p>
+この文書は産業技術大学院大学主催の<a href="http://pk.aiit.ac.jp/index.php?InfoTalk%2F20120316">第40回InfoTalk</a>の内容をまとめたものです。
+この講演はUstreamでも配信されており、<a href="http://www.ustream.tv/recorded/21139050">ここ</a>から視聴できます。
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 消費者が生み出す情報の分析 ― 行動情報からCGMの解析まで</a>
+<ul>
+<li><a href="#sec-1-1">1.1 飯尾 淳 氏＝株式会社三菱総合研究所 先進ビジネス推進本部 主席研究員</a></li>
+<li><a href="#sec-1-2">1.2 技術のハイプサイクル</a></li>
+<li><a href="#sec-1-3">1.3 クラウドコンピューティング活用による価値の創出</a></li>
+<li><a href="#sec-1-4">1.4 事例その1</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1 情報大航海プロジェクト</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-5">1.5 既存手法との比較</a>
+<ul>
+<li><a href="#sec-1-5-1">1.5.1 オンラインアンケート</a></li>
+<li><a href="#sec-1-5-2">1.5.2 交通量調査</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">2 大規模データに基づく解析手法の動向と今後の課題 - 大きな数を正確に数える</a>
+<ul>
+<li><a href="#sec-2-1">2.1 問題(スマートグリッド上の配電)</a></li>
+<li><a href="#sec-2-2">2.2 問題(日本地図上のパス)</a></li>
+<li><a href="#sec-2-3">2.3 問題(情報推薦)</a></li>
+<li><a href="#sec-2-4">2.4 問題(あみだくじ)</a></li>
+<li><a href="#sec-2-5">2.5 列挙によるアプローチ</a></li>
+<li><a href="#sec-2-6">2.6 データの大容量化、複雑化</a></li>
+<li><a href="#sec-2-7">2.7 計算時間がかかる問題の例</a>
+<ul>
+<li><a href="#sec-2-7-1">2.7.1 超巨大なデータを扱う計算</a></li>
+<li><a href="#sec-2-7-2">2.7.2 データはそれほど巨大でないが、膨大な場合分けが必要なもの</a></li>
+<li><a href="#sec-2-7-3">2.7.3 データがあると色気も出てくる</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-8">2.8 余談：いろいろな巨大数</a></li>
+<li><a href="#sec-2-9">2.9 組み合わせ論的数： 身近な問題</a></li>
+<li><a href="#sec-2-10">2.10 直感的な探索木の縮約</a></li>
+<li><a href="#sec-2-11">2.11 BDD/ZDDの概要</a>
+<ul>
+<li><a href="#sec-2-11-1">2.11.1 BDD</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-12">2.12 BDD/ZDDの簡約化規則</a></li>
+<li><a href="#sec-2-13">2.13 BDD簡約化の効率</a></li>
+<li><a href="#sec-2-14">2.14 さまざまな*DDファミリー</a></li>
+<li><a href="#sec-2-15">2.15 ZDDは大きな数の数え上げが特に得意</a></li>
+<li><a href="#sec-2-16">2.16 スマートグリッド配電網への応用</a></li>
+<li><a href="#sec-2-17">2.17 制約条件</a></li>
+<li><a href="#sec-2-18">2.18 配電網の標準解析モデル</a></li>
+<li><a href="#sec-2-19">2.19 配電網構成とZDDの対応</a></li>
+<li><a href="#sec-2-20">2.20 標準解析モデルへの適用結果</a></li>
+<li><a href="#sec-2-21">2.21 損失最小構成の探索</a></li>
+<li><a href="#sec-2-22">2.22 今後の展開</a></li>
+<li><a href="#sec-2-23">2.23 概要(クラス差分に基づく情報推薦機能)</a>
+<ul>
+<li><a href="#sec-2-23-1">2.23.1 協調フィルタリング</a></li>
+<li><a href="#sec-2-23-2">2.23.2 クラス差分に基づく情報推薦</a></li>
+<li><a href="#sec-2-23-3">2.23.3 情報推薦へのZDDの適用</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-24">2.24 一般的な情報推薦(協調フィルタリング)</a></li>
+<li><a href="#sec-2-25">2.25 クラス間の差異に基づく情報推薦</a></li>
+<li><a href="#sec-2-26">2.26 想定されるアプリケーション</a></li>
+<li><a href="#sec-2-27">2.27 余談</a>
+<ul>
+<li><a href="#sec-2-27-1">2.27.1 公開データ</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-28">2.28 検討中の課題</a></li>
+<li><a href="#sec-2-29">2.29 余談(クラウドソーシングサービス Lancers)</a></li>
+<li><a href="#sec-2-30">2.30 検討中の課題2</a></li>
+<li><a href="#sec-2-31">2.31 検討中の課題3 株価変動予測</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> 消費者が生み出す情報の分析 ― 行動情報からCGMの解析まで</h2>
+<div class="outline-text-2" id="text-1">
+
+<p>飯尾 淳 氏＝株式会社三菱総合研究所 先進ビジネス推進本部 主席研究員
+</p>
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> 飯尾 淳 氏＝株式会社三菱総合研究所 先進ビジネス推進本部 主席研究員</h3>
+<div class="outline-text-3" id="text-1-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> 技術のハイプサイクル</h3>
+<div class="outline-text-3" id="text-1-2">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> クラウドコンピューティング活用による価値の創出</h3>
+<div class="outline-text-3" id="text-1-3">
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 事例その1</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> 情報大航海プロジェクト</h4>
+<div class="outline-text-4" id="text-1-4-1">
+
+<ul>
+<li id="sec-1-4-1-1">行動情報マイニング<br/>
+<ul>
+<li>i-modeのアプリを配布
+</li>
+<li>位置情報を10分おきに収集
+</li>
+<li>携帯の開け閉めを補足
+</li>
+<li>ユーザーの匿名化(事前に消費傾向等の個人の属性を収集)
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> 既存手法との比較</h3>
+<div class="outline-text-3" id="text-1-5">
+
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1"><span class="section-number-4">1.5.1</span> オンラインアンケート</h4>
+<div class="outline-text-4" id="text-1-5-1">
+
+<ul>
+<li>必ずしも回答通りの行動が取れているとは限らない
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5-2" class="outline-4">
+<h4 id="sec-1-5-2"><span class="section-number-4">1.5.2</span> 交通量調査</h4>
+<div class="outline-text-4" id="text-1-5-2">
+
+<ul>
+<li>目視で属性を推定
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> 大規模データに基づく解析手法の動向と今後の課題 - 大きな数を正確に数える</h2>
+<div class="outline-text-2" id="text-2">
+
+<p>白井 康之 氏＝（独）科学技術振興機構 ERATO湊離散構造処理系プロジェクト 技術参事
+</p>
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> 問題(スマートグリッド上の配電)</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>変電所と送電線とON/OFFスイッチから構成される配電網がある。
+このとき、変電所から各家庭に電力を供給する方法は何通りあるか？
+また最適な構成を求めよ。
+</p></div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> 問題(日本地図上のパス)</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>北海道から鹿児島県までの県庁所在地をすべて到達する方法は何通りあるか？
+また二度づつ訪ずれるとしたらどうなるか？
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> 問題(情報推薦)</h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>クラスPに属する事例集合とクラスNに属する事例集合がある。
+ここでNに属する新しい事例に対して
+</p></div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> 問題(あみだくじ)</h3>
+<div class="outline-text-3" id="text-2-4">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> 列挙によるアプローチ</h3>
+<div class="outline-text-3" id="text-2-5">
+
+<p>制約充足問題ではないのか？=&gt; yes
+ただ、制約が緩く、すべてを数え上げるのは困難。
+近似解でも良いのではないのか？ =&gt; yes
+ただ近似のレベルが問題。
+</p></div>
+
+</div>
+
+<div id="outline-container-2-6" class="outline-3">
+<h3 id="sec-2-6"><span class="section-number-3">2.6</span> データの大容量化、複雑化</h3>
+<div class="outline-text-3" id="text-2-6">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-7" class="outline-3">
+<h3 id="sec-2-7"><span class="section-number-3">2.7</span> 計算時間がかかる問題の例</h3>
+<div class="outline-text-3" id="text-2-7">
+
+
+</div>
+
+<div id="outline-container-2-7-1" class="outline-4">
+<h4 id="sec-2-7-1"><span class="section-number-4">2.7.1</span> 超巨大なデータを扱う計算</h4>
+<div class="outline-text-4" id="text-2-7-1">
+
+<ul>
+<li>コンビニチェーンの購買データ
+</li>
+<li>ヒトゲノム
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-7-2" class="outline-4">
+<h4 id="sec-2-7-2"><span class="section-number-4">2.7.2</span> データはそれほど巨大でないが、膨大な場合分けが必要なもの</h4>
+<div class="outline-text-4" id="text-2-7-2">
+
+<ul>
+<li>カーナビの最短経路の探索
+</li>
+<li>囲碁、将棋のかちまけパタンの分類
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-7-3" class="outline-4">
+<h4 id="sec-2-7-3"><span class="section-number-4">2.7.3</span> データがあると色気も出てくる</h4>
+<div class="outline-text-4" id="text-2-7-3">
+
+<ul>
+<li>ゲノムの組み合わせによる遺伝情報の解析
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-8" class="outline-3">
+<h3 id="sec-2-8"><span class="section-number-3">2.8</span> 余談：いろいろな巨大数</h3>
+<div class="outline-text-3" id="text-2-8">
+
+<ul>
+<li>組み合わせ論的数
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-9" class="outline-3">
+<h3 id="sec-2-9"><span class="section-number-3">2.9</span> 組み合わせ論的数： 身近な問題</h3>
+<div class="outline-text-3" id="text-2-9">
+
+<p>クーポン券が10枚あります。1000円の商品を買いたいのですが、おつりは出ません。ぴったりの組合せはいくつあるでしょうか？
+</p></div>
+
+</div>
+
+<div id="outline-container-2-10" class="outline-3">
+<h3 id="sec-2-10"><span class="section-number-3">2.10</span> 直感的な探索木の縮約</h3>
+<div class="outline-text-3" id="text-2-10">
+
+<ul>
+<li>ノードが大きくなると削減効率が高くなる
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-11" class="outline-3">
+<h3 id="sec-2-11"><span class="section-number-3">2.11</span> BDD/ZDDの概要</h3>
+<div class="outline-text-3" id="text-2-11">
+
+<ul>
+<li>Binary Decision Diagram(BDD)は論理関数を効率的に表現する方法であり、計算手法である
+</li>
+<li>BryantがBDDを提唱したのが1986年で長期間情報科学分野での最多引用文献であった
+</li>
+<li>しかし時期が熟していなかった
+</li>
+<li>一方インターネットの普及で膨大かつスパース
+</li>
+<li>BDDの変種ZDDはスパースなデータを対象としたデータ構造で、近年開発がさかん
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-2-11-1" class="outline-4">
+<h4 id="sec-2-11-1"><span class="section-number-4">2.11.1</span> BDD</h4>
+<div class="outline-text-4" id="text-2-11-1">
+
+<ul>
+<li>論理関数を効率的に表現、計算するための手法
+</li>
+<li>共通部分集合の表現、スパースな構造の表現において圧縮効率が高い
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-12" class="outline-3">
+<h3 id="sec-2-12"><span class="section-number-3">2.12</span> BDD/ZDDの簡約化規則</h3>
+<div class="outline-text-3" id="text-2-12">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-13" class="outline-3">
+<h3 id="sec-2-13"><span class="section-number-3">2.13</span> BDD簡約化の効率</h3>
+<div class="outline-text-3" id="text-2-13">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-14" class="outline-3">
+<h3 id="sec-2-14"><span class="section-number-3">2.14</span> さまざまな*DDファミリー</h3>
+<div class="outline-text-3" id="text-2-14">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<caption></caption>
+<colgroup><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left"></th><th scope="col" class="left">BDD</th><th scope="col" class="left">ZDD</th><th scope="col" class="left">SeqBDD</th><th scope="col" class="left">πDD</th><th scope="col" class="left">&hellip;</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">概要</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">発表</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+<tr><td class="left">想定される応用</td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td><td class="left"></td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-15" class="outline-3">
+<h3 id="sec-2-15"><span class="section-number-3">2.15</span> ZDDは大きな数の数え上げが特に得意</h3>
+<div class="outline-text-3" id="text-2-15">
+
+<ul>
+<li>パス列挙問題
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-16" class="outline-3">
+<h3 id="sec-2-16"><span class="section-number-3">2.16</span> スマートグリッド配電網への応用</h3>
+<div class="outline-text-3" id="text-2-16">
+
+<ul>
+<li>近似的な方法は知られていた
+</li>
+<li>ZDDを使って網羅的に調べよう
+</li>
+<li>林泰弘教授らとの共同研究
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-17" class="outline-3">
+<h3 id="sec-2-17"><span class="section-number-3">2.17</span> 制約条件</h3>
+<div class="outline-text-3" id="text-2-17">
+
+<ul>
+<li>すべての家庭に繋ぐ
+</li>
+<li>膨大な数の構成要素
+</li>
+<li>最適性
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-18" class="outline-3">
+<h3 id="sec-2-18"><span class="section-number-3">2.18</span> 配電網の標準解析モデル</h3>
+<div class="outline-text-3" id="text-2-18">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-19" class="outline-3">
+<h3 id="sec-2-19"><span class="section-number-3">2.19</span> 配電網構成とZDDの対応</h3>
+<div class="outline-text-3" id="text-2-19">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-20" class="outline-3">
+<h3 id="sec-2-20"><span class="section-number-3">2.20</span> 標準解析モデルへの適用結果</h3>
+<div class="outline-text-3" id="text-2-20">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-21" class="outline-3">
+<h3 id="sec-2-21"><span class="section-number-3">2.21</span> 損失最小構成の探索</h3>
+<div class="outline-text-3" id="text-2-21">
+
+<ul>
+<li>最適なものでも送電損失は3%削減(火力発電0.1基分)
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-22" class="outline-3">
+<h3 id="sec-2-22"><span class="section-number-3">2.22</span> 今後の展開</h3>
+<div class="outline-text-3" id="text-2-22">
+
+<ul>
+<li>ZDDで索引化されているため運用の都合や故障対応といった追加の制約条件に対して絞り込みが用意
+</li>
+<li>あるアイテム集合が含まれるかどうか、あるいは部分アイテムを含む(含まないさく)解集合を抽出するのは簡単
+</li>
+<li>解のカウントは得意
+</li>
+<li>抽出した部分集合同士の集合演算
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-23" class="outline-3">
+<h3 id="sec-2-23"><span class="section-number-3">2.23</span> 概要(クラス差分に基づく情報推薦機能)</h3>
+<div class="outline-text-3" id="text-2-23">
+
+
+</div>
+
+<div id="outline-container-2-23-1" class="outline-4">
+<h4 id="sec-2-23-1"><span class="section-number-4">2.23.1</span> 協調フィルタリング</h4>
+<div class="outline-text-4" id="text-2-23-1">
+
+<ul>
+<li>類似したレコードから、追加すべきアイテムを推薦
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-23-2" class="outline-4">
+<h4 id="sec-2-23-2"><span class="section-number-4">2.23.2</span> クラス差分に基づく情報推薦</h4>
+<div class="outline-text-4" id="text-2-23-2">
+
+<ul>
+<li>クラス間の差異に基づき追加、削除すべきアイテムセットを推薦
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-23-3" class="outline-4">
+<h4 id="sec-2-23-3"><span class="section-number-4">2.23.3</span> 情報推薦へのZDDの適用</h4>
+<div class="outline-text-4" id="text-2-23-3">
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-24" class="outline-3">
+<h3 id="sec-2-24"><span class="section-number-3">2.24</span> 一般的な情報推薦(協調フィルタリング)</h3>
+<div class="outline-text-3" id="text-2-24">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-25" class="outline-3">
+<h3 id="sec-2-25"><span class="section-number-3">2.25</span> クラス間の差異に基づく情報推薦</h3>
+<div class="outline-text-3" id="text-2-25">
+
+<ul>
+<li>集合の過不足を推薦する
+</li>
+<li>文脈をもった推薦
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-26" class="outline-3">
+<h3 id="sec-2-26"><span class="section-number-3">2.26</span> 想定されるアプリケーション</h3>
+<div class="outline-text-3" id="text-2-26">
+
+<ul>
+<li>生活行動履歴
+</li>
+<li>検索キーワード
+</li>
+<li>レシピ
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-27" class="outline-3">
+<h3 id="sec-2-27"><span class="section-number-3">2.27</span> 余談</h3>
+<div class="outline-text-3" id="text-2-27">
+
+
+</div>
+
+<div id="outline-container-2-27-1" class="outline-4">
+<h4 id="sec-2-27-1"><span class="section-number-4">2.27.1</span> 公開データ</h4>
+<div class="outline-text-4" id="text-2-27-1">
+
+<ul>
+<li>楽天のデータ(ユーザーの行動履歴が公開されていない)
+</li>
+<li>livedoorアグルメ
+</li>
+<li>Yahoo!知恵袋
+</li>
+<li>AOL Search Log
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-28" class="outline-3">
+<h3 id="sec-2-28"><span class="section-number-3">2.28</span> 検討中の課題</h3>
+<div class="outline-text-3" id="text-2-28">
+
+<ul>
+<li>料理のレシピ
+</li>
+<li>論文データにおけるキーワード
+</li>
+<li>健康支援
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-29" class="outline-3">
+<h3 id="sec-2-29"><span class="section-number-3">2.29</span> 余談(クラウドソーシングサービス <a href="http://www.lancers.jp/">Lancers</a>)</h3>
+<div class="outline-text-3" id="text-2-29">
+
+<ul>
+<li>仕事マーケットプレイス
+</li>
+<li>あまりに素早い反応にびっくり
+</li>
+<li>質も悪くなく、コストパフォーマンス的には評価できる
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-30" class="outline-3">
+<h3 id="sec-2-30"><span class="section-number-3">2.30</span> 検討中の課題2</h3>
+<div class="outline-text-3" id="text-2-30">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-31" class="outline-3">
+<h3 id="sec-2-31"><span class="section-number-3">2.31</span> 検討中の課題3 株価変動予測</h3>
+<div class="outline-text-3" id="text-2-31">
+
+<ul>
+<li>新聞記事から株価の上下を予測
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-03-16 Fri</p>
+<p class="author">Author: Shigeaki Matsumura</p>
+<p class="creator">Org version 7.8.03 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
