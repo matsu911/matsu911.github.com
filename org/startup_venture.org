@@ -15,13 +15,7 @@
 #+XSLT: 
 #+STYLE: <link rel="stylesheet" type="text/css" href="main.css" />
 
-#+BEGIN_HTML
-<div align="right">
-<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-size="large">ツイート</a>
-<a href="https://twitter.com/matsu911" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@matsu911をフォロー</a>
-</div>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-#+END_HTML
+#+INCLUDE: "head.org"
 
 この文書は産業技術大学院大学主催の[[http://pk.aiit.ac.jp/index.php?InfoTalk%252F20120217][第39回InfoTalk]]の内容をまとめたものです。
 この講演はUstreamでも配信されており、[[http://www.ustream.tv/recorded/20501062][ここ]]から視聴できます。
