@@ -1,6 +1,8 @@
 body {
     margin: 0 auto;
     width: 80%;
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "MS ゴシック", "MS Gothic", sans-serif;
+    line-height: 1.6em;
 }
 
 pre {
