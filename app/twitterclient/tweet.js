@@ -8,7 +8,7 @@ var updateTwitterFeed = function() {
   $.ajax({
            url: strUrl,
            dataType: 'json',
-           success: function() {
+           success: function(data) {
              $page.find(".content").empty();
              $page.find(".content").html("<ul></ul>");
              var $list = $page.find(".content ul");
