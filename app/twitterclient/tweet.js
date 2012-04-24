@@ -3,9 +3,12 @@
 (function($) {
    var updateTwitterFeed = function() {
      var $page = $("#pageTweetList");
+
      var strUrl = "http://search.twitter.com/search.json?callback=?&rpp=";
-     strUrl += $page.data("rpp");
-     strUrl += "&q=from:" + $page.data("twitterUser");
+     // strUrl += $page.data("rpp");
+     // strUrl += "&q=from:" + $page.data("twitterUser");
+     strUrl += 20;
+     strUrl += "&q=from:" + "jreid01";
      alert(strUrl);
 
      $.ajax({
@@ -44,16 +47,13 @@
        $page.data("rpp", 20);
        $page.data("twitterUser", "jreid01");
        $page.data("boolUpdate", false);
-       alert($page.data("rpp"));
-       alert($page.data("twitterUser"));
-       alert($page.data("boolUpdate"));
 
        updateTwitterFeed();
        $page.bind("pageshow", function(event, ui) {
-                    if($page.datga("boolUpdate")) {
+                    // if($page.datga("boolUpdate")) {
                       updateTwitterFeed();
                       $page.data("boolUpdate", false);
-                    }
+                    // }
                   });
      },
      initDetailPage : function() {
