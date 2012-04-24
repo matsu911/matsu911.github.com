@@ -5,16 +5,13 @@
      var $page = $("#pageTweetList");
 
      var strUrl = "http://search.twitter.com/search.json?callback=?&rpp=";
-     // strUrl += $page.data("rpp");
-     // strUrl += "&q=from:" + $page.data("twitterUser");
-     strUrl += 20;
-     strUrl += "&q=from:" + "jreid01";
-     alert(strUrl);
+     strUrl += $page.data("rpp");
+     strUrl += "&q=from:" + $page.data("twitterUser");
 
      $.ajax({
               url: strUrl,
               dataType: 'json',
-              success: function(data) {
+              success: function(data, textStatus, jqXHR) {
                 $page.find(".content").empty();
                 $page.find(".content").html("<ul></ul>");
                 var $list = $page.find(".content ul");
@@ -25,7 +22,7 @@
                   strHtml += '</a></li>\n';
                   var tweet = $(strHtml);
                   $list.append(tweet);
-                  $list.find("a:list").data("tweetJSON", JSON.stringify(data.results[i]));
+                  $list.find("a:last").data("tweetJSON", JSON.stringify(data.results[i]));
 
                 }
                 $list.listview();
@@ -50,10 +47,10 @@
 
        updateTwitterFeed();
        $page.bind("pageshow", function(event, ui) {
-                    // if($page.datga("boolUpdate")) {
+                    if($page.data("boolUpdate")) {
                       updateTwitterFeed();
                       $page.data("boolUpdate", false);
-                    // }
+                    }
                   });
      },
      initDetailPage : function() {
