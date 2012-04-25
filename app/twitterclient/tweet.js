@@ -32,7 +32,11 @@
                                       });
               },
               error: function() {
-                alert("エラーが発生しました。リトライしてください");
+                var $page = $("#pageError .content");
+                var strHtml = "<h3>更新に失敗しました</h3>";
+                strHtml += "<p>Twitterフィードを更新できませんでした。リトライしてください</p>";
+                $page.html(strHtml);
+                $("#show-error-page").click();
               }
             });
    };
@@ -54,8 +58,32 @@
                   });
      },
      initDetailPage : function() {
+       var $page = $("#pageTweetDetail");
+       $page.bind("pageshow", function(event, ui) {
+                    var objTweet = JSON.parse($page.data("tweetJSON"));
+                    var strHtml = '<p><img src="' + objTweet.profile_image_url + '">';
+                    strHtml += objTweet.text + '</p>';
+                    $page.find(".container-tweet").html(strHtml);
+                  });
      },
      initSettigsPage : function() {
+       var $page = $("#pageSettings");
+       var $datapage = $("#pageTweetList");
+       $page.find("#username").change(function(){
+                                        var newvVal = $(this).val();
+                                        $datapage.data("twitterUser", newvVal);
+                                        $datapage.data("boolUpdate", true);
+                                      });
+       $page.bind("pagebeforehide", function(event, ui){
+                    var sliderValue = $page.find("#slider").val();
+                    if(parseInt(sliderValue, 10) != paseIn($datapage.data("rpp"), 10)) {
+                      $datapage.data("rpp", sliderValue);
+                      $datapage.data("boolUpdate", true);
+                    }});
+       $page.bind("pageshow", function(event, ui) {
+                    $page.find("#slider").val($datapage.data("rpp")).slider("refresh");
+                    $page.find("#username").val($datapage.data("twitterUser"));
+                  });
      },
      initAll : function() {
        $().initApp("initMainPage");
