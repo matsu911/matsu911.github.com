@@ -2,6 +2,7 @@
 
 (function($) {
    var updateTwitterFeed = function() {
+     $.mobile.showPageLoadingMsg();
      var $page = $("#pageTweetList");
 
      var strUrl = "http://search.twitter.com/search.json?callback=?&rpp=";
@@ -13,6 +14,16 @@
               dataType: 'json',
               success: function(data, textStatus, jqXHR) {
                 $page.find(".content").empty();
+                if(data.results.length == 0) {
+                  var strHtml = "<h3>ツイートがありません</h3>";
+                  strHtml += "<p>ユーザー" + $page.data("twitterUser");
+                  strHtml += "のツイートは存在しません";
+                  $("#pageError .content").html(strHtml);
+                  $("#show-error-page").click();
+                  $page.find(".content").html("<h3>ツイートがありません</h3>");
+                  $.mobile.hidePageLoadingMsg();
+                  return;
+                }
                 $page.find(".content").html("<ul></ul>");
                 var $list = $page.find(".content ul");
                 for(var i = 0; i < data.results.length; i++) {
@@ -26,6 +37,7 @@
 
                 }
                 $list.listview();
+                $.mobile.hidePageLoadingMsg();
                 $list.find("a").click(function() {
                                         var $this = $(this);
                                         $("#pageTweetDetail").data("tweetJSON", $this.data("tweetJSON"));
@@ -37,6 +49,7 @@
                 strHtml += "<p>Twitterフィードを更新できませんでした。リトライしてください</p>";
                 $page.html(strHtml);
                 $("#show-error-page").click();
+                $.mobile.hidePageLoadingMsg();
               }
             });
    };
