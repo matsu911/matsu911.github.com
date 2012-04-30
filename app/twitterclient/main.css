@@ -1,0 +1,10 @@
+.ui-li .ui-btn-text a.ui-link-inherit {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.ui-li-thumb {
+    margin-top: 10px;
+    margin-left: 10px;
+}

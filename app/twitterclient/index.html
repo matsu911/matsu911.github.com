@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>twitter client</title>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.css"/>
+    <link rel="stylesheet" href="main.css"/>
+    <script src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.0/jquery.mobile-1.0.min.js"></script>
+    <script src="https://raw.github.com/douglascrockford/JSON-js/master/json2.js"></script>
+    <script src="tweet.js"></script>
+  </head>
+  <body>
+    <section id="pageTweetList" data-role="page">
+      <header data-role="header" data-position="fixed">
+	<h1>jqmTweet</h1>
+	<a href="#pageSettings"
+	   data-transition="flip"
+	   data-role="button"
+	   data-icon="gear"
+	   data-iconpos="notext"
+	   class="ui-btn-right">設定</a>
+      </header>
+      <div class="content" data-role="content">
+	<ul data-role="listview">
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	  <li><a href="#pageTweetDetail">ツイート!</a></li>
+	</ul>
+      </div>
+      <footer data-role="footer" data-position="fixed">
+	<h1>O'Reilly <i>jQuery Mobile</i></h1>
+      </footer>
+    </section>
+    <section id="pageSettings" data-role="page">
+      <header data-role="header"><h1>jqmTweet</h1></header>
+      <div class="content" data-role="content">
+	<h3>設定</h3>
+	<div data-role="fieldcontain">
+	  <label for="username">Twitterユーザ名：</label>
+	  <input type="text" id="username" value=""/>
+	</div>
+	<div data-role="fieldcontain">
+	  <label for="slider">表示させるツイート数：</label>
+	  <input type="range" id="slider" name="slider" min="5" max="50" value=""/>
+	</div>
+      </div>
+      <footer data-role="footer" data-position="fixed">
+	<h1>O'Reilly <i>jQuery Mobile</i></h1>
+      </footer>
+    </section>
+    <section id="pageTweetDetail" data-iconpos="page">
+      <header data-role="header"><h1>jqmTweet</h1></header>
+      <div class="content" data-role="content">
+	<div class="container-tweet">
+	  <p>ツイート!</p>
+	</div>
+      </div>
+      <footer data-role="footer" data-position="fixed">
+	<h1>O'Reilly <i>jQuery Mobile</i></h1>
+      </footer>
+    </section>
+    <section id="pageError" data-iconpos="page" data-theme="e">
+      <header data-role="header"><h1>jqmTweet</h1></header>
+      <div class="content" data-role="content">
+      </div>
+      <footer data-role="footer" data-position="fixed">
+	<h1>O'Reilly <i>jQuery Mobile</i></h1>
+      </footer>
+    </section>
+    <script>
+      jQuery().initApp();
+    </script>
+  </body>
+</html>
