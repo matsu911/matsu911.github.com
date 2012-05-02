@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+lang="en" xml:lang="en">
+<head>
+<title>キャパシティプランニング</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-05-03 Thu"/>
+<meta name="author" content="Matsumura Shigeaki"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="main.css" />
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
+ <a accesskey="h" href="http://matsu911.github.com"> UP </a>
+ |
+ <a accesskey="H" href="http://matsu911.github.com"> HOME </a>
+</div>
+
+<h1 class="title">キャパシティプランニング</h1>
+
+
+<script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-12269114-3']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[1]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+<div align="right">
+<a href="https://twitter.com/share" class="twitter-share-button" data-lang="ja" data-size="large">ツイート</a>
+<a href="https://twitter.com/matsu911" class="twitter-follow-button" data-show-count="false" data-lang="ja" data-size="large">@matsu911をフォロー</a>
+</div>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[1];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 キャパシティツール </a>
+<ul>
+<li><a href="#sec-1.1">1.1 モニタリング </a>
+<ul>
+<li><a href="#sec-1.1.1">1.1.1 指標収集およびイベント通知システム </a></li>
+<li><a href="#sec-1.1.2">1.1.2 その場限りの計測およびグラフ化ツール </a></li>
+</ul>
+</li>
+<li><a href="#sec-1.2">1.2 配置ツール </a>
+<ul>
+<li><a href="#sec-1.2.1">1.2.1 自動OSインストール </a></li>
+<li><a href="#sec-1.2.2">1.2.2 構成管理 </a></li>
+<li><a href="#sec-1.2.3">1.2.3 クラスタ管理 </a></li>
+<li><a href="#sec-1.2.4">1.2.4 資産管理 </a></li>
+<li><a href="#sec-1.2.5">1.2.5 動向分析と曲線当てはめ </a></li>
+<li><a href="#sec-1.2.6">1.2.6 キャパシティプランニングにおける待ち行列理論と数学に関する書籍 </a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> キャパシティツール </h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1.1" class="outline-3">
+<h3 id="sec-1.1"><span class="section-number-3">1.1</span> モニタリング </h3>
+<div class="outline-text-3" id="text-1.1">
+
+
+</div>
+
+<div id="outline-container-1.1.1" class="outline-4">
+<h4 id="sec-1.1.1"><span class="section-number-4">1.1.1</span> 指標収集およびイベント通知システム </h4>
+<div class="outline-text-4" id="text-1.1.1">
+
+<ul>
+<li>
+Ganglia, <a href="http://ganglia.info/">http://ganglia.info/</a>
+</li>
+<li>
+Nagios, <a href="http://nagios.org/">http://nagios.org/</a>
+</li>
+<li>
+Cacti, <a href="http://cacti.net/">http://cacti.net/</a>
+</li>
+<li>
+ZABBIX, <a href="http://zabbix.com/">http://zabbix.com/</a>
+</li>
+<li>
+Munin, <a href="http://munin.projects.linpro.no/">http://munin.projects.linpro.no/</a>
+</li>
+<li>
+Zenoss, <a href="http://zenoss.com/">http://zenoss.com/</a>
+</li>
+<li>
+OpenNMS, <a href="http://opennms.org/">http://opennms.org/</a>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.1.2" class="outline-4">
+<h4 id="sec-1.1.2"><span class="section-number-4">1.1.2</span> その場限りの計測およびグラフ化ツール </h4>
+<div class="outline-text-4" id="text-1.1.2">
+
+<ul>
+<li>
+RRDtool, <a href="http://oss.oetiker.ch/rrdtool/">http://oss.oetiker.ch/rrdtool/</a>
+</li>
+<li>
+Collectd, <a href="http://collectd.org/">http://collectd.org/</a>
+</li>
+<li>
+Rrd2csv, <a href="http://opennms.org/index.php/Rrd2csv">http://opennms.org/index.php/Rrd2csv</a>
+</li>
+<li>
+Dstat, <a href="http://dag.wieers.com/home-made/dstat/">http://dag.wieers.com/home-made/dstat/</a>
+</li>
+<li>
+GraphClick, <a href="http://arizona-software.ch/graphclick/">http://arizona-software.ch/graphclick/</a>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1.2" class="outline-3">
+<h3 id="sec-1.2"><span class="section-number-3">1.2</span> 配置ツール </h3>
+<div class="outline-text-3" id="text-1.2">
+
+
+</div>
+
+<div id="outline-container-1.2.1" class="outline-4">
+<h4 id="sec-1.2.1"><span class="section-number-4">1.2.1</span> 自動OSインストール </h4>
+<div class="outline-text-4" id="text-1.2.1">
+
+<ul>
+<li>
+SystemImager, <a href="http://sf.net/projects/systemimager/">http://sf.net/projects/systemimager/</a>
+</li>
+<li>
+FAI, <a href="http://www.infomatik.uni-koeln.de/fai/">http://www.infomatik.uni-koeln.de/fai/</a>
+</li>
+<li>
+KickStart, <a href="http://fedoraproject.org/wiki/Anaconda/Kickstart/">http://fedoraproject.org/wiki/Anaconda/Kickstart/</a>
+</li>
+<li>
+Cobbler, <a href="https://fedorahosted.org/cobbler/">https://fedorahosted.org/cobbler/</a>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.2.2" class="outline-4">
+<h4 id="sec-1.2.2"><span class="section-number-4">1.2.2</span> 構成管理 </h4>
+<div class="outline-text-4" id="text-1.2.2">
+
+<ul>
+<li>
+Puppet, <a href="http://puppet.reductivelabs.com">http://puppet.reductivelabs.com</a>
+</li>
+<li>
+Cfengine, <a href="http://cfengine.org">http://cfengine.org</a>
+</li>
+<li>
+Bcfg2, <a href="http://trac.mcs.anl.gov/projects/bcfg2">http://trac.mcs.anl.gov/projects/bcfg2</a>
+</li>
+<li>
+LCFG, <a href="http://www.lcfg.org">http://www.lcfg.org</a>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.2.3" class="outline-4">
+<h4 id="sec-1.2.3"><span class="section-number-4">1.2.3</span> クラスタ管理 </h4>
+<div class="outline-text-4" id="text-1.2.3">
+
+<ul>
+<li>
+Capistrano, <a href="http://capify.org">http://capify.org</a>
+</li>
+<li>
+Dsh, <a href="http://freshmeat.net/project/dsh/">http://freshmeat.net/project/dsh/</a>
+</li>
+<li>
+Fabric, <a href="http://savannah.nongnu.org/projects/fab">http://savannah.nongnu.org/projects/fab</a>
+</li>
+<li>
+Func, <a href="https://fedorahosted.org/func/">https://fedorahosted.org/func/</a>
+</li>
+<li>
+xCAT, <a href="http://xcat.sf.net/">http://xcat.sf.net/</a>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.2.4" class="outline-4">
+<h4 id="sec-1.2.4"><span class="section-number-4">1.2.4</span> 資産管理 </h4>
+<div class="outline-text-4" id="text-1.2.4">
+
+<ul>
+<li>
+iClassify, <a href="https://wiki.hjksolutions.com/desplay/IC">https://wiki.hjksolutions.com/desplay/IC</a>
+</li>
+<li>
+OSC Inventory NG, <a href="http://oscinventory-ng.org">http://oscinventory-ng.org</a>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.2.5" class="outline-4">
+<h4 id="sec-1.2.5"><span class="section-number-4">1.2.5</span> 動向分析と曲線当てはめ </h4>
+<div class="outline-text-4" id="text-1.2.5">
+
+<ul>
+<li>
+Fityk, <a href="http://unipress.waw.pl/fityk/">http://unipress.waw.pl/fityk/</a>
+</li>
+<li>
+SciPy, <a href="http://scipy.org">http://scipy.org</a>
+</li>
+<li>
+R, <a href="http://www.r-project.org">http://www.r-project.org</a>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1.2.6" class="outline-4">
+<h4 id="sec-1.2.6"><span class="section-number-4">1.2.6</span> キャパシティプランニングにおける待ち行列理論と数学に関する書籍 </h4>
+<div class="outline-text-4" id="text-1.2.6">
+
+<ul>
+<li>
+Gunther, Neil「Guerilla Capacity Planning」(Springer, 2006)
+</li>
+<li>
+Menasce, Daniel A., Virgilio A. F. Almeida 「Capacity Planning For Web Services: Metrics, Models and Methods」(Prentice Hall, 2001)
+</li>
+<li>
+Menasce, Daniel A., etc 「Performance By Design」(Prentice Hall, 2004)
+</li>
+<li>
+Menasce, Daniel A., Virgilio A. F. Almeida 「Scaling for E-business」(Prentice Hall, 2000)
+
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+</div>
+<div id="footnotes">
+<h2 class="footnotes">Footnotes: </h2>
+<div id="text-footnotes">
+<p class="footnote"><sup><a class="footnum" name="fn.1" href="#fnr.1">1</a></sup> FOOTNOTE DEFINITION NOT FOUND: 0
+</p>
+</div>
+</div>
+<div id="postamble">
+<p class="author"> Author: Matsumura Shigeaki
+<a href="mailto:matsu911@Matsumura-Shigeaki-no-Mac-mini.local">&lt;matsu911@Matsumura-Shigeaki-no-Mac-mini.local&gt;</a>
+</p>
+<p class="date"> Date: 2012-05-03 Thu</p>
+<p class="creator">HTML generated by org-mode 6.33x in emacs 23</p>
+</div>
+</div>
+</body>
+</html>
