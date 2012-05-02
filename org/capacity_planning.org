@@ -1,6 +1,6 @@
 #+TITLE:     キャパシティプランニング
 #+AUTHOR:    Matsumura Shigeaki
-#+EMAIL:     matsu911@Matsumura-Shigeaki-no-Mac-mini.local
+#+EMAIL:     matsu911@gmail.com
 #+DATE:      2012-05-03 Thu
 #+DESCRIPTION: 
 #+KEYWORDS: 
