@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="keywords" content="Shigeaki Matsumura,Python,Common Lisp,Lua,LD_PRELOAD,Emacs,Waf">
     <title>Shigeaki Matsumura</title>
-    <link href="index.css" madia="screen" rel="stylesheet" type="text/css"/>
+    <link href="css/bootstrap.min.css" madia="screen" rel="stylesheet" type="text/css"/>
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-12269114-3']);
@@ -18,60 +18,65 @@
     </script>
   </head>
   <body>
-    <header>
-      <h1>Shigeaki Matsumura</h1>
-    </header>
-    <section>
-      <h2>Projects</h2>
-      <article>
-	<ul>
-	  <li><a href="https://github.com/matsu911/code_metrics">Code Metrics Tool</a></li>
-	  <li><a href="https://github.com/matsu911/waf_book_ja">The Waf Book Japanese Translation</a></li>
-	  <li><a href="https://github.com/matsu911/swank-lua">SLIME swank server for Lua</a></li>
-	  <li><a href="https://github.com/matsu911/spim-mode">Emacs major mode for SPIM</a></li>
-	  <li><a href="https://github.com/matsu911/cl-finance">Common Lisp for finance</a></li>
-	  <li><a href="https://github.com/matsu911/pyQ">pyQ: Python Q Binding</a></li>
-	  <li><a href="https://github.com/matsu911/pyELF">pyELF: Python ELF Binding</a></li>
-	</ul>
-      </article>
-    </section>
-    <section>
-      <h2>Forked Projects</h2>
-      <article>
-	<ul>
-	  <li><a href="https://github.com/matsu911/swank-clojure">SLIME swank server for Clojure</a></li>
-	  <li><a href="https://github.com/matsu911/org-googlecl">Org Google CL</a></li>
-	  <li><a href="https://github.com/matsu911/luabind">luabind: C++ binding for Lua</a></li>
-	</ul>
-      </article>
-    </section>
-    <section>
-      <h2>Apps</h2>
-      <article>
-	<ul>
-	  <li><a href="http://matsu911.github.com/app/blackscholes/">Black Scholes Calculator</a></li>
-	  <li><a href="http://nailnavi.heroku.com">ネイルナビ: 現在地からネイルサロンを検索</a></li>
-	</ul>
-      </article>
-    </section>
-    <section>
-      <h2>Documents</h2>
-      <article>
-	<ul>
-	  <li><a href="http://matsu911.github.com/org/ld_preload_c.html">LD_PRELOADを使ったテスト(C言語編)</a></li>
-	  <li><a href="http://matsu911.github.com/waf_book_ja/">「The Waf Book」日本語訳</a></li>
-	  <li><a href="http://matsu911.github.com/org/startup_venture.html">スタートアップベンチャー</a></li>
-	  <li><a href="http://matsu911.github.com/org/infomation_analysis.html">情報の解析</a></li>
-	  <li><a href="http://matsu911.github.com/org/TPP.html">90分解説 TPP入門</a></li>
-	  <li><a href="http://matsu911.github.com/org/quants_trading.html">クオンツトレーディング入門</a></li>
-	  <li><a href="http://matsu911.github.com/org/free_agent.html">フリーエージェント社会の到来</a></li>
-	  <li><a href="http://matsu911.github.com/org/capacity_planning.html">キャパシティプランニング</a></li>
-	  <li><a href="http://matsu911.github.com/org/buyout_strategy.html">バイアウトからの逆算、誰があなたの会社を買うか？</a></li>
-	  <li><a href="http://matsu911.github.com/org/startup_monetize_seminor.html">ITスタートアップのためのマネタイズセミナー</a></li>
-	  <li><a href="http://matsu911.github.com/org/design_rules.html">デザインルールズ</a></li>
-	  <li><a href="http://matsu911.github.com/org/big_data.html">ビッグデータの衝撃</a></li>
-	</ul>
-      </article>
-    </section>
+    <div class='container'>
+      <header>
+        <h1>Shigeaki Matsumura</h1>
+      </header>
+      <div class='row'>
+        <section class='span3'>
+          <h2>Projects</h2>
+          <article>
+	    <ul>
+	      <li><a href="https://github.com/matsu911/code_metrics">Code Metrics Tool</a></li>
+	      <li><a href="https://github.com/matsu911/waf_book_ja">The Waf Book Japanese Translation</a></li>
+	      <li><a href="https://github.com/matsu911/swank-lua">SLIME swank server for Lua</a></li>
+	      <li><a href="https://github.com/matsu911/spim-mode">Emacs major mode for SPIM</a></li>
+	      <li><a href="https://github.com/matsu911/cl-finance">Common Lisp for finance</a></li>
+	      <li><a href="https://github.com/matsu911/pyQ">pyQ: Python Q Binding</a></li>
+	      <li><a href="https://github.com/matsu911/pyELF">pyELF: Python ELF Binding</a></li>
+	      <li><a href="https://github.com/matsu911/jvm-on-cl">JVM on CL: Java VM on Common Lisp</a></li>
+	    </ul>
+          </article>
+        </section>
+        <section  class='span3'>
+          <h2>Forked Projects</h2>
+          <article>
+	    <ul>
+	      <li><a href="https://github.com/matsu911/swank-clojure">SLIME swank server for Clojure</a></li>
+	      <li><a href="https://github.com/matsu911/org-googlecl">Org Google CL</a></li>
+	      <li><a href="https://github.com/matsu911/luabind">luabind: C++ binding for Lua</a></li>
+	    </ul>
+          </article>
+        </section>
+        <section  class='span3'>
+          <h2>Apps</h2>
+          <article>
+	    <ul>
+	      <li><a href="app/blackscholes/">Black Scholes Calculator</a></li>
+	      <li><a href="http://nailnavi.heroku.com">ネイルナビ: 現在地からネイルサロンを検索</a></li>
+	    </ul>
+          </article>
+        </section>
+        <section  class='span3'>
+          <h2>Documents</h2>
+          <article>
+	    <ul>
+	      <li><a href="org/ld_preload_c.html">LD_PRELOADを使ったテスト(C言語編)</a></li>
+	      <li><a href="waf_book_ja/">「The Waf Book」日本語訳</a></li>
+	      <li><a href="org/startup_venture.html">スタートアップベンチャー</a></li>
+	      <li><a href="org/infomation_analysis.html">情報の解析</a></li>
+	      <li><a href="org/TPP.html">90分解説 TPP入門</a></li>
+	      <li><a href="org/quants_trading.html">クオンツトレーディング入門</a></li>
+	      <li><a href="org/free_agent.html">フリーエージェント社会の到来</a></li>
+	      <li><a href="org/capacity_planning.html">キャパシティプランニング</a></li>
+	      <li><a href="org/buyout_strategy.html">バイアウトからの逆算、誰があなたの会社を買うか？</a></li>
+	      <li><a href="org/startup_monetize_seminor.html">ITスタートアップのためのマネタイズセミナー</a></li>
+	      <li><a href="org/design_rules.html">デザインルールズ</a></li>
+	      <li><a href="org/big_data.html">ビッグデータの衝撃</a></li>
+	    </ul>
+          </article>
+        </section>
+      </div>
+    </div>
   </body>
 </html>
