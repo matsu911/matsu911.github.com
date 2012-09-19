@@ -1,0 +1,62 @@
+---
+layout: post
+title: キャパシティプランニング
+category: Book
+tags: [Book]
+---
+{% include JB/setup %}
+
+# キャパシティツール
+## モニタリング
+#### 指標収集およびイベント通知システム
++ [Ganglia](http://ganglia.info/)
++ [Nagios](http://nagios.org/)
++ [Cacti](http://cacti.net/)
++ [ZABBIX](http://zabbix.com/)
++ [Munin](http://munin.projects.linpro.no/)
++ [Zenoss](http://zenoss.com/)
++ [OpenNMS](http://opennms.org/)
+
+### その場限りの計測およびグラフ化ツール
++ [RRDtool](http://oss.oetiker.ch/rrdtool/)
++ [Collectd](http://collectd.org/)
++ [Rrd2csv](http://opennms.org/index.php/Rrd2csv)
++ [Dstat](http://dag.wieers.com/home-made/dstat/)
++ [GraphClick](http://arizona-software.ch/graphclick/)
+
+## 配置ツール
+
+### 自動OSインストール
+
++ [SystemImager](http://sf.net/projects/systemimager/)
++ [FAI](http://www.infomatik.uni-koeln.de/fai/)
++ [KickStart](http://fedoraproject.org/wiki/Anaconda/Kickstart/)
++ [Cobbler](https://fedorahosted.org/cobbler/)
+
+### 構成管理
++ [Puppet](http://puppet.reductivelabs.com)
++ [Cfengine](http://cfengine.org)
++ [Bcfg2](http://trac.mcs.anl.gov/projects/bcfg2)
++ [LCFG](http://www.lcfg.org)
+
+### クラスタ管理
++ [Capistrano](http://capify.org)
++ [Dsh](http://freshmeat.net/project/dsh/)
++ [Fabric](http://savannah.nongnu.org/projects/fab)
++ [Func](https://fedorahosted.org/func/)
++ [xCAT](http://xcat.sf.net/)
+
+### 資産管理
++ [iClassify](https://wiki.hjksolutions.com/desplay/IC)
++ [OSC Inventory NG](http://oscinventory-ng.org)
+
+### 動向分析と曲線当てはめ
++ [Fityk](http://unipress.waw.pl/fityk/)
++ [SciPy](http://scipy.org)
++ [R](http://www.r-project.org)
+
+### キャパシティプランニングにおける待ち行列理論と数学に関する書籍
++ Gunther, Neil「Guerilla Capacity Planning」(Springer, 2006)
++ Menasce, Daniel A., Virgilio A. F. Almeida 「Capacity Planning For Web Services: Metrics, Models and Methods」(Prentice Hall, 2001)
++ Menasce, Daniel A., etc 「Performance By Design」(Prentice Hall, 2004)
++ Menasce, Daniel A., Virgilio A. F. Almeida 「Scaling for E-business」(Prentice Hall, 2000)
