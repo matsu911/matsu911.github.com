@@ -1,8 +1,8 @@
 ---
 layout: post
 title: LD_PRELOADを使ったテスト(C言語編)
-category: LD_PRELOAD
-tags: [LD_PRELOAD, testing]
+category: Testing
+tags: [LD_PRELOAD, Testing]
 ---
 {% include JB/setup %}
 
