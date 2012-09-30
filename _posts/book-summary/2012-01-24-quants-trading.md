@@ -3,6 +3,7 @@ layout: post
 title: クオンツトレーディング入門
 category: Book
 tags: [Book]
+keywords: [クオンツトレーディング]
 ---
 {% include JB/setup %}
 

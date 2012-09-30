@@ -3,6 +3,7 @@ layout: post
 title: キャパシティプランニング
 category: Book
 tags: [Book]
+keywords: [キャパシティプランニング]
 ---
 {% include JB/setup %}
 

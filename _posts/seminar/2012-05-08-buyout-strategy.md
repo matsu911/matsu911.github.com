@@ -3,6 +3,7 @@ layout: post
 title: バイアウトからの逆算、誰があなたの会社を買うか？
 category: Seminar
 tags: [Seminar, Buy Out, Startup]
+keywords: [バイアウト]
 ---
 {% include JB/setup %}
 

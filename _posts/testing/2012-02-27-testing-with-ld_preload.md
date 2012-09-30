@@ -3,6 +3,7 @@ layout: post
 title: LD_PRELOADを使ったテスト(C言語編)
 category: Testing
 tags: [LD_PRELOAD, Testing]
+keywords: [LD_PRELOAD,テスト,APIスプーフィング,API Spoofing]
 ---
 {% include JB/setup %}
 

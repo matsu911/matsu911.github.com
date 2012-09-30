@@ -3,6 +3,7 @@ layout: post
 title: リーダブルコード
 category: Book
 tags: [Book]
+keywords: [リーダブルコード]
 ---
 {% include JB/setup %}
 
