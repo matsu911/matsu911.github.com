@@ -1,6 +1,7 @@
 ---
 layout: post
 title: LD_PRELOADを使ったテスト(C言語編)
+description: "LD_PRELOADを使ってOSやライブラリが提供する関数やAPIをフックし、テストに応用する方法を示します"
 category: Testing
 tags: [LD_PRELOAD, Testing]
 keywords: [LD_PRELOAD,テスト,APIスプーフィング,API Spoofing]
