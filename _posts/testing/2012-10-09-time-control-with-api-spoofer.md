@@ -66,3 +66,34 @@ $ which date
 {% endhighlight %}
 
 /bin/dateがdateコマンドのパスであることがわかります。
+次に、スプーフィングを行うためのコードテンプレートを生成します。
+
+{% highlight console %}
+$ api_spoofer /bin/date > date_spoofer.c
+{% endhighlight %}
+
+そして、OSが提供する時刻を返すAPIであるclock_gettimeを次のように変更します。
+
+{% highlight c %}
+int clock_gettime (clockid_t __clock_id, struct timespec *__tp)
+{
+  __tp->tv_sec  = 0;
+  __tp->tv_nsec = 0;
+  return 0;
+}
+{% endhighlight %}
+
+編集後、date_spoofer.cをコンパイルし、共有ライブラリを作成します。
+
+{% highlight console %}
+$ gcc -fPIC -shared date_spoofer.c -o date_spoofer.so
+{% endhighlight %}
+
+この作成したdate_spoofer.soを環境変数LD_PRELOADに設定することで、clock_gettimeを上書きすることができます。
+つまり、clock_gettimeを上書きすることで、任意の設定した時刻をアプリケーション側に認識させることができます。
+
+{% highlight console %}
+$ LD_PRELOAD=date_spoofer.so date
+1970年  1月  1日 木曜日 09:00:00 JST
+{% endhighlight %}
+
