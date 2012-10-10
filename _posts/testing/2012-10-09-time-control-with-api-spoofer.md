@@ -72,7 +72,8 @@ $ which date
 $ api_spoofer /bin/date > date_spoofer.c
 {% endhighlight %}
 
-そして、OSが提供する時刻を返すAPIであるclock_gettimeを次のように変更します。
+dateコマンドはOSが提供する時刻を返すAPIであるclock_gettimeを呼び出すことで、OSから時刻を取得し、表示します。
+clock_gettimeを次のように変更します。
 
 {% highlight c %}
 int clock_gettime (clockid_t __clock_id, struct timespec *__tp)
