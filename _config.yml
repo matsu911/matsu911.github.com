@@ -78,6 +78,14 @@ JB :
   categories_path : /categories.html
   tags_path : /tags.html
 
+  likes :
+    providers : ["facebook", "twitter"]
+    facebook :
+      appid : 319090544825222
+      width : 450
+    twitter :
+      size : small
+      lang : en
   # Settings for comments helper
   # Set 'provider' to the comment provider you want to use.
   # Set 'provider' to false to turn commenting off globally.

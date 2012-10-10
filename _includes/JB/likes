@@ -1,0 +1,10 @@
+{% if site.JB.likes.providers %}
+  {% for provider in site.JB.likes.providers %}
+    {% case provider %}
+    {% when "facebook" %}
+      {% include JB/likes-providers/facebook %}
+    {% when "twitter" %}
+      {% include JB/likes-providers/twitter %}
+    {% endcase %}
+  {% endfor %}
+{% endif %}
