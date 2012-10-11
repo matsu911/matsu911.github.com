@@ -4,7 +4,7 @@ title: "API Spooferによる時刻の制御"
 description: "APIをスプーフィングするツールAPI Spooferを使って、アプリケーションの時刻を制御します"
 category: Testing
 tags: [LD_PRELOAD, API Spoofer]
-keywords: [LD_PRELOAD,テスト,APIスプーフィング,API Spoofer]
+keywords: [LD_PRELOAD,テスト,APIスプーフィング,API Spoofer,clock_gettime,時刻の制御]
 ---
 {% include JB/setup %}
 
