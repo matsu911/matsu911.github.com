@@ -87,7 +87,7 @@ int clock_gettime (clockid_t __clock_id, struct timespec *__tp)
 編集後、date_spoofer.cをコンパイルし、共有ライブラリを作成します。
 
 {% highlight console %}
-$ gcc -fPIC -shared date_spoofer.c -o date_spoofer.so
+$ gcc -ldl -fPIC -shared date_spoofer.c -o date_spoofer.so
 {% endhighlight %}
 
 この作成したdate_spoofer.soを環境変数LD_PRELOADに設定することで、clock_gettimeを上書きすることができます。
