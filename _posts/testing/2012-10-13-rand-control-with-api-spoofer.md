@@ -21,9 +21,42 @@ keywords: [LD_PRELOAD,テスト,APIスプーフィング,API Spoofer,乱数の�
 ソースは次のようになります。
 
 {% highlight c %}
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
+
+int main(void)
+{
+  srand((unsigned) time(NULL));
+
+  printf("%d\n", rand());
+  printf("%d\n", rand());
+  printf("%d\n", rand());
+
+  return 0;
+}
 {% endhighlight %}
 
 このコードをコンパイルし、何度か実行してみます。
 
 {% highlight console %}
+$ gcc test.c
+$ ./a.out 
+1913766507
+1688256889
+1376930303
+$ ./a.out 
+1611767276
+430798400
+957049420
+$ ./a.out 
+230746457
+238110194
+1602118775
 {% endhighlight %}
+
+毎回実行結果が違うことが確認できます。
+
+# API Spooferを使って乱数を制御する
+
+
