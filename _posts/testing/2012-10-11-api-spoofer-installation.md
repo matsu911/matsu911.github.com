@@ -26,7 +26,7 @@ Python 2.7.3
 
 {% highlight console %}
 $ curl https://nodeload.github.com/matsu911/api_spoofer/tarball/v0.0.3 | tar xvzf -
-$ cd matsu911-api_spoofer-c97e315/
+$ cd matsu911-api_spoofer-3fe83d4/
 $ python setup.py install
 {% endhighlight %}
 
