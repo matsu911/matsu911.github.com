@@ -23,11 +23,13 @@ Legacy Code Consultant especially for C/C++.
 + [SLIME swank server for Clojure](https://github.com/matsu911/swank-clojure)
 + [Org Google CL](https://github.com/matsu911/org-googlecl)
 + [luabind: C++ binding for Lua](https://github.com/matsu911/luabind)
++ [clojure-mode](https://github.com/matsu911/clojure-mode)
 
 ## Web Applications
 + [Black Scholes Calculator](app/blackscholes/)
 + [ネイルナビ: 現在地からネイルサロンを検索](http://nailnavi.heroku.com)
 + [姓名判断横断検索](http://seimeihandan.heroku.com)
++ [品川区立図書館新刊一覧](http://library-new-books.herokuapp.com)
 
 ## Posts
 
