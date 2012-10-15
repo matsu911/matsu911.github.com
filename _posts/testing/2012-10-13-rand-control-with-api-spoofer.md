@@ -4,7 +4,7 @@ title: "API Spooferによる乱数の制御"
 description: "APIをスプーフィングするツールAPI Spooferを使って、乱数を制御します"
 category: Testing
 tags: [LD_PRELOAD, API Spoofer]
-keywords: [LD_PRELOAD,テスト,APIスプーフィング,API Spoofer,乱数の制御]
+keywords: [LD_PRELOAD,テスト,APIスプーフィング,API Spoofer,乱数の制御,API,偽装]
 ---
 {% include JB/setup %}
 

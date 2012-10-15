@@ -4,7 +4,7 @@ title: "API Spooferのインストール"
 description: "APIのインストール方法について解説します"
 category: Testing
 tags: [LD_PRELOAD, API Spoofer]
-keywords: [LD_PRELOAD,テスト,APIスプーフィング,API Spoofer,インストール]
+keywords: [LD_PRELOAD,テスト,APIスプーフィング,API Spoofer,インストール,API,偽装]
 ---
 {% include JB/setup %}
 
