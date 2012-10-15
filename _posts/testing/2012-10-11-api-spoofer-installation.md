@@ -21,12 +21,12 @@ $ python -V
 Python 2.7.3
 {% endhighlight %}
 
-[API Spoofer](http://github.com/matsu911/api_spoofer)の[v0.0.3](https://github.com/matsu911/api_spoofer/zipball/v0.0.3)をダウンロードします。
+[API Spoofer](http://github.com/matsu911/api_spoofer)の[v0.0.4](https://github.com/matsu911/api_spoofer/zipball/v0.0.4)をダウンロードします。
 ダウンロードしたら解凍し、インストールを行います。
 
 {% highlight console %}
-$ curl https://nodeload.github.com/matsu911/api_spoofer/tarball/v0.0.3 | tar xvzf -
-$ cd matsu911-api_spoofer-3fe83d4/
+$ curl https://nodeload.github.com/matsu911/api_spoofer/tarball/v0.0.4 | tar xvzf -
+$ cd matsu911-api_spoofer-99b66df/
 $ python setup.py install
 {% endhighlight %}
 
