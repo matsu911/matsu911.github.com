@@ -15,7 +15,7 @@ Mac OSを触るようになって初めて知ったのですが、Mac OSのバ�
 # サンプルコード
 まずは以下のように今回使用するサンプルコードを書きます。
 
-{% higlight c %}
+{% highlight c %}
 #include <stdio.h>
 
 int main()
@@ -28,7 +28,7 @@ int main()
 
 コンパイル、実行して動作することを確認します。
 
-{% higlight console %}
+{% highlight console %}
 $ gcc main.c 
 $ ./a.out
 aaa
