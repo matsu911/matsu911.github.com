@@ -67,3 +67,4 @@ bbb
 {% endhighlight %}
 
 "bbb"と表示されることが確認されました。
+この手法を応用すればMac OSでHappy Hackingライフを送れるでしょう。
