@@ -4,7 +4,7 @@ title: "wafによるビルド環境構築"
 description: "Python製の汎用ビルドツールwafを使ってビルド環境を構築します"
 category: Testing
 tags: [waf,build]
-keywords: [waf,build,ビルド]
+keywords: [waf,build,ビルド,autoconf,automake,make,Python]
 ---
 {% include JB/setup %}
 
