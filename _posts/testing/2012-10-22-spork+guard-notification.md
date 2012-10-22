@@ -12,6 +12,8 @@ keywords: [ruby,spork,quard,test/unit,growl,notify,drb]
 Guardfileには次のように:drdオプションを指定しています。
 
 {% highlight ruby %}
+notification :growl
+
 guard :test, :drb => true do
   ...
 end
