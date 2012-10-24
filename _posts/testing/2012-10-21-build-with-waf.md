@@ -151,7 +151,7 @@ def build(bld):
                 target='nngsrv')
 {% endhighlight %}
 
-このファイルひとつでconfigureoもビルドもできます。
+このファイルひとつでconfigureもビルドもできます。
 
 {% highlight console %}
 $ waf configure build
