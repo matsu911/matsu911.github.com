@@ -5,6 +5,7 @@ tagline: Legacy Code Consultant
 ---
 {% include JB/setup %}
 
+CEO of [Backflip180, LLC.](http://backflip180.jp).
 Legacy Code Consultant especially for C/C++.
 
 ## Projects
