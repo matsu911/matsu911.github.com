@@ -45,7 +45,7 @@
           <p class="header">about</h4>
           <ul>
             {% if site.author.email %}
-            <li class="contact"><address><span class="author fn n">{{ site.author.name }}</span> - <span class="fn email">{{ site.author.email }}</span></address></li>
+            <li class="contact"><address><span class="author fn n"><a href="mailo:{{ site.author.email }}">{{ site.author.name }}</a></span></address></li>
             {% endif %}
             {% if site.author.github %}
             <li class="github"><a href="http://github.com/{{ site.author.github }}/" rel="me">github.com/{{ site.author.github }}</a></li>
@@ -65,6 +65,9 @@
             {% if site.author.pinterest %}
             <li class="pinterest"><a href="http://pinterest.com/{{ site.author.pinterest }}" rel="me">pinterest.com/{{ site.author.pinterest }}</a></li>
             {% endif %}
+            {% if site.author.company %}
+            <li class=""><a href="{{ site.author.company }}">{{ site.author.company }}</a></li>
+            {% endif %}
           </ul>
         </div><!-- misc -->
         {% endif %}
@@ -75,7 +78,7 @@
       </section>
 
       <footer>
-      <p><small>Hosted on <a href="http://pages.github.com/">GitHub Pages</a></small></p>
+      <!-- <p><small>Hosted on <a href="http://pages.github.com/">GitHub Pages</a></small></pachydactyl> -->
       </footer>
     </div>
     <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
