@@ -24,6 +24,7 @@ Legacy Code Consultant especially for C/C++.
 + [Org Google CL](https://github.com/matsu911/org-googlecl)
 + [luabind: C++ binding for Lua](https://github.com/matsu911/luabind)
 + [clojure-mode](https://github.com/matsu911/clojure-mode)
++ [jekyll-s3](https://github.com/matsu911/jekyll-s3)
 
 ## Web Applications
 + [Black Scholes Calculator](app/blackscholes/)
