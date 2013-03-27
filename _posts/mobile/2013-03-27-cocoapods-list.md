@@ -7,7 +7,7 @@ keywords: [iPhone,Cocoapods,podspec]
 ---
 {% include JB/setup %}
 
-CocoapodsはiOSやOSXの開発で便利なオープンソースのモジュール管理ツールです。
+[Cocoapods](http://cocoapods.org)はiOSやOSXの開発で便利なオープンソースのモジュール管理ツールです。
 モジュールの数が多くて何のモジュールか良くわからなかったりするので、一覧を作ってみました。
 
 # Cocoapods一覧
