@@ -10,8 +10,6 @@ keywords: [iPhone,Cocoapods,podspec]
 [Cocoapods](http://cocoapods.org)はiOSやOSXの開発で便利なオープンソースのモジュール管理ツールです。
 モジュールの数が多くて何のモジュールか良くわからなかったりするので、一覧を作ってみました。
 
-# Cocoapods一覧
-
 ## [500px-iOS-api](https://github.com/500px/500px-iOS-api)
 A simple SDK for accessing the 500px API.
 ## [_.m](http://kmalakoff.github.com/_.m/)
