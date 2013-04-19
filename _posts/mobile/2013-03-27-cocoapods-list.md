@@ -324,6 +324,8 @@ The Bazaarvoice software development kit (SDK) for iOS is an iOS static library 
 Create drum beats with as many voices (hi-hat, snare, bass drum, etc.) as you want.
 ## [BBHTTP](https://github.com/brunodecarvalho/BBHTTP)
 A modern HTTP client framework for iOS/OSX built on top of libcurl.
+## [BButton](https://github.com/jessesquires/BButton)
+BButton is a subclass of UIButton that looks like the Twitter Bootstrap 2.3.1 buttons.
 ## [BCGenieEffect](https://github.com/Ciechan/BCGenieEffect)
 OSX style genie effect inside your iOS app.
 ## [BCStatusItem](https://github.com/jfro/BCStatusItem)
@@ -1053,6 +1055,8 @@ GCNetworkReachability monitors the network state on iOS and OS X devices. Suppor
 Includes customized animation delay and duration, triggering the transition via notification and display of an activity indicator.
 ## [GCPlaceholderTextView](https://github.com/gcamp/GCPlaceholderTextView)
 A subclass of UITextView that allow a placeholder.
+## [GCTagList](https://github.com/greenchiu/GCTagList)
+GCTagList like iOS Mail app's sender or recivers tags.
 ## [GData](https://code.google.com/p/gdata-objectivec-client)
 The Google data APIs provide a simple protocol for reading and writing data on the web. Many Google services provide a Google data API.
 ## [GDataXML-HTML](https://github.com/graetzer/GDataXML-HTML)
@@ -1178,6 +1182,8 @@ Unit conversion library for Objective-C.
 ## [HJCache](https://github.com/markofjohnson/HJCache)
 HJCache is library for asynchronous download of images and other data over the net, and for sharing 
 and caching them.
+## [HKCircularProgressView](https://github.com/Harmek/HKCircularProgressView)
+A simple discrete/continuous circular progress view with current/max properties, customizable appearance and animatable.
 ## [HMSegmentedControl](https://github.com/HeshamMegid/HMSegmentedControl)
 A drop-in replacement for UISegmentedControl mimicking the style of the segmented control used in Google Currents.
 ## [HockeyKit](http://hockeykit.net/)
@@ -1487,8 +1493,12 @@ Similar to the status bar seen in the MailBox app, it covers the top status bar 
 An addition to AFNetworking to easily bring in Gravatar images.
 ## [KIF](https://github.com/square/KIF)
 KIF, which stands for Keep It Functional, is an iOS integration test framework. It allows for easy automation of iOS apps by leveraging the accessibility attributes that the OS makes available for those with visual disabilities.
+## [KIImagePager](https://github.com/kimar/KIImagePager)
+This UIView Subclass is used to present Images loaded from the Web and is inspired from foursquare's Image Slideshow.
 ## [kingpin](http://itsbonczek.github.com/kingpin)
 A drop-in MapKit/MKAnnotation pin clustering library for MKMapView on iOS.
+## [KIPullToReveal](https://github.com/kimar/KIPullToReveal)
+This UITableViewController is used to combine a search result's UITableView with a MKMapView.
 ## [KISSmetrics](http://www.kissmetrics.com)
 Library for KISSmetrics.
 ## [KissNSUserDefaults](https://github.com/cxa/KissNSUserDefaults)
@@ -1582,6 +1592,8 @@ Simple UIAlertView wrapper that uses blocks for button actions.
 A lightweight singleton ad mediation platform for iOS. Ads are managed in a way that most closely adheres to best practices for ad networks using a single instance for each ad network in order to provide the best publishing platform for advertisers to maximize ad inventory based on your particular needs. Currently there are two adapters available (iAd and Google Ads). The adapters can be extended to any ad framework wanted.
 ## [LARSTorch](https://github.com/larsacus/LARSTorch)
 Lightweight AVFoundation-based class to access the LED torch on your iDevice.
+## [Lasagna-Cookies](https://github.com/kbessiere/Lasagna-Cookies)
+Lasagna Cookies is a UI theme for iOS that provide multiple view object.
 ## [LastFm](https://github.com/gangverk/LastFm)
 Block based Last.fm SDK for iOS and Mac OS X.
 ## [LAWalkthrough](https://github.com/larryaasen/LAWalkthrough)
@@ -1765,6 +1777,8 @@ Create a parallax effect using a custom container view, much like the top view o
 Like Path's timestamp scrollbar label.
 ## [MDCShineEffect](https://github.com/modocache/MDCShineEffect)
 Add a "shine" effect to any view.
+## [MDRadialProgress](https://github.com/mdinacci/MDRadialProgress)
+MDRadialProgress is a custom UIView to display progress in discrete steps.
 ## [MEActionSheet](https://github.com/enriquez/MEActionSheet)
 UIActionSheet subclass with a simpler API using blocks and target/action invocations.
 ## [MEAlertView](https://github.com/enriquez/MEAlertView)
@@ -1860,6 +1874,8 @@ Additions for UIColor for easy handling with hex- and rgb-colors.
 A 'high score'-style counting view that animates between different displayed integers.
 ## [MMMarkdown](https://github.com/mdiep/MMMarkdown)
 An Objective-C static library for converting Markdown to HTML.
+## [MMRecord](https://github.com/MutualMobile/MMRecord)
+A simple block based web service integration library.
 ## [MNColorKit](https://github.com/madninja/MNColorKit)
 A utility belt of color related add-ons for UIKit.
 ## [MNMBottomPullToRefresh](https://bitbucket.org/emenegro/bottom-pull-to-refresh)
@@ -2744,6 +2760,8 @@ A Keychain based Account Storage similar to ACAccount for third party providers.
 * SHAccountStore
 
 The api works the same way as the Accounts framework.
+## [ShakingAlertView](https://github.com/stringer630/ShakingAlertView)
+ShakingAlertView is a UIAlertView subclass with a password entry textfield. Incorrect password entry causes a 'shake' animation similar to the OS X account login screen.
 ## [SHAlert](https://github.com/seivan/SHAlert)
 +(SHViewControllerAlert *)alertControllerWithStoryboardId:(NSString *)storyboardId
                                                 withTitle:(NSString *)theTitle
@@ -3297,12 +3315,16 @@ Windows Azure Mobile SDK for iOS.
 A library for parsing geometries from Well-Known-Text (WKT).
 ## [WKVerticalScrollBar](https://github.com/litl/WKVerticalScrollBar)
 A traditional-style scrollbar for iOS that integrates with existing UIScrollView or UIScrollView subclasses.
+## [WMATweetView](https://github.com/markbeaton/WMATweetView)
+This is a self-contained UIView subclass that renders the text portion of a tweet according to Twitter's guidelines at [https://dev.twitter.com/terms/display-guidelines](https://dev.twitter.com/terms/display-guidelines).
 ## [WorkflowSchema](https://github.com/CRedit360/WorkflowSchema)
 An iOS framework which allows you to define app workflows in XML.
 ## [wpxmlrpc](https://github.com/wordpress-mobile/wpxmlrpc)
 Lightweight XML-RPC library.
 ## [WSAssetPickerController](https://github.com/w5mith/WSAssetPickerController)
 This is an iOS, Objective-C alternative to UIImagePickerController that looks almost exactly the same, but provides the ability to select multiple images. It's as easy to setup as UIImagePickerController and it works in both portrait and landscape orientations. It requires the addition of AssetsLibrary.framework. This code uses ARC.
+## [WSCoachMarksView](https://github.com/workshirt/WSCoachMarksView)
+iOS drop-in class for interactive coach marks with cutouts to spotlight the app's existing UI.
 ## [XBImageFilters](https://github.com/xissburg/XBImageFilters)
 OpenGL ES 2-based image and real-time camera filters for iOS.
 ## [Xbox360ControllerManager](https://github.com/halo/Xbox360ControllerManager)
@@ -3339,6 +3361,10 @@ Use Yandex Geocoding API for forward and reversed geocoding.
 Static library for embedding Yandex.Maps into iOS applications.
 ## [YBStatechart](https://github.com/ronaldmannak/YBStatechart)
 Framework for statecharts. A statecharts is a formalized type of finite state machine.
+## [YIDragScrollBar](https://github.com/inamiy/YIDragScrollBar)
+Attaches draggable scroll bar on top of original UIScrollView for iOS5+, works like a drug.
+## [YIFullScreenScroll](https://github.com/inamiy/YIFullScreenScroll)
+Pinterest-like scroll-to-fullscreen UI for iOS.
 ## [YIInnerShadowView](https://github.com/inamiy/YIInnerShadowView)
 Inner-shadow UIView/CALayer for iOS.
 ## [YIPopupTextView](https://github.com/inamiy/YIPopupTextView)
@@ -3412,6 +3438,8 @@ all of its delegate method are optional.
 ZipArchive is an Objective-C class to compress or uncompress zip files, which is base on open source code "MiniZip".
 
 It can be used for iPhone application development, and cocoa on Mac OSX as well.
+## [ZipKit](https://bitbucket.org/kolpanic/zipkit/wiki/Home)
+ZipKit is an Objective-C framework for reading and writing Zip archives in Mac OS X and iOS apps. It supports the standard PKZip format, files larger than 4GB in size using PKZip's zip64 extensions, optionally, resource forks in a manner compatible with Mac OS X's Archive Utility (in the Mac OS X targets only), and clean interruption so archiving can be cancelled by the invoking object (e.g., a NSOperation or NSThread).
 ## [zipzap](https://github.com/pixelglow/zipzap)
 The zip file is an ideal container for compound Objective-C documents. Zip files are widely used and well understood. You can randomly access their parts. The format compresses decently and has extensive operating system and tool support. So we want to make this format an even easier choice for you. Thus, the library features:
 

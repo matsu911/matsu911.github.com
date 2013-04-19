@@ -7,7 +7,10 @@ data = {}
 Dir.glob("#{ENV['HOME']}/.cocoapods/master/*/*/*.podspec").each do |f|
   begin
     pod = eval(open(f).read)
-    data[pod.name] = {description: pod.description, homepage: pod.homepage}
+    data[pod.name] = {
+      description: pod.description || pod.summary,
+      homepage: pod.homepage
+    }
   rescue
   end
 end
